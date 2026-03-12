@@ -30,13 +30,14 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.indexes
+    #- navigation.indexes
     - navigation.tabs
     - navigation.tabs.sticky
     - content.code.annotate
     - navigation.instant.preview
 plugins:
   - search
+  - meta-descriptions
   - awesome-pages
   - mike
   - mermaid2
