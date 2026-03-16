@@ -105,6 +105,30 @@
   text-decoration: underline;
   color: var(--md-accent-fg-color, var(--md-primary-fg-color));
 }
+.md-typeset .headerlink {
+  cursor: pointer;
+}
+/* Tooltip shown after copying heading link */
+.md-typeset .headerlink .ok-copy-tip {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%) translateY(-4px);
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--md-default-bg-color, #fff);
+  background: var(--md-default-fg-color, #333);
+  border-radius: 6px;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  animation: ok-copy-tip 1.6s var(--ok-ease) forwards;
+}
+@keyframes ok-copy-tip {
+  0%, 70% { opacity: 1; }
+  100% { opacity: 0; }
+}
 
 /* ========== .md-typeset h1 — by viewport ========== */
 /* Mobile (max-width: 30em) */
