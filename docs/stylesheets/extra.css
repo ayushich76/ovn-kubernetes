@@ -1,24 +1,25 @@
-/* MkDocs Material UI showcase theme (docs site only). */
+/* MkDocs Material UI — fully fluid, query-less responsive (ultra-wide 100em+ optimized). */
 :root {
-  --ok-radius: 16px;
-  --ok-radius-sm: 12px;
-  --ok-ease: cubic-bezier(.2,.8,.2,1);
+  --ok-radius: clamp(12px, 1.2vw, 16px);
+  --ok-radius-sm: clamp(8px, 1vw, 12px);
+  --ok-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ok-fast: 140ms var(--ok-ease);
   --ok-med: 220ms var(--ok-ease);
   --ok-slow: 520ms var(--ok-ease);
-  --md-sidebar-width: 12.5rem;
+  --ok-sidebar-base: min(12.5rem, 20vw);
+  --md-sidebar-width: var(--ok-sidebar-base);
+  --ok-content-max: min(56.25rem, 90vw);
 }
 
 /* Theme-aware surfaces */
 [data-md-color-scheme="default"] {
   --ok-bg: radial-gradient(1200px 800px at 15% 10%, rgba(82, 108, 254, 0.16), transparent 60%),
-           radial-gradient(900px 700px at 90% 0%, rgba(64, 81, 181, 0.14), transparent 55%),
-           linear-gradient(180deg, #f6f7fb 0%, #ded6f1 100%);
+    radial-gradient(900px 700px at 90% 0%, rgba(64, 81, 181, 0.14), transparent 55%),
+    linear-gradient(180deg, #f6f7fb 0%, #ded6f1 100%);
   --ok-surface: rgba(255, 255, 255, 0.78);
   --ok-surface-2: rgba(255, 255, 255, 0.92);
   --ok-border: rgba(0, 0, 0, 0.08);
   --ok-sidebar-border: #a855f7;
-  /* Sidebar: solid content area for readability; tight gradient on left edge only */
   --ok-sidebar-bg: rgba(255, 255, 255, 0.96);
   --ok-sidebar-edge: rgba(168, 85, 247, 0.14);
   --ok-sidebar-gradient: linear-gradient(
@@ -27,7 +28,6 @@
     var(--ok-sidebar-bg) 12%,
     var(--ok-sidebar-bg) 100%
   );
-  /* Secondary (TOC): mirrored gradient — edge on right */
   --ok-sidebar-secondary-gradient: linear-gradient(
     to left,
     var(--ok-sidebar-edge) 0%,
@@ -40,14 +40,13 @@
 
 [data-md-color-scheme="slate"] {
   --ok-bg: radial-gradient(1100px 800px at 15% 10%, rgba(81, 92, 141, 0.22), transparent 60%),
-           radial-gradient(900px 700px at 90% 0%, rgba(64, 81, 181, 0.16), transparent 56%),
-           radial-gradient(900px 650px at 60% 95%, rgba(0, 212, 255, 0.08), transparent 62%),
-           linear-gradient(180deg, #1c212f 0%, #141824 100%);
+    radial-gradient(900px 700px at 90% 0%, rgba(64, 81, 181, 0.16), transparent 56%),
+    radial-gradient(900px 650px at 60% 95%, rgba(0, 212, 255, 0.08), transparent 62%),
+    linear-gradient(180deg, #1c212f 0%, #141824 100%);
   --ok-surface: rgba(22, 24, 34, 0.72);
   --ok-surface-2: rgba(22, 24, 34, 0.92);
   --ok-border: rgba(255, 255, 255, 0.12);
   --ok-sidebar-border: #05bed7;
-  /* Sidebar: solid content area for readability; tight gradient on left edge only */
   --ok-sidebar-bg: rgba(22, 26, 42, 0.96);
   --ok-sidebar-edge: rgba(82, 108, 254, 0.18);
   --ok-sidebar-gradient: linear-gradient(
@@ -56,7 +55,6 @@
     var(--ok-sidebar-bg) 12%,
     var(--ok-sidebar-bg) 100%
   );
-  /* Secondary (TOC): mirrored gradient — edge on right */
   --ok-sidebar-secondary-gradient: linear-gradient(
     to left,
     var(--ok-sidebar-edge) 0%,
@@ -67,13 +65,12 @@
   --ok-shadow-sm: 0 16px 58px rgba(0, 0, 0, 0.62), 0 0 0 1px rgba(255, 255, 255, 0.045) inset, 0 1px 0 rgba(255, 255, 255, 0.05) inset;
 }
 
-/* Background + typography tweaks */
 .md-container {
   background: var(--ok-bg);
 }
 
 .md-typeset {
-  line-height: 1.65;
+  line-height: clamp(1.5, 1.5 + 0.15vw, 1.65);
 }
 
 .md-typeset h1,
@@ -82,22 +79,30 @@
   letter-spacing: -0.01em;
 }
 
-/* Make anchor jumps land nicely below sticky header/tabs */
 .md-typeset :is(h1, h2, h3, h4, h5, h6) {
   scroll-margin-top: calc(var(--md-header-height, 3rem) + var(--md-tabs-height, 3rem) + 1rem);
 }
 
-/* Heading permalink (anchor) links — visible on hover, styled as hyperlinks */
+/* Fluid h1: mobile → ultra-wide (no media queries) */
+.md-typeset h1 {
+  color: var(--md-default-fg-color--light);
+  font-size: clamp(1.5rem, 1.2rem + 0.8vw, 2rem);
+  line-height: 1.3;
+  margin: 0 0 clamp(-0.875rem, -1.2vw, -1.25rem) 0;
+}
+
+/* Heading permalink links */
 .md-typeset :is(h1, h2, h3, h4, h5, h6):hover .headerlink,
 .md-typeset :is(h1, h2, h3, h4, h5, h6) .headerlink:focus {
   opacity: 1;
 }
 .md-typeset .headerlink {
   opacity: 0.4;
-  margin-left: 0.35em;
+  margin-left: clamp(0.2em, 0.35em, 0.5em);
   color: var(--md-accent-fg-color, var(--md-primary-fg-color));
   text-decoration: none;
   font-weight: 400;
+  cursor: pointer;
   transition: opacity var(--ok-fast);
 }
 .md-typeset .headerlink:hover {
@@ -105,22 +110,18 @@
   text-decoration: underline;
   color: var(--md-accent-fg-color, var(--md-primary-fg-color));
 }
-.md-typeset .headerlink {
-  cursor: pointer;
-}
-/* Tooltip shown after copying heading link */
 .md-typeset .headerlink .ok-copy-tip {
   position: absolute;
   left: 50%;
   bottom: 100%;
-  transform: translateX(-50%) translateY(-4px);
-  padding: 4px 8px;
-  font-size: 0.7rem;
+  transform: translateX(-50%) translateY(clamp(-2px, -0.4vw, -4px));
+  padding: clamp(2px, 0.4vw, 4px) clamp(4px, 0.8vw, 8px);
+  font-size: clamp(0.65rem, 0.6rem + 0.15vw, 0.7rem);
   font-weight: 600;
   white-space: nowrap;
   color: var(--md-default-bg-color, #fff);
   background: var(--md-default-fg-color, #333);
-  border-radius: 6px;
+  border-radius: clamp(4px, 0.6vw, 6px);
   pointer-events: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   animation: ok-copy-tip 1.6s var(--ok-ease) forwards;
@@ -130,53 +131,12 @@
   100% { opacity: 0; }
 }
 
-/* ========== .md-typeset h1 — by viewport ========== */
-/* Mobile (max-width: 30em) */
-@media screen and (max-width: 30em) {
-  .md-typeset h1 {
-    color: var(--md-default-fg-color--light);
-    font-size: 1.5em;
-    line-height: 1.3;
-    margin: 0 0 -14px 0;
-  }
-}
-
-/* Tablet (30.0625em – 76.24em) */
-@media screen and (min-width: 30.0625em) and (max-width: 76.24em) {
-  .md-typeset h1 {
-    color: var(--md-default-fg-color--light);
-    font-size: 1.75em;
-    line-height: 1.3;
-    margin: 0 0 -16px 0;
-  }
-}
-
-/* Laptop (76.25em – 99.9em) */
-@media screen and (min-width: 76.25em) and (max-width: 99.9em) {
-  .md-typeset h1 {
-    color: var(--md-default-fg-color--light);
-    font-size: 1.9em;
-    line-height: 1.3;
-    margin: 0 0 -18px 0;
-  }
-}
-
-/* Ultra-wide (100em+) */
-@media screen and (min-width: 100em) {
-  .md-typeset h1 {
-    color: var(--md-default-fg-color--light);
-    font-size: 2em;
-    line-height: 1.3;
-    margin: 0 0 -20px 0;
-  }
-}
-
-/* Scroll progress bar (inserted by docs/javascripts/extra.js) */
+/* Scroll progress bar — fluid height */
 #ok-progress {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
+  height: clamp(2px, 0.3vh, 3px);
   width: 100%;
   transform: scaleX(0);
   transform-origin: left;
@@ -185,12 +145,10 @@
   transition: transform var(--ok-fast);
 }
 
-/* Search: rounded, but no focus effect */
 .md-search__input {
   border-radius: 999px;
   transition: none;
 }
-
 .md-search__input:focus,
 .md-search__input:focus-within {
   outline: none;
@@ -198,9 +156,9 @@
   transform: none;
 }
 
-/* Header: subtle gradient overlay (keeps theme base color) */
+/* Header — fluid height (vw/vh) */
 .md-header {
-  height: 140px;
+  height: clamp(80px, 15vh, 140px);
   background-image: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.18) 0%,
@@ -208,13 +166,12 @@
     rgba(0, 0, 0, 0.12) 100%
   );
 }
-
 [data-md-color-scheme="slate"] .md-header {
   background-image: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.08) 0%,
     rgba(255, 255, 255, 0) 60%,
-    rgba(82, 108, 254, 0.10) 100%
+    rgba(82, 108, 254, 0.1) 100%
   );
 }
 
@@ -222,38 +179,35 @@
 .md-header__button.md-logo svg {
   fill: currentcolor;
   display: block;
-  height: 2.2rem;
+  height: clamp(1.5rem, 1.5rem + 0.5vw, 2.2rem);
   width: auto;
 }
 
-/* Top panel title text only (not sidebar nav) */
 .md-header .md-ellipsis {
-  font-size: 22px;
+  font-size: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem);
   position: relative;
-  left: -22px;
-  top: 4px;
+  left: clamp(-1.375rem, -1.5vw, -0.5rem);
+  top: clamp(2px, 0.4vw, 4px);
 }
 
-[dir=ltr] .md-source__icon + .md-source__repository {
-  margin-left: -2rem;
-  font-size: 15px;
+[dir="ltr"] .md-source__icon + .md-source__repository {
+  margin-left: clamp(-1.5rem, -2vw, -2rem);
+  font-size: clamp(0.625rem, 0.6rem + 0.1vw, 0.6875rem);
 }
 
-/* Tabs nav below header: same subtle gradient overlay */
+/* Tabs — fluid font size */
 nav.md-tabs {
   background-image: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.16) 0%,
     rgba(255, 255, 255, 0) 60%,
-    rgba(0, 0, 0, 0.10) 100%
+    rgba(0, 0, 0, 0.1) 100%
   );
 }
-
 a.md-tabs__link {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: clamp(0.75rem, 0.65rem + 0.25vw, 0.8rem);
+  font-weight: 400;
 }
-
 [data-md-color-scheme="slate"] .md-tabs {
   background-image: linear-gradient(
     90deg,
@@ -263,36 +217,34 @@ a.md-tabs__link {
   );
 }
 
-/* Sidebar and footer stacking: sidebar below footer */
 .md-sidebar {
   z-index: 1;
 }
-
 .md-footer {
   position: relative;
   z-index: 3;
 }
 
-/* ========== Primary sidebar (left nav) ========== */
+/* ========== Primary sidebar — fluid width/position (no breakpoints) ========== */
 .md-sidebar--primary {
-  width: 12.5rem;
-  min-width: 12.5rem;
-  max-width: 12.5rem;
-  transform: translateX(-12px);
+  width: var(--ok-sidebar-base);
+  min-width: min(8rem, 12vw);
+  max-width: 15rem;
+  transform: translateX(clamp(-20rem, 2.5% - 10vw, -5rem))
 }
 
 .md-sidebar--primary .md-sidebar__scrollwrap {
   position: absolute;
   box-sizing: border-box;
+  width: min(15rem, 80vw);
+  left: clamp(2.5%, 0px, 0px);
   background: var(--ok-sidebar-gradient);
   background-clip: padding-box;
   border: 1px solid var(--ok-sidebar-border);
   border-radius: var(--ok-radius);
   box-shadow: var(--ok-shadow);
-  height: 864px;
-  max-height: calc(
-    100vh - var(--md-header-height, 3rem) - var(--md-tabs-height, 3rem) - 1rem
-  );
+  height: calc(100vh - var(--md-header-height, 3rem) - var(--md-tabs-height, 3rem) - 1rem);
+  max-height: calc(100vh - var(--md-header-height, 3rem) - var(--md-tabs-height, 3rem) - 1rem);
   overflow-y: auto;
   overflow-x: hidden;
   transition: transform var(--ok-med), box-shadow var(--ok-med);
@@ -301,60 +253,22 @@ a.md-tabs__link {
 .md-sidebar--primary .md-sidebar__inner {
   background: var(--ok-sidebar-bg);
   border-radius: var(--ok-radius-sm);
-  margin: 0 2px;
+  margin: 0 clamp(1px, 0.2vw, 2px);
   min-height: 100%;
 }
 
-/* Mobile (max-width: 30em) */
-@media screen and (max-width: 30em) {
-  .md-sidebar--primary .md-sidebar__scrollwrap {
-    width: 95%;
-    left: 2.5%;
-    border-color: var(--ok-sidebar-border);
-  }
-}
-
-/* Tablet (30.0625em – 76.24em) */
-@media screen and (min-width: 30.0625em) and (max-width: 76.24em) {
-  .md-sidebar--primary .md-sidebar__scrollwrap {
-    width: 400px;
-    left: 0;
-    border-color: var(--ok-sidebar-border);
-  }
-}
-
-/* Laptop (76.25em – 99.9em) */
-@media screen and (min-width: 76.25em) and (max-width: 99.9em) {
-  .md-sidebar--primary .md-sidebar__scrollwrap {
-    width: 300px;
-    left: -120px;
-    border-color: var(--ok-sidebar-border);
-  }
-}
-
-/* Ultra-wide (100em+) */
-@media screen and (min-width: 100em) {
-  .md-sidebar--primary .md-sidebar__scrollwrap {
-    width: 320px;
-    left: -160px;
-    border-color: var(--ok-sidebar-border);
-  }
-}
-
-.md-sidebar--primary .md-sidebar__scrollwrap .md-nav {
-  overflow: visible;
-}
-
-.md-nav {
-  font-size: 0.75rem;
-}
-
+.md-sidebar--primary .md-sidebar__scrollwrap .md-nav,
 .md-sidebar--primary .md-nav__list {
   overflow: visible;
 }
 
+.md-nav {
+  font-weight: 400;
+  font-size: clamp(0.7rem, 0.6rem + 0.25vw, 0.75rem);
+}
+
 .md-sidebar--primary .md-sidebar__scrollwrap:hover {
-  transform: translateY(-2px);
+  transform: translateY(clamp(-2px, -0.2vw, -4px));
   box-shadow: var(--ok-shadow), rgba(24, 23, 23, 0.1) 0 2px 0;
 }
 
@@ -362,69 +276,50 @@ a.md-tabs__link {
   box-shadow: var(--ok-shadow), 0 0 0 1px rgba(82, 108, 254, 0.08);
 }
 
-/* Main content grid: reserve space for both sidebars on large screens */
+/* Main grid — minmax for side columns, 1fr middle; ultra-wide capped */
 .md-main__inner {
-  grid-template-columns: 12.5rem 1fr;
+  grid-template-columns: minmax(min(10rem, 15vw), 12.5rem) 1fr minmax(min(10rem, 15vw), 12.5rem);
 }
 
-/* Laptop and up: add column for TOC when secondary sidebar is present */
-@media screen and (min-width: 76.25em) {
-  .md-main__inner {
-    grid-template-columns: 12.5rem 1fr 12.5rem;
-  }
-  [dir=ltr] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
-    margin-left: -55px;
-  }
-  .md-content__inner {
-    width: 900px;
-    text-align: justify;
-  }
+[dir="ltr"] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
+  margin-left: clamp(0, -5vw, -3.5rem);
 }
 
 .md-sidebar--primary .md-sidebar__inner {
-  padding: 0.85rem 0.7rem;
+  padding: clamp(0.5rem, 0.5rem + 0.3vw, 0.85rem) clamp(0.4rem, 0.4rem + 0.3vw, 0.7rem);
 }
 
-/* ========== Content area width and alignment ========== */
-.md-content__inner {
-  text-align: justify;
-}
+/* Content area — fluid width, max-width for 100em+ */
 
-/* Mobile (max-width: 30em) */
-@media screen and (max-width: 30em) {
-  [dir=ltr] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
-    margin-left: 0;
-  }
-  .md-content__inner {
-    width: 100%;
-    max-width: 100%;
-    text-align: justify;
-  }
-}
-
-/* Tablet (30.0625em – 76.24em) */
-@media screen and (min-width: 30.0625em) and (max-width: 76.24em) {
-  [dir=ltr] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
+ 
+  [dir=ltr] .md-content > .md-content__inner {
+  
+    width: min(850px, 95%);
+  
     margin-left: -40px;
-  }
-  .md-content__inner {
-    width: 720px;
+    
+  
+    /* 4. Typography cleanup */
     text-align: justify;
+    hyphens: auto;
+    line-height: 1.6; /* Added for better readability with justified text */
   }
-}
 
-/* Ultra-wide (100em+) */
-@media screen and (min-width: 100em) {
-  [dir=ltr] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
-    margin-left: -55px;
-  }
   .md-content__inner {
-    width: 900px;
+    /* Fluid width: 
+       Min: 100% (for mobile)
+       Preferred: 60vw (for tablet/laptop)
+       Max: 900px (your ultra-wide cap) 
+    */
+    width: min(900px, 100%, 70vw);
+    
+    /* Centers content as it hits the 900px max */
+    margin-inline: auto;
+    
     text-align: justify;
+    hyphens: auto;
   }
-}
-
-/* Left sidebar: word-wrap and typography */
+/* Primary sidebar nav — fluid typography */
 .md-sidebar--primary .md-nav__link,
 .md-sidebar--primary .md-nav__title,
 .md-sidebar--primary .md-nav__link .md-ellipsis,
@@ -440,20 +335,20 @@ a.md-tabs__link {
 
 .md-sidebar--primary .md-nav__title {
   animation: none !important;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 0.9rem + 0.35vw, 1.2rem);
   font-weight: 800;
   color: var(--md-accent-fg-color, var(--md-primary-fg-color));
   border-radius: var(--ok-radius-sm);
-  padding: 0.42rem 0.6rem;
+  padding: clamp(0.35rem, 0.3rem + 0.15vw, 0.42rem) clamp(0.5rem, 0.4rem + 0.2vw, 0.6rem);
   transition: transform var(--ok-fast), box-shadow var(--ok-fast), background-color var(--ok-fast);
 }
 
 .md-sidebar--primary .md-nav__link {
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 0.6rem + 0.25vw, 0.75rem);
   overflow: visible;
   text-overflow: unset;
   border-radius: var(--ok-radius-sm);
-  padding: 0.42rem 0.6rem;
+  padding: clamp(0.35rem, 0.3rem + 0.15vw, 0.42rem) clamp(0.5rem, 0.4rem + 0.2vw, 0.6rem);
   transition: transform var(--ok-fast), background-color var(--ok-fast), box-shadow var(--ok-fast);
 }
 .md-sidebar--primary .md-nav__list .md-nav__list .md-nav__link {
@@ -465,37 +360,37 @@ a.md-tabs__link {
   text-overflow: unset;
 }
 .md-sidebar--primary .md-nav__list .md-nav__list .md-nav__link:hover {
-  transform: translateX(6px);
+  transform: translateX(clamp(4px, 0.5vw, 6px));
 }
 .md-sidebar--primary .md-nav__list .md-nav__list .md-nav__link:active {
   transform: scale(0.96);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
-
 [data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__list .md-nav__list .md-nav__link:active {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
-/* ========== Secondary sidebar (Table of Contents) — floating card, mirrored ========== */
+/* ========== Secondary sidebar (TOC) — fluid ========== */
 .md-sidebar--secondary {
-  width: 12.5rem;
-  min-width: 12.5rem;
-  max-width: 12.5rem;
-  transform: translateX(12px);
+  width: var(--ok-sidebar-base);
+  min-width: min(8rem, 12vw);
+  max-width: 15rem;
+  transform: translateX(clamp(5rem, -2.5% + 10vw, 20rem));
 }
 
 .md-sidebar--secondary .md-sidebar__scrollwrap {
   position: absolute;
   box-sizing: border-box;
+  width: min(15.5rem, 80vw);
+  right: clamp(2.5%, 0px, 0px);
+  left: auto;
   background: var(--ok-sidebar-secondary-gradient);
   background-clip: padding-box;
   border: 1px solid var(--ok-sidebar-border);
   border-radius: var(--ok-radius);
   box-shadow: var(--ok-shadow);
-  height: 864px;
-  max-height: calc(
-    100vh - var(--md-header-height, 3rem) - var(--md-tabs-height, 3rem) - 1rem
-  );
+  height: calc(100vh - var(--md-header-height, 3rem) - var(--md-tabs-height, 3rem) - 1rem);
+  max-height: calc(100vh - var(--md-header-height, 3rem) - var(--md-tabs-height, 3rem) - 1rem);
   overflow-y: auto;
   overflow-x: hidden;
   transition: transform var(--ok-med), box-shadow var(--ok-med);
@@ -504,105 +399,56 @@ a.md-tabs__link {
 .md-sidebar--secondary .md-sidebar__inner {
   background: var(--ok-sidebar-bg);
   border-radius: var(--ok-radius-sm);
-  margin: 0 2px;
+  margin: 0 clamp(1px, 0.2vw, 2px);
   min-height: 100%;
-  padding: 0.85rem 0.7rem;
-}
-
-/* Mobile (max-width: 30em) */
-@media screen and (max-width: 30em) {
-  .md-sidebar--secondary .md-sidebar__scrollwrap {
-    width: 95%;
-    right: 2.5%;
-    left: auto;
-    border-color: var(--ok-sidebar-border);
-  }
-}
-
-/* Tablet (30.0625em – 76.24em) */
-@media screen and (min-width: 30.0625em) and (max-width: 76.24em) {
-  .md-sidebar--secondary .md-sidebar__scrollwrap {
-    width: 400px;
-    right: 0;
-    left: auto;
-    border-color: var(--ok-sidebar-border);
-  }
-}
-
-/* Laptop (76.25em – 99.9em) */
-@media screen and (min-width: 76.25em) and (max-width: 99.9em) {
-  .md-sidebar--secondary .md-sidebar__scrollwrap {
-    width: 300px;
-    right: -120px;
-    left: auto;
-    border-color: var(--ok-sidebar-border);
-  }
-}
-
-/* Ultra-wide (100em+) */
-@media screen and (min-width: 100em) {
-  .md-sidebar--secondary .md-sidebar__scrollwrap {
-    width: 320px;
-    right: -160px;
-    left: auto;
-    border-color: var(--ok-sidebar-border);
-  }
+  padding: clamp(0.5rem, 0.5rem + 0.3vw, 0.85rem) clamp(0.4rem, 0.4rem + 0.3vw, 0.7rem);
 }
 
 .md-sidebar--secondary .md-sidebar__scrollwrap:hover {
-  transform: translateY(-2px);
+  transform: translateY(clamp(-2px, -0.2vw, -4px));
   box-shadow: var(--ok-shadow), rgba(24, 23, 23, 0.1) 0 2px 0;
 }
-
 [data-md-color-scheme="slate"] .md-sidebar--secondary .md-sidebar__scrollwrap {
   box-shadow: var(--ok-shadow), 0 0 0 1px rgba(82, 108, 254, 0.08);
 }
-
 [data-md-color-scheme="slate"] .md-sidebar--secondary .md-sidebar__scrollwrap:hover {
   box-shadow: var(--ok-shadow), 0 0 0 1px rgba(82, 108, 254, 0.12);
 }
 
-/* TOC nav links: same card-like + hover/active as primary */
 .md-sidebar--secondary .md-nav__link {
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 0.6rem + 0.25vw, 0.75rem);
   border-radius: var(--ok-radius-sm);
-  padding: 0.42rem 0.6rem;
+  padding: clamp(0.35rem, 0.3rem + 0.15vw, 0.42rem) clamp(0.5rem, 0.4rem + 0.2vw, 0.6rem);
   transition: transform var(--ok-fast), background-color var(--ok-fast), box-shadow var(--ok-fast);
-}
-.md-sidebar--secondary .md-nav__link {
   background-color: color-mix(in srgb, currentColor 4%, transparent);
   box-shadow: var(--ok-shadow-sm);
 }
 .md-sidebar--secondary .md-nav__link:hover {
-  transform: translateX(-6px);
+  transform: translateX(clamp(-6px, -0.5vw, -4px));
 }
 .md-sidebar--secondary .md-nav__link:active {
   transform: scale(0.96);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
-
 [data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link:active {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .md-sidebar--secondary .md-nav__title {
   animation: none !important;
-  font-size: 0.8rem;
+  font-size: clamp(0.75rem, 0.65rem + 0.25vw, 0.8rem);
   font-weight: 600;
   border-radius: var(--ok-radius-sm);
-  padding: 0.54rem 0.6rem;
-  padding-left: 1.5rem;
+  padding: clamp(0.4rem, 0.4rem + 0.2vw, 0.54rem) clamp(0.5rem, 0.4rem + 0.2vw, 0.6rem);
+  padding-left: clamp(1rem, 1rem + 0.5vw, 1.5rem);
 }
-
 [data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__title {
   color: #8661c6;
 }
-
 [data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__title {
   color: #00bdd6;
 }
 
-/* Brief highlight on TOC scroll target */
 @keyframes ok-toc-flash {
   from {
     background: color-mix(in srgb, var(--md-accent-fg-color) 14%, transparent);
@@ -613,23 +459,19 @@ a.md-tabs__link {
     box-shadow: none;
   }
 }
-
 .ok-toc-flash {
   animation: ok-toc-flash 900ms var(--ok-ease) both;
   border-radius: var(--ok-radius-sm);
 }
 
-/* Content: cards */
 .md-content__inner > * {
   animation: ok-fade-up var(--ok-slow) var(--ok-ease) both;
 }
-
 @keyframes ok-fade-up {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Make common blocks feel premium */
 .md-typeset pre,
 .md-typeset .admonition,
 .md-typeset details {
@@ -637,15 +479,14 @@ a.md-tabs__link {
   box-shadow: var(--ok-shadow-sm);
   transition: transform var(--ok-med), box-shadow var(--ok-med);
 }
-
 .md-typeset pre:hover,
 .md-typeset .admonition:hover,
 .md-typeset details:hover {
-  transform: translateY(-2px);
+  transform: translateY(clamp(-2px, -0.2vw, -4px));
   box-shadow: var(--ok-shadow);
 }
 
-/* Reduce motion if user asks */
+/* Accessibility: reduced motion only (no layout breakpoints) */
 @media (prefers-reduced-motion: reduce) {
   #ok-progress,
   .md-content__inner > * {
@@ -665,9 +506,9 @@ a.md-tabs__link {
   }
 }
 
-/* Keep logo sizing (existing site behavior) */
-img[alt=ovn-kubernetes-logo] { width: 350px; }
-
+img[alt="ovn-kubernetes-logo"] {
+  width: clamp(280px, 25vw, 350px);
+}
 img {
   display: block;
   float: none;
