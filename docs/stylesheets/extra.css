@@ -86,9 +86,9 @@
 /* Fluid h1: mobile → ultra-wide (no media queries) */
 .md-typeset h1 {
   color: var(--md-default-fg-color--light);
-  font-size: clamp(1.5rem, 1.2rem + 0.8vw, 2rem);
   line-height: 1.3;
-  margin: 0 0 clamp(-0.875rem, -1.2vw, -1.25rem) 0;
+  margin: 0 0 clamp(-0.175rem, -1.2vw, -1.25rem) 0;
+  font-weight: 400;
 }
 
 /* Heading permalink links */
@@ -205,8 +205,8 @@ nav.md-tabs {
   );
 }
 a.md-tabs__link {
-  font-size: clamp(0.75rem, 0.65rem + 0.25vw, 0.8rem);
-  font-weight: 400;
+  font-size: clamp(0.7rem, 0.6rem + 0.25vw, 0.775rem);
+  font-weight: 550;
 }
 [data-md-color-scheme="slate"] .md-tabs {
   background-image: linear-gradient(
@@ -218,7 +218,7 @@ a.md-tabs__link {
 }
 
 .md-sidebar {
-  z-index: 1;
+  z-index: 4;
 }
 .md-footer {
   position: relative;
@@ -226,12 +226,43 @@ a.md-tabs__link {
 }
 
 /* ========== Primary sidebar — fluid width/position (no breakpoints) ========== */
-.md-sidebar--primary {
+/*.md-sidebar--primary {
   width: var(--ok-sidebar-base);
   min-width: min(8rem, 12vw);
   max-width: 15rem;
-  transform: translateX(clamp(-20rem, 2.5% - 10vw, -5rem))
-}
+  transform: translateX(clamp(-20rem, 2.5% - 10vw, -5rem));
+  visibility: visible;
+}*/
+/* 1. Reset the Sidebar for Mobile (Drawer Mode) */
+/* This ensures that when MkDocs turns the sidebar into a drawer, 
+   your 'Shift' math doesn't break the touch-target areas. */
+   .md-sidebar--primary {
+    z-index: 10; /* Ensure it stays above the 'dimming' overlay */
+    transform: none; /* Default state for mobile */
+  }
+  
+  /* 2. Apply Anchor Math ONLY for Desktop/Tablet Layouts */
+  /* We use the theme's 'not hidden' attribute to target 
+     the sidebar when it's part of the main grid. */
+  .md-sidebar--primary:not([hidden]) {
+    width: var(--ok-sidebar-base);
+    min-width: min(8rem, 12vw);
+    max-width: 15rem;
+    transform: translateX(clamp(-20rem, 2.5% - 10vw, -5rem));
+    /* Your Anchor Calculation:
+       On your 1906px screen, this stays exactly as you want it.
+       The '0rem' max ensures it doesn't overlap text as screens shrink. */
+  }
+  
+  /* 3. Fix the 'Dimming' Unclickable Links */
+  /* Sometimes the 'overlay' that dims the background sits ON TOP 
+     of the sidebar links. We force the sidebar to stay 'touchable'. */
+  .md-nav__link, 
+  .md-nav__title {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 20;
+  }
 
 .md-sidebar--primary .md-sidebar__scrollwrap {
   position: absolute;
@@ -282,7 +313,12 @@ a.md-tabs__link {
 }
 
 [dir="ltr"] .md-sidebar--primary:not([hidden]) ~ .md-content > .md-content__inner {
-  margin-left: clamp(0, -5vw, -3.5rem);
+
+  /* 2. Responsive Margin-Left */
+  /* Min: -40px (your target), Preferred: -4vw, Max: 0px (no shift on small screens) */
+  margin-left: clamp(-50px, -4vw, 0px);
+  margin-right: clamp(-40px, -4vw, 0px);
+  /* 3. Keep alignment consistent */
 }
 
 .md-sidebar--primary .md-sidebar__inner {
@@ -290,35 +326,29 @@ a.md-tabs__link {
 }
 
 /* Content area — fluid width, max-width for 100em+ */
+[dir=ltr] .md-content > .md-content__inner {  
 
- 
-  [dir=ltr] .md-content > .md-content__inner {
-  
-    width: min(850px, 95%);
-  
-    margin-left: -40px;
+    /* 2. Maximum Panel Adhesion */
+    /* Increased the pull to -100px and -8vw. 
+       This forces the content to 'stick' to the left sidebar 
+       even on very high-resolution displays. */
+    margin-left: clamp(-120px, -8vw, 0px);
     
-  
-    /* 4. Typography cleanup */
+    /* Keep it pinned to the left */
+    margin-right: auto;
+
+    /* 3. Readability & Polish */
     text-align: justify;
     hyphens: auto;
-    line-height: 1.6; /* Added for better readability with justified text */
-  }
+    
+    /* Critical: At 2100px, you need more line spacing 
+       so the reader's eye doesn't get lost. */
+    line-height: 1.8; 
 
-  .md-content__inner {
-    /* Fluid width: 
-       Min: 100% (for mobile)
-       Preferred: 60vw (for tablet/laptop)
-       Max: 900px (your ultra-wide cap) 
-    */
-    width: min(900px, 100%, 70vw);
     
-    /* Centers content as it hits the 900px max */
-    margin-inline: auto;
-    
-    text-align: justify;
-    hyphens: auto;
-  }
+    /* Adds a small gap so text doesn't touch the sidebar line */
+}
+
 /* Primary sidebar nav — fluid typography */
 .md-sidebar--primary .md-nav__link,
 .md-sidebar--primary .md-nav__title,
@@ -381,7 +411,7 @@ a.md-tabs__link {
 .md-sidebar--secondary .md-sidebar__scrollwrap {
   position: absolute;
   box-sizing: border-box;
-  width: min(15.5rem, 80vw);
+  width: min(15rem, 80vw);
   right: clamp(2.5%, 0px, 0px);
   left: auto;
   background: var(--ok-sidebar-secondary-gradient);
