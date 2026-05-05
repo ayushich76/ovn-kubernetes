@@ -81,7 +81,6 @@
       </div>
     
     
-  
       
 
   
@@ -421,52 +420,6 @@
   
 </header>
     
-  <div class="md-header__option">
-    <div class="version-selector">
-      <button class="version-button" id="vBtn" type="button">
-        <span>📦 Versions</span>
-        <span class="version-arrow">▼</span>
-      </button>
-      <div class="version-dropdown" id="vMenu">
-        <ul id="v-list">
-          </ul>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var btn = document.getElementById("vBtn");
-      var menu = document.getElementById("vMenu");
-      
-      // Open/Close menu
-      btn.addEventListener("click", function(e) {
-        menu.style.display = (menu.style.display === "block") ? "none" : "block";
-        e.stopPropagation();
-      });
-
-      // Close menu if user clicks anywhere else
-      document.addEventListener("click", () => menu.style.display = "none");
-
-      // THE "BRAIN" LOGIC: Fetch versions.json
-      // This tells the UI which folders exist on the server
-      fetch("/ovn-kubernetes/1.0/versions.json")
-        .then(res => res.json())
-        .then(data => {
-          var list = document.getElementById("v-list");
-          data.forEach(v => {
-            var li = document.createElement("li");
-            var a = document.createElement("a");
-            // Redirects user to the specific version folder (e.g., /1.1/)
-            a.href = "/ovn-kubernetes/1.0/.../" + v.version + "/"; 
-            a.textContent = v.title;
-            li.appendChild(a);
-            list.appendChild(li);
-          });
-        });
-    });
-  </script>
-
     <div class="md-container" data-md-component="container">
       
       
