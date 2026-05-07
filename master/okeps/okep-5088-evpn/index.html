@@ -1630,6 +1630,8 @@
       
         
       
+        
+      
     
     
     
@@ -1912,6 +1914,34 @@
     
   
     ClusterNetworkConnect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VTEP
   
 
     
@@ -3093,6 +3123,8 @@
       
         
       
+        
+      
     
     
     
@@ -3179,6 +3211,34 @@
     
   
     No-Overlay Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/bgp-integration/evpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EVPN
   
 
     
@@ -5445,6 +5505,9 @@ the UDNs.</p>
 we just need a way to get the packet from the pod into the IP-VRF, it does not matter if we use the ovn-k8s-mpx interface
 or if we use an SVI interface attached to the Linux Bridge. Therefore, we will never configure an IP address on the SVI
 interface of the Linux bridge, and rely on ovn-k8s-mpx to get packets to the IP-VRF.</p>
+<p>Nonetheless, for MAC-VRFs a Layer 2 SVI is still created on the Linux bridge. While it is not used as a gateway and does
+not need an IP address, FRR depends on it as an IP domain anchor with a neighbor table from which it generates Type 2
+routes with IP and installs entries from learned Type 2 routes with IP for ARP suppression.</p>
 <p>For the remaining devices, the API will drive their creation, covered in a later section.</p>
 <h3 id="workflow-description">Workflow Description<a class="headerlink" href="#workflow-description" title="Permanent link">¶</a></h3>
 <p>Tenants as well as admins are able to create UDNs and CUDNs for their namespace(s), respectively. However, only CUDNs
@@ -5540,8 +5603,8 @@ provisioning may be done by the provider and configured for each node.</p>
 <code>k8s.ovn.org/vteps: {"vtep-name1": {"ips": ["ipv4", "ipv6"]}, "vtep-name2": {"ips": ["ipv4", "ipv6"]}}</code>.
 For managed mode, ovnkube-cluster-manager allocates IPs and writes the annotation. For unmanaged mode,
 ovnkube-node discovers IPs on the node that fall within the VTEP CIDRs and writes the annotation back.
-Even though the user or external automation (e.g. a loopback IP for EVPN) originally configured the IP on the
-interface, annotating it to the node object provides a central view through the Kubernetes API so that operators
+Even though the user or external automation originally configured the VTEP IP on the interface,
+annotating it to the node object provides a central view through the Kubernetes API so that operators
 can inspect every node's VTEP IPs without SSH access. This is especially important for future use cases like
 multi VTEP Geneve tunnels where the VTEP IP may be DHCP-assigned and not known to the user ahead of time.
 ovnkube-cluster-manager then reads the annotation to validate all nodes have VTEP IPs.
@@ -5555,7 +5618,7 @@ If any node does not have a matching IP, the VTEP CR will be set to <code>Accept
 <p>The allocated VTEPIPs will not be included in the status. So the user has no way to know what went wrong when
 its <code>AllocationFailed</code> and which node to check to fix the situation from the status alone. The node side
 controller will add events in case something goes wrong with the allocation (in managed mode, if the VTEP IP
-could not be added to the loopback interface and in unmanaged mode, if discovery failed) to provide input to the user.</p>
+could not be configured on an interface and in unmanaged mode, if discovery failed) to provide input to the user.</p>
 <h3 id="cudn-crd-changes-for-evpn">CUDN CRD changes for EVPN<a class="headerlink" href="#cudn-crd-changes-for-evpn" title="Permanent link">¶</a></h3>
 <p>This API change depends on the <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/pull/5289">No Overlay Feature</a> which will
 introduce a new Transport field that we can extend to use EVPN. The API change will look like this:</p>
@@ -5630,9 +5693,11 @@ unmanaged VTEP includes the Kubernetes node IP for a node, then the node IP will
 node IP should be avoided in most cases, as that IP will already be tied to a specific interface on the node. This
 prevents proper Layer 3 failure handling. While the node IP on a dedicated link could use bonding to prevent Layer 2
 failover, if something goes wrong on the Layer 3 interface, or the leaf connected to that link goes down, then there is
-no failover. With EVPN, it is advantageous to assign the VTEP IP to a loopback interface, so that multihoming and
-failover handling can occur. If a link goes down to one leaf, BFD will fire, and there will be a mass withdrawal of
-routes, moving all traffic to a second leaf.</p>
+no failover. With EVPN, it is advantageous to assign the VTEP IP to an interface without a physical link
+carrier, so that multihoming and failover handling can occur. If a link goes down to one leaf, BFD will fire,
+and there will be a mass withdrawal of routes, moving all traffic to a second leaf. Although loopback interfaces
+are generally used for this, in our case we will use VTEP IPs configured as primary addresses on dummy interfaces
+which facilitates management and filtering out unwanted addresses from discovery.</p>
 <p>If the VTEP is in unmanaged mode, ovnkube-node discovers IPs on each node that fall within the VTEP CIDRs and writes
 the <code>k8s.ovn.org/vteps</code> annotation. Keepalived VIPs (identified by the <code>vip</code> label suffix that keepalived
 adds to addresses) and secondary addresses (<code>IFA_F_SECONDARY</code> flag) are filtered out since they can float
@@ -5654,8 +5719,10 @@ it will generate the proper FRR-K8S configuration.</p>
 <p>For the rest of the examples in this section, assume there is a layer 2 UDN called "blue", with subnet 10.0.10.0/24.</p>
 <h5 id="node-configuration-mac-vrf-ip-vrf-combination-with-layer-2-udn">Node Configuration: MAC-VRF + IP-VRF Combination with Layer 2 UDN<a class="headerlink" href="#node-configuration-mac-vrf-ip-vrf-combination-with-layer-2-udn" title="Permanent link">¶</a></h5>
 <p>Once the VTEP IP is assigned, ovnkube-node will then handle configuring the following:
-</p><div class="highlight"><pre><span></span><code><span class="c1"># VTEP IP assignment to loopback - only done in VTEP managed mode</span>
-ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">100</span>.64.0.1/32<span class="w"> </span>dev<span class="w"> </span>lo
+</p><div class="highlight"><pre><span></span><code><span class="c1"># VTEP IP assignment to dummy interface - only done in VTEP managed mode</span>
+ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>evlo-evpn-vtep<span class="w"> </span><span class="nb">type</span><span class="w"> </span>dummy
+ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">100</span>.64.0.1/32<span class="w"> </span>dev<span class="w"> </span>evlo-evpn-vtep
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>evlo-evpn-vtep<span class="w"> </span>up
 
 <span class="c1"># SVD bridge + VXLAN setup</span>
 ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>br0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>bridge<span class="w"> </span>vlan_filtering<span class="w"> </span><span class="m">1</span><span class="w"> </span>vlan_default_pvid<span class="w"> </span><span class="m">0</span>
@@ -5692,11 +5759,22 @@ bridge<span class="w"> </span>vlan<span class="w"> </span>add<span class="w"> </
 bridge<span class="w"> </span>vni<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>vxlan0<span class="w"> </span>vni<span class="w"> </span><span class="m">100</span>
 bridge<span class="w"> </span>vlan<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>vxlan0<span class="w"> </span>vid<span class="w"> </span><span class="m">12</span><span class="w"> </span>tunnel_info<span class="w"> </span>id<span class="w"> </span><span class="m">100</span>
 
+<span class="c1">## SVI </span>
+ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>br0.12<span class="w"> </span>link<span class="w"> </span>br0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>vlan<span class="w"> </span>id<span class="w"> </span><span class="m">12</span>
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>br0.12<span class="w"> </span>address<span class="w"> </span>aa:bb:cc:00:00:64<span class="w"> </span>addrgenmode<span class="w"> </span>none
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>br0.12<span class="w"> </span>master<span class="w"> </span>blue
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>br0.12<span class="w"> </span>up
+
 <span class="c1"># 2. Connect OVS to the Linux Bridge</span>
 ovs-vsctl<span class="w"> </span>add-port<span class="w"> </span>br-int<span class="w"> </span>blue<span class="w"> </span>--<span class="w"> </span><span class="nb">set</span><span class="w"> </span>interface<span class="w"> </span>blue<span class="w"> </span><span class="nv">type</span><span class="o">=</span>internal<span class="w"> </span>external-ids:iface-id<span class="o">=</span>blue
 ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>blue<span class="w"> </span>master<span class="w"> </span>br0
 bridge<span class="w"> </span>vlan<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>blue<span class="w"> </span>vid<span class="w"> </span><span class="m">12</span><span class="w"> </span>pvid<span class="w"> </span>untagged
 ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>blue<span class="w"> </span>up
+
+<span class="c1"># Per pod: static FDB and neighbor entries</span>
+<span class="c1"># example pod with MAC 0a:58:0a:00:0a:05 and IP 10.0.10.5</span>
+bridge<span class="w"> </span>fdb<span class="w"> </span>add<span class="w"> </span>0a:58:0a:00:0a:05<span class="w"> </span>dev<span class="w"> </span>blue<span class="w"> </span>vlan<span class="w"> </span><span class="m">12</span><span class="w"> </span>master<span class="w"> </span>static
+ip<span class="w"> </span>neigh<span class="w"> </span>add<span class="w"> </span><span class="m">10</span>.0.10.5<span class="w"> </span>lladdr<span class="w"> </span>0a:58:0a:00:0a:05<span class="w"> </span>dev<span class="w"> </span>br0.12<span class="w"> </span>nud<span class="w"> </span>permanent
 </code></pre></div><p></p>
 <p>The Linux configuration ends up looking like this:</p>
 <div class="highlight"><pre><span></span><code>┌────────────────────────────── OVN-KUBERNETES DOMAIN ───────────────────────────────┐                                 
@@ -5756,7 +5834,9 @@ Geneve overlay and allow L2 communication between UDNs on different nodes via th
 Kubernetes nodes. This allows for VM migration and other layer 2 connectivity between entities external to the cluster
 and entities within.</p>
 <p>ovnkube-controller will be responsible for configuring OVN, including the extra OVS internal port attached to the worker logical
-switch.</p>
+switch. Additionally, for each pod in the UDN, static FDB and neighbor entries are created on the Linux bridge and the SVI
+respectively. Both entries are needed for FRR to generate Type 2 routes with IP. Creating the FDB entry statically also
+avoids depending on bootstrap traffic that would otherwise be needed to populate the entry through MAC learning.</p>
 <p>In addition to VTEP IP allocation, ovnkube-cluster-manager will be responsible for generating FRR-K8S config to enable
 FRR with EVPN. The config for the above example would look something like this:</p>
 <p></p><div class="highlight"><pre><span></span><code>vrf<span class="w"> </span>blue
@@ -5819,8 +5899,10 @@ enhancement.</p>
 <p>The RouteAdvertisements CRD will still work in conjunction with the EVPN CRD to determine what IPs should be advertised.</p>
 <h4 id="ip-vrf-layer-3-udn">IP-VRF + Layer 3 UDN<a class="headerlink" href="#ip-vrf-layer-3-udn" title="Permanent link">¶</a></h4>
 <p>A Layer 3 UDN with an IP-VRF is really just a subset of the previous example, as far as configuration of the node:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># VTEP IP assignment to loopback - only done in VTEP managed mode</span>
-ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">100</span>.64.0.1/32<span class="w"> </span>dev<span class="w"> </span>lo
+<div class="highlight"><pre><span></span><code><span class="c1"># VTEP IP assignment to dummy interface - only done in VTEP managed mode</span>
+ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>evlo-evpn-vtep<span class="w"> </span><span class="nb">type</span><span class="w"> </span>dummy
+ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">100</span>.64.0.1/32<span class="w"> </span>dev<span class="w"> </span>evlo-evpn-vtep
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>evlo-evpn-vtep<span class="w"> </span>up
 
 <span class="c1"># SVD bridge + VXLAN setup</span>
 ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>br0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>bridge<span class="w"> </span>vlan_filtering<span class="w"> </span><span class="m">1</span><span class="w"> </span>vlan_default_pvid<span class="w"> </span><span class="m">0</span>
@@ -5888,8 +5970,10 @@ router<span class="w"> </span>bgp<span class="w"> </span><span class="m">65000</
 <p>In this case each node has its own layer 2 domain, and routing is used via the IP-VRF for inter-node UDN communication. </p>
 <h4 id="mac-vrf-layer-2-udn">MAC-VRF + Layer 2 UDN<a class="headerlink" href="#mac-vrf-layer-2-udn" title="Permanent link">¶</a></h4>
 <p>With only a MAC-VRF it is also a subset of the previous node configuration:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># VTEP IP assignment to loopback - only done in VTEP managed mode</span>
-ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">100</span>.64.0.1/32<span class="w"> </span>dev<span class="w"> </span>lo
+<div class="highlight"><pre><span></span><code><span class="c1"># VTEP IP assignment to dummy interface - only done in VTEP managed mode</span>
+ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>evlo-evpn-vtep<span class="w"> </span><span class="nb">type</span><span class="w"> </span>dummy
+ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">100</span>.64.0.1/32<span class="w"> </span>dev<span class="w"> </span>evlo-evpn-vtep
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>evlo-evpn-vtep<span class="w"> </span>up
 
 <span class="c1"># SVD bridge + VXLAN setup</span>
 ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>br0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>bridge<span class="w"> </span>vlan_filtering<span class="w"> </span><span class="m">1</span><span class="w"> </span>vlan_default_pvid<span class="w"> </span><span class="m">0</span>
@@ -5909,11 +5993,22 @@ bridge<span class="w"> </span>vlan<span class="w"> </span>add<span class="w"> </
 bridge<span class="w"> </span>vni<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>vxlan0<span class="w"> </span>vni<span class="w"> </span><span class="m">100</span>
 bridge<span class="w"> </span>vlan<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>vxlan0<span class="w"> </span>vid<span class="w"> </span><span class="m">12</span><span class="w"> </span>tunnel_info<span class="w"> </span>id<span class="w"> </span><span class="m">100</span>
 
-<span class="c1"># 2. Connect OVS to the Linux Bridge</span>
+<span class="c1">## 2. SVI </span>
+ip<span class="w"> </span>link<span class="w"> </span>add<span class="w"> </span>br0.12<span class="w"> </span>link<span class="w"> </span>br0<span class="w"> </span><span class="nb">type</span><span class="w"> </span>vlan<span class="w"> </span>id<span class="w"> </span><span class="m">12</span>
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>br0.12<span class="w"> </span>address<span class="w"> </span>aa:bb:cc:00:00:64<span class="w"> </span>addrgenmode<span class="w"> </span>none
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>br0.12<span class="w"> </span>master<span class="w"> </span>blue
+ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>br0.12<span class="w"> </span>up
+
+<span class="c1"># 3. Connect OVS to the Linux Bridge</span>
 ovs-vsctl<span class="w"> </span>add-port<span class="w"> </span>br-int<span class="w"> </span>blue<span class="w"> </span>--<span class="w"> </span><span class="nb">set</span><span class="w"> </span>interface<span class="w"> </span>blue<span class="w"> </span><span class="nv">type</span><span class="o">=</span>internal<span class="w"> </span>external-ids:iface-id<span class="o">=</span>blue
 ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>blue<span class="w"> </span>master<span class="w"> </span>br0
 bridge<span class="w"> </span>vlan<span class="w"> </span>add<span class="w"> </span>dev<span class="w"> </span>blue<span class="w"> </span>vid<span class="w"> </span><span class="m">12</span><span class="w"> </span>pvid<span class="w"> </span>untagged
 ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>blue<span class="w"> </span>up
+
+<span class="c1"># Per pod: static FDB and neighbor entries</span>
+<span class="c1"># example pod with MAC 0a:58:0a:00:0a:05 and IP 10.0.10.5</span>
+bridge<span class="w"> </span>fdb<span class="w"> </span>add<span class="w"> </span>0a:58:0a:00:0a:05<span class="w"> </span>dev<span class="w"> </span>blue<span class="w"> </span>vlan<span class="w"> </span><span class="m">12</span><span class="w"> </span>master<span class="w"> </span>static
+ip<span class="w"> </span>neigh<span class="w"> </span>add<span class="w"> </span><span class="m">10</span>.0.10.5<span class="w"> </span>lladdr<span class="w"> </span>0a:58:0a:00:0a:05<span class="w"> </span>dev<span class="w"> </span>br0.12<span class="w"> </span>nud<span class="w"> </span>permanent
 </code></pre></div>
 <p>The FRR configuration is also a subset of the original config:</p>
 <div class="highlight"><pre><span></span><code>router<span class="w"> </span>bgp<span class="w"> </span><span class="m">65000</span>
@@ -6038,8 +6133,8 @@ drawbacks listed above, and therefore OpenPERouter is not a viable alternative.<
 <p>Another design for unmanaged VTEP mode had ovnkube-cluster-manager discover VTEP IPs by reading
 the existing <code>k8s.ovn.org/host-cidrs</code> node annotation and matching those IPs against the VTEP CIDRs.
 This avoided introducing a new annotation, since <code>host-cidrs</code> already contains all IPs configured on
-the node (and will be extended to include loopback interface IPs). The RouteAdvertisements controller
-would independently perform the same discovery when generating FRR configurations.</p>
+the node. The RouteAdvertisements controller would independently perform the same discovery when
+generating FRR configurations.</p>
 <p>This approach was rejected primarily because users would have no way to know which IP was selected as
 the VTEP IP for a given node without inspecting the <code>host-cidrs</code> annotation and mentally replaying
 the matching logic. Surfacing the allocated IPs in <code>VTEP.Status.NodeAllocations</code> was considered, but
