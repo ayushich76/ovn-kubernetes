@@ -1028,7 +1028,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1112,7 +1112,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../features/requirements/" class="md-nav__link">
+      <a href="../../features/requirements.md" class="md-nav__link">
         
   
   
@@ -2044,7 +2044,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -2072,7 +2072,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2269,7 +2269,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2297,7 +2297,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -3107,7 +3107,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../features/ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../features/ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3341,7 +3341,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../features/bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3369,7 +3369,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../features/bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -4124,7 +4124,7 @@ ovn-kubernetes/.github/workflows/test.yml.">
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4381,11 +4381,11 @@ ovn-kubernetes/.github/workflows/test.yml.">
 <h1 id="ci-tests">CI Tests<a class="headerlink" href="#ci-tests" title="Permanent link">¶</a></h1>
 <p>For CI, OVN-Kubernetes runs the
 <a href="https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md">Kubernetes E2E tests</a>
-and some <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/tree/master/test/e2e">locally defined</a> tests. 
+and some <a href="https://github.com/ovn-org/ovn-kubernetes/tree/master/test/e2e">locally defined</a> tests. 
 <a href="https://help.github.com/en/actions">GitHub Actions</a>
 are used to run a subset of the Kubernetes E2E tests on each pull request. The
 local workflow that controls the test run is located in
-<a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/.github/workflows/test.yml">ovn-kubernetes/.github/workflows/test.yml</a>.</p>
+<a href="https://github.com/ovn-org/ovn-kubernetes/blob/master/.github/workflows/test.yml">ovn-kubernetes/.github/workflows/test.yml</a>.</p>
 <p>The following tasks are performed:</p>
 <ul>
 <li>Build OVN-Kubernetes</li>
@@ -4394,7 +4394,7 @@ local workflow that controls the test run is located in
 <li>Run a matrix of End-To-End Tests using KIND</li>
 <li>Ensure that documentation builds successfully</li>
 </ul>
-<p>The full matrix of e2e tests found <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/.github/workflows/test.yml">here</a>
+<p>The full matrix of e2e tests found <a href="https://github.com/ovn-org/ovn-kubernetes/blob/master/.github/workflows/test.yml">here</a>
 are also run periodically (twice daily) using an OVN-Kubernetes build based on the currently merged code base.</p>
 <p>The following sections should help you understand (and if needed modify) the set of tests that run and how to run these
 tests locally.</p>
@@ -4421,7 +4421,7 @@ A rocket emoji reaction on your comment should apper when the retest is triggere
 <h3 id="shard-tests">Shard tests<a class="headerlink" href="#shard-tests" title="Permanent link">¶</a></h3>
 <p>The shard tests are broken into a set of shards, which is just a grouping of tests,
 and each shard is run in a separate job in parallel. Shards execute the <code>shard-%</code> target in 
-<a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/test/Makefile">ovn-kubernetes/test/Makefile</a>.
+<a href="https://github.com/ovn-org/ovn-kubernetes/blob/master/test/Makefile">ovn-kubernetes/test/Makefile</a>.
 The set of shards may change in the future. Below is an example of the shards at time of this writing:</p>
 <ul>
 <li>shard-network</li>
@@ -4437,10 +4437,10 @@ The set of shards may change in the future. Below is an example of the shards at
 selecting a specific shard, you modify ginkgo's <code>--focus</code> parameter.</p>
 <p>The regex expression for determining which E2E test is run in which shard, as
 well as the list of skipped tests is defined in
-<a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/test/scripts/e2e-kind.sh">ovn-kubernetes/test/scripts/e2e-kind.sh</a>.</p>
+<a href="https://github.com/ovn-org/ovn-kubernetes/blob/master/test/scripts/e2e-kind.sh">ovn-kubernetes/test/scripts/e2e-kind.sh</a>.</p>
 <h3 id="control-plane-tests">Control-plane tests<a class="headerlink" href="#control-plane-tests" title="Permanent link">¶</a></h3>
 <p>In addition to the <code>shard-%</code> tests, there is also a <code>control-plane</code> target in 
-<a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/test/Makefile">ovn-kubernetes/test/Makefile</a>.
+<a href="https://github.com/ovn-org/ovn-kubernetes/blob/master/test/Makefile">ovn-kubernetes/test/Makefile</a>.
 Below is a description of this target:</p>
 <ul>
 <li>control-plane</li>
@@ -4449,9 +4449,9 @@ Below is a description of this target:</p>
 <li>See bottom of this document for an example.</li>
 </ul>
 <p>All local tests are run by <code>make control-plane</code>. The local tests are controlled in
-<a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/test/scripts/e2e-cp.sh">ovn-kubernetes/test/scripts/e2e-cp.sh</a>
+<a href="https://github.com/ovn-org/ovn-kubernetes/blob/master/test/scripts/e2e-cp.sh">ovn-kubernetes/test/scripts/e2e-cp.sh</a>
 and the actual tests are defined in the directory
-<a href="https://github.com/ovn-kubernetes/ovn-kubernetes/tree/master/test/e2e">ovn-kubernetes/test/e2e/</a>.</p>
+<a href="https://github.com/ovn-org/ovn-kubernetes/tree/master/test/e2e">ovn-kubernetes/test/e2e/</a>.</p>
 <h4 id="node-ip-migration-tests">Node IP migration tests<a class="headerlink" href="#node-ip-migration-tests" title="Permanent link">¶</a></h4>
 <p>The node IP migration tests are part of the control-plane tests but due to their impact they cannot be run concurrently
 with other tests and they are disabled when running <code>make control-plane</code>.
@@ -4460,13 +4460,13 @@ Instead, they must explicitly be requested with <code>make -C test control-plane
 <p>Each of these shards and control-plane tests can then be run in a <a href="https://docs.github.com/en/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix">Github Actions matrix</a> of:
 * HA setup (3 masters and 0 workers) and a non-HA setup (1 master and 2 workers)
 * Local Gateway Mode and Shared Gateway Mode. See:
-<a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/docs/design/shared_gw_dgp.md">Enable Node-Local Services Access in Shared Gateway Mode</a>
+<a href="https://github.com/ovn-org/ovn-kubernetes/blob/master/docs/design/shared_gw_dgp.md">Enable Node-Local Services Access in Shared Gateway Mode</a>
 * IPv4 Only, IPv6 Only and Dualstack
 * Disabled SNAT Multiple Gateways or Enabled SNAT Gateways
 * Single bridge or two bridges</p>
 <p>To reduce the explosion of tests being run in CI, the test cases run are limited
 using an <code>exclude:</code> statement in 
-<a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/.github/workflows/test.yml">ovn-kubernetes/.github/workflows/test.yml</a>.</p>
+<a href="https://github.com/ovn-org/ovn-kubernetes/blob/master/.github/workflows/test.yml">ovn-kubernetes/.github/workflows/test.yml</a>.</p>
 <h1 id="conformance-tests">Conformance Tests<a class="headerlink" href="#conformance-tests" title="Permanent link">¶</a></h1>
 <p>We have a conformance test suit that can be invoked using the <code>make conformance</code> command.
 Currently we run the <code>TestNetworkPolicyV2Conformance</code> tests there. The actual tests are
@@ -4476,7 +4476,7 @@ upstream to <code>network-policy-api</code> repo and then brought downstream int
 through version bump.</p>
 <h1 id="documentation-build-check">Documentation Build Check<a class="headerlink" href="#documentation-build-check" title="Permanent link">¶</a></h1>
 <p>To catch any potential documentation build breakages which would prevent any docs changes
-from being deployed to our GitHub Pages <a href="https://github.com/ovn-kubernetes/ovn-kubernetes">site</a>. The build check will produce the
+from being deployed to our GitHub Pages <a href="https://github.com/ovn-org/ovn-kubernetes">site</a>. The build check will produce the
 html docs and will be available in the job artifacts for review. There is a link printed
 in the job run logs inside the step "Upload Artifact". Download and unzip that locally 
 to view the resulting docs after they are built to see what would be deployed to github

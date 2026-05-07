@@ -454,7 +454,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../installation/launching-ovn-kubernetes-with-dpu/">
+<a class="md-nav__link" href="../../../installation/launching-ovn-kubernetes-with-dpu.md">
 <span class="md-ellipsis">
     
   
@@ -490,7 +490,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../requirements/">
+<a class="md-nav__link" href="../../requirements.md">
 <span class="md-ellipsis">
     
   
@@ -818,7 +818,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../api-reference/clusternetworkconnect-api-spec/">
+<a class="md-nav__link" href="../../../api-reference/clusternetworkconnect-api-spec.md">
 <span class="md-ellipsis">
     
   
@@ -830,7 +830,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../api-reference/vtep-api-spec/">
+<a class="md-nav__link" href="../../../api-reference/vtep-api-spec.md">
 <span class="md-ellipsis">
     
   
@@ -903,7 +903,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../user-defined-networks/cluster-network-connect/">
+<a class="md-nav__link" href="../../user-defined-networks/cluster-network-connect.md">
 <span class="md-ellipsis">
     
   
@@ -915,7 +915,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../user-defined-networks/dynamic-udn/">
+<a class="md-nav__link" href="../../user-defined-networks/dynamic-udn.md">
 <span class="md-ellipsis">
     
   
@@ -1331,15 +1331,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#multiple-interfaces-on-the-same-network">
-<span class="md-ellipsis">
-      
-        Multiple interfaces on the same network
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#persistent-ip-addresses-for-virtualization-workloads">
 <span class="md-ellipsis">
       
@@ -1499,7 +1490,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../ovs-dynamic-cpu-affinity/">
+<a class="md-nav__link" href="../../ovs-dynamic-cpu-affinity.md">
 <span class="md-ellipsis">
     
   
@@ -1596,7 +1587,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bgp-integration/no-overlay/">
+<a class="md-nav__link" href="../../bgp-integration/no-overlay.md">
 <span class="md-ellipsis">
     
   
@@ -1608,7 +1599,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../bgp-integration/evpn/">
+<a class="md-nav__link" href="../../bgp-integration/evpn.md">
 <span class="md-ellipsis">
     
   
@@ -1917,7 +1908,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/">
+<a class="md-nav__link" href="../../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md">
 <span class="md-ellipsis">
     
   
@@ -2163,15 +2154,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#multiple-interfaces-on-the-same-network">
-<span class="md-ellipsis">
-      
-        Multiple interfaces on the same network
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#persistent-ip-addresses-for-virtualization-workloads">
 <span class="md-ellipsis">
       
@@ -2246,7 +2228,6 @@ layer 2 and layer 3 topologies are overlays - thus, they do not need <strong>any
 <ul>
 <li><a href="https://github.com/k8snetworkplumbingwg/multus-cni">multus-cni</a></li>
 </ul>
-<p>Always check the dependencies on the <a href="../../requirements/">Requirements page</a></p>
 <h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">¶</a></h2>
 <p>Multihoming is essential when you need more than one network interface on your pods. This can be useful for various
 use cases, such as virtual network functions (VNFs), firewalls, or virtualization (virt) where the default
@@ -2504,32 +2485,6 @@ the user can specify the IP address for a pod's secondary attachment
 specifying a static IP address for the pod is only possible when the
   attachment configuration does <strong>not</strong> feature subnets.</p>
 </blockquote>
-<h3 id="multiple-interfaces-on-the-same-network">Multiple interfaces on the same network<a class="headerlink" href="#multiple-interfaces-on-the-same-network" title="Permanent link">¶</a></h3>
-<p>OVN-Kubernetes supports attaching a pod to the same non-primary user-defined
-network multiple times, allowing the pod to have multiple interfaces connected
-to the same network. This is useful for workloads that require multiple network
-interfaces on the same network for advanced networking scenarios. Note that
-layer 2, layer 3 and localnet networks are all supported.</p>
-<p>To request multiple interfaces on the same network, specify the network
-multiple times in the <code>k8s.v1.cni.cncf.io/networks</code> annotation:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">k8s.v1.cni.cncf.io/networks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">l3-network,l3-network</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">multi-nic-pod</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ns1</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">args</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pause</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">registry.k8s.io/e2e-test-images/agnhost:2.36</span>
-<span class="w">    </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">agnhost-container</span>
-</code></pre></div>
-<p>In this example, the pod will have two interfaces both connected to the
-<code>l3-network</code>. Each interface will receive its own IP address from the
-network's subnet.</p>
 <h3 id="persistent-ip-addresses-for-virtualization-workloads">Persistent IP addresses for virtualization workloads<a class="headerlink" href="#persistent-ip-addresses-for-virtualization-workloads" title="Permanent link">¶</a></h3>
 <p>OVN-Kubernetes provides persistent IP addresses for virtualization workloads,
 allowing VMs to have the same IP addresses when they migrate, when they restart,
@@ -2608,6 +2563,8 @@ overridden with the following command line options:
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">¶</a></h2>
 <p>OVN-Kubernetes currently does <strong>not</strong> support:</p>
 <ul>
+<li>the same attachment configured multiple times in the same pod - i.e.
+  <code>k8s.v1.cni.cncf.io/networks: l3-network,l3-network</code> is invalid.</li>
 <li>updates to the network selection elements lists - i.e. <code>k8s.v1.cni.cncf.io/networks</code> annotation</li>
 <li>external IPAM - i.e. the user can't define the IPAM attribute in the configuration. They must use the subnets
   attribute.</li>

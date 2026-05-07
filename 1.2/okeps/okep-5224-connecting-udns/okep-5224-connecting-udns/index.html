@@ -1020,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1104,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../features/requirements/" class="md-nav__link">
+      <a href="../../../features/requirements.md" class="md-nav__link">
         
   
   
@@ -1906,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -1934,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2131,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../features/user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../../../features/user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2159,7 +2159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../features/user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../../../features/user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -2969,7 +2969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../features/ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../../features/ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3203,7 +3203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../features/bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../../features/bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3231,7 +3231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../features/bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../../features/bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -4626,7 +4626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -5680,7 +5680,7 @@ controller to connect the topologies of the UDNs selected by this CR.</p>
 <span class="w">    </span><span class="nt">networkPrefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">96</span>
 <span class="w">  </span><span class="nt">connectivity</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PodNetwork</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceNetwork</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIPServiceNetwork</span>
 </code></pre></div>
 * <code>connectivity</code> field will ensure we can add support for enabling
   more types of features for the connected UDNs granularly in the future.
@@ -5688,7 +5688,7 @@ controller to connect the topologies of the UDNs selected by this CR.</p>
   for which combinations of these options could/should be set together
 * If <code>PodNetwork</code> is enabled then admin is asking for full
   pod2pod connectivity across UDNs
-* If <code>ServiceNetwork</code> is enabled then admin is asking for
+* If <code>ClusterIPServiceNetwork</code> is enabled then admin is asking for
   clusterIPs to be reachable across UDNs.
     * If this flag is set but <code>PodNetwork</code> is not set, then
       it means users only want partial connectivity through services and
@@ -5832,17 +5832,15 @@ controller to connect the topologies of the UDNs selected by this CR.</p>
 <span class="p">}</span>
 
 <span class="c1">// ConnectivityType represents the different connectivity types that can be enabled for connected networks.</span>
-<span class="c1">// +kubebuilder:validation:Enum=PodNetwork;ServiceNetwork</span>
+<span class="c1">// +kubebuilder:validation:Enum=PodNetwork;ClusterIPServiceNetwork</span>
 <span class="kd">type</span><span class="w"> </span><span class="nx">ConnectivityType</span><span class="w"> </span><span class="kt">string</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="c1">// PodNetwork enables direct pod-to-pod communication across connected networks.</span>
 <span class="w">    </span><span class="nx">PodNetwork</span><span class="w"> </span><span class="nx">ConnectivityType</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"PodNetwork"</span>
 
-<span class="w">    </span><span class="c1">// ServiceNetwork enables ClusterIP service access across connected networks.</span>
-<span class="w">    </span><span class="c1">// Note that services of type nodeports and loadbalancers are already reachable</span>
-<span class="w">      </span><span class="c1">// across networks by default.</span>
-<span class="w">    </span><span class="nx">ServiceNetwork</span><span class="w"> </span><span class="nx">ConnectivityType</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"ServiceNetwork"</span>
+<span class="w">    </span><span class="c1">// ClusterIPServiceNetwork enables ClusterIP service access across connected networks.</span>
+<span class="w">    </span><span class="nx">ClusterIPServiceNetwork</span><span class="w"> </span><span class="nx">ConnectivityType</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">"ClusterIPServiceNetwork"</span>
 <span class="p">)</span>
 
 <span class="c1">// StatusType represents the status of a ClusterNetworkConnect.</span>
@@ -6447,10 +6445,10 @@ each other we will need to add appropriate routes on the routers.</p>
 phase1. Conflict overlap detection and notification via API must be
 implemented.</p>
 <h4 id="services">Services<a class="headerlink" href="#services" title="Permanent link">¶</a></h4>
-<p>Case1: <code>ServiceNetwork</code> is not set</p>
+<p>Case1: <code>ClusterIPServiceNetwork</code> is not set</p>
 <p>no-op. Services connectivity is not supported across connected UDNs.</p>
-<p>Case2: <code>ServiceNetwork</code> and <code>PodNetwork</code> are set</p>
-<p>If the <code>ServiceNetwork</code> is explicitly requested, then
+<p>Case2: <code>ClusterIPServiceNetwork</code> and <code>PodNetwork</code> are set</p>
+<p>If the <code>ClusterIPServiceNetwork</code> is explicitly requested, then
 it means the end user wants the services of both networks to be
 connected. In this case, we need to modify the services controller to
 program the OVN load balancers on the local network switches also for
@@ -6496,7 +6494,7 @@ care of routing the DNAT-ed traffic to the correct network.</p>
 <span class="l l-Scalar l-Scalar-Plain">04aa1e0b-bfec-4270-94f0-4b6d511b63a3    blue_blue.networ    tcp        10.96.210.158:80    103.103.0.5:8080,103.103.2.5:8080</span>
 <span class="l l-Scalar l-Scalar-Plain">ab3397dd-6c4f-41bd-9239-60c73c25aaee    green_green.netw    tcp        10.96.69.71:80      104.104.1.4:8080,104.104.2.4:8080</span>
 </code></pre></div>
-<p>Case3: <code>ServiceNetwork</code> is set and <code>PodNetwork</code> is not set</p>
+<p>Case3: <code>ClusterIPServiceNetwork</code> is set and <code>PodNetwork</code> is not set</p>
 <p>This means user is asking for partial connectivity between UDNs
 through serviceCIDRs. They don't want direct connectivity between
 all their applications.</p>
@@ -6708,7 +6706,7 @@ accommodate adds, updates and deletes for the network-subnet.</p>
      Deterministic Static TunnelID Allocator approach mentioned below for details.
 5) Creates the <code>pass</code> and <code>drop</code> ACLs if only partial service connectivity
    is requested
-6) If <code>ServiceNetwork</code> is set, then once the services
+6) If <code>ClusterIPServiceNetwork</code> is set, then once the services
    controller of each network creates the load balancers (retries till
    its created), this controller will also attach those load balancers
    to the switches of the connected networks. This way, no changes are
@@ -6956,7 +6954,7 @@ compared to the solution we have today.<p></p>
 <h3 id="adding-load-balancers-on-transit-connect-routers-for-services">Adding load balancers on transit connect routers for services<a class="headerlink" href="#adding-load-balancers-on-transit-connect-routers-for-services" title="Permanent link">¶</a></h3>
 <p>Alternative Idea2: <strong>Instead of doing the DNAT at the network
 switches, we could add the load balancers to the connect router.</strong></p>
-<p>If <code>ServiceNetwork</code> is set, then we add routes for each
+<p>If <code>ClusterIPServiceNetwork</code> is set, then we add routes for each
 clusterIP that belongs to the other connected networks
 to be routed to the <code>connect-router</code> or a ClusterIP CIDR route.
 We would need to then either host all load balancers for all connected

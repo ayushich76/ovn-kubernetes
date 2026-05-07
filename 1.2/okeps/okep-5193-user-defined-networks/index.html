@@ -1020,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1104,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/requirements/" class="md-nav__link">
+      <a href="../../features/requirements.md" class="md-nav__link">
         
   
   
@@ -1906,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -1934,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2131,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2159,7 +2159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -2969,7 +2969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../features/ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3203,7 +3203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../features/bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3231,7 +3231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../features/bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -4735,7 +4735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -5610,7 +5610,7 @@
 
 <h1 id="okep-5193-user-defined-network-segmentation">OKEP-5193: User Defined Network Segmentation<a class="headerlink" href="#okep-5193-user-defined-network-segmentation" title="Permanent link">¶</a></h1>
 <ul>
-<li>Issue: <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/issues/5193">#5193</a></li>
+<li>Issue: <a href="https://github.com/ovn-org/ovn-kubernetes/issues/5193">#5193</a></li>
 </ul>
 <h2 id="problem-statement">Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">¶</a></h2>
 <p>OVN-Kubernetes today allows multiple different types of networks per secondary network: layer 2, layer 3, or localnet.
@@ -5733,7 +5733,7 @@ but at a minimum KAPI/DNS will be accessible. Furthermore, the IP of the pod fro
 show the IP assigned in the cluster default network.</p>
 <p>In OVN-Kubernetes secondary networks are defined using Network Attachment Definitions (NADs). For more information on
 how these are configured, refer to:</p>
-<p><a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/docs/features/multi-homing.md">https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/docs/features/multi-homing.md</a></p>
+<p><a href="https://github.com/ovn-org/ovn-kubernetes/blob/master/docs/features/multi-homing.md">https://github.com/ovn-org/ovn-kubernetes/blob/master/docs/features/multi-homing.md</a></p>
 <p>The proposal here is to leverage this existing mechanism to create the network. A new field, “role” is
 introduced to the NAD spec which indicates that this network should be used for the pod's primary network. Additionally,
 a new "joinSubnets" field is added in order to specify the join subnet used inside the OVN network topology. An

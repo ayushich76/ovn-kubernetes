@@ -8,10 +8,10 @@
         <link rel="canonical" href="https://www.ovn.org/ovn-kubernetes/1.2/features/user-defined-networks/user-defined-networks/">
       
       
-        <link rel="prev" href="../../../api-reference/vtep-api-spec/">
+        <link rel="prev" href="../../../api-reference/routeadvertisements-api-spec/">
       
       
-        <link rel="next" href="../cluster-network-connect/">
+        <link rel="next" href="../../network-security-controls/admin-network-policy/">
       
       
         
@@ -1022,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1106,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../requirements/" class="md-nav__link">
+      <a href="../../requirements.md" class="md-nav__link">
         
   
   
@@ -1908,7 +1908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -1936,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2250,17 +2250,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#performancescale-optimizations-for-udn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Performance/Scale Optimizations for UDN
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#workflow-description" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2414,7 +2403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cluster-network-connect/" class="md-nav__link">
+      <a href="../cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2442,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dynamic-udn/" class="md-nav__link">
+      <a href="../dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -3252,7 +3241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3486,7 +3475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3514,7 +3503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -4269,7 +4258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4504,17 +4493,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#performancescale-optimizations-for-udn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Performance/Scale Optimizations for UDN
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#workflow-description" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4710,26 +4688,15 @@ across namespaces brown, cyan, orange and violet.</p>
 <p>There are more user stories which will be covered in the sections below
 with appropriate diagrams.</p>
 <h2 id="how-to-enable-this-feature-on-an-ovn-kubernetes-cluster">How to enable this feature on an OVN-Kubernetes cluster?<a class="headerlink" href="#how-to-enable-this-feature-on-an-ovn-kubernetes-cluster" title="Permanent link">¶</a></h2>
-<p>This feature is disabled by default. Enable it with the
-<code>--enable-network-segmentation</code> feature config option under
-<code>OVNKubernetesFeatureConfig</code>:</p>
-<div class="highlight"><pre><span></span><code>--enable-network-segmentation=true
---enable-multi-network=true
-</code></pre></div>
-<p>UDNs require both <code>--enable-network-segmentation</code> and
-<code>--enable-multi-network</code>. UDNs use NetworkAttachmentDefinitions as an
-underlying implementation detail and reuse the user-defined network
-controllers. Note that changing the feature configuration does not remove
-existing CRs in the cluster.</p>
-<p>Always check the dependencies on the <a href="../../requirements/">Requirements page</a></p>
-<h2 id="performancescale-optimizations-for-udn">Performance/Scale Optimizations for UDN<a class="headerlink" href="#performancescale-optimizations-for-udn" title="Permanent link">¶</a></h2>
-<p>UDN scale is currently constrained to a couple of hundred UDNs when every UDN is
-rendered on every node in the cluster. If you need to scale beyond that, use the
-Dynamic UDN feature which can reduce per-node OVN-Kubernetes workload, avoid
-unused per-node UDN state, and avoid per-node allocations until resources that
-need the UDN are scheduled on that node.
-See the <a href="../dynamic-udn/">Dynamic UDN feature page</a> for enablement,
-observability, and limitations.</p>
+<p>This feature is enabled by default on all OVN-Kubernetes clusters.
+You don't need to do anything extra to start using this feature.
+There is a Feature Config option <code>--enable-network-segmentation</code> under
+<code>OVNKubernetesFeatureConfig</code> config that can be used to disable this
+feature. However, note that disabling the feature will not remove
+existing CRs in the cluster. This feature has to be enabled along with
+the flag for multiple-networks <code>--enable-multi-network</code> since UDNs
+use Network Attachment Definitions as underlying implementation detail
+construct and reuse the user-defined network controllers.</p>
 <h2 id="workflow-description">Workflow Description<a class="headerlink" href="#workflow-description" title="Permanent link">¶</a></h2>
 <p>A tenant consists of one or more namespaces in a cluster. Network segmentation
 can be achieved by attaching 1 or more namespaces as part of same network which
@@ -4780,13 +4747,11 @@ of end users. Currently supported topology types for a given network include:</p
 <p><strong>Layer3 Networks</strong></p>
 <p><code>Layer3</code>: is a topology type wherein the pods or VMs are connected to their
 node’s local router and all these routers are then connected to the distributed
-switch across nodes.</p>
-<ul>
-<li>Each pod would hence get an IP from the node's subnet segment</li>
-<li>When in doubt which topology to use go with layer3 which is the same topology
-    as the cluster default network</li>
-<li>Can be of type <code>primary</code> or <code>secondary</code></li>
-</ul>
+switch across nodes.
+  * Each pod would hence get an IP from the node's subnet segment
+  * When in doubt which topology to use go with layer3 which is the same topology
+    as the cluster default network
+  * Can be of type <code>primary</code> or <code>secondary</code></p>
 <p>Let's see how a Layer3 Network looks on the OVN layer.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/L3DeepDive.png" data-desc-position="bottom"><img alt="l3-UDN" src="../images/L3DeepDive.png"></a></p>
 <p>Here we can see a blue and green P-UDN. On node1, pod1 is part of green UDN and
@@ -4795,31 +4760,27 @@ the UDN network and a eth0 interface that is attached to the cluster default
 network (grey color) which is only used for kubelet healthchecks.</p>
 <p><strong>Layer2 Networks</strong></p>
 <p><code>Layer2</code>: is a topology type wherein the pods or VMs are all connected to the
-same layer2 flat switch.</p>
-<ul>
-<li>Usually used when the applications deployed expect a layer2 type network
-    connection (Perhaps applications want a single broadcast domain, latency sensitive, use proprietary L2 protocols)</li>
-<li>Common in Virtualization world for seamless migration of the VM since
+same layer2 flat switch.
+  * Usually used when the applications deployed expect a layer2 type network
+    connection (Perhaps applications want a single broadcast domain, latency sensitive, use proprietary L2 protocols)
+  * Common in Virtualization world for seamless migration of the VM since
     persistent IPs of the VMs can be preserved across nodes in your cluster
-    during live migration</li>
-<li>Can be of type <code>primary</code> or <code>secondary</code></li>
-</ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/L2DeepDive-2segments.jpg" data-desc-position="bottom"><img alt="l2-UDN" src="../images/L2DeepDive-2segments.jpg"></a></p>
+    during live migration
+  * Can be of type <code>primary</code> or <code>secondary</code></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="images/L2DeepDive-2segments.png" data-desc-position="bottom"><img alt="l2-UDN" src="images/L2DeepDive-2segments.png"></a></p>
 <p>Here we can see a blue and green P-UDN. On node1, pod1 is part of green UDN and
 pod2 is part of blue UDN. They each have a udn-0 interface that is attached to
 the UDN network and a eth0 interface that is attached to the cluster default
 network (grey color) which is only used for kubelet healthchecks.</p>
 <p><strong>Localnet Networks</strong></p>
 <p><code>Localnet</code>: is a topology type wherein the pods or VMs attached to a localnet
-network on the overlay can egress to the provider’s physical network</p>
-<ul>
-<li>without SNATing to nodeIPs… preserves the podIPs</li>
-<li>podIPs can be on the same subnet as the provider’s VLAN</li>
-<li>VLAN IDs can be used to mark the traffic coming from the localnet for
-    isolation on provider network</li>
-<li>Can be of type <code>secondary</code>, it cannot be a <code>primary</code> network of a pod.</li>
-<li>Only <code>ClusterUserDefinedNetwork</code> supports <code>localnet</code></li>
-</ul>
+network on the overlay can egress to the provider’s physical network
+  * without SNATing to nodeIPs… preserves the podIPs
+  * podIPs can be on the same subnet as the provider’s VLAN
+  * VLAN IDs can be used to mark the traffic coming from the localnet for
+    isolation on provider network
+  * Can be of type <code>secondary</code>, it cannot be a <code>primary</code> network of a pod.
+  * Only <code>ClusterUserDefinedNetwork</code> supports <code>localnet</code></p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/localnet-topology.png" data-desc-position="bottom"><img alt="localnet-UDN" src="../images/localnet-topology.png"></a></p>
 <p>Here we can see blue and green S-UDN localnet networks.</p>
 <p>The ovnkube-cluster-manager component watches for these CR's and the controller

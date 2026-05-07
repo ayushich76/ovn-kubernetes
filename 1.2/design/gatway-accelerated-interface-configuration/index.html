@@ -5,31 +5,27 @@
       
       
       
-        <link rel="canonical" href="https://www.ovn.org/ovn-kubernetes/1.2/features/user-defined-networks/dynamic-udn/">
+        <link rel="canonical" href="https://www.ovn.org/ovn-kubernetes/1.2/design/gatway-accelerated-interface-configuration/">
       
       
-        <link rel="prev" href="../cluster-network-connect/">
-      
-      
-        <link rel="next" href="../../network-security-controls/admin-network-policy/">
       
       
         
       
       
-      <link rel="icon" href="../../../images/ovn-inside-k8s.png">
+      <link rel="icon" href="../../images/ovn-inside-k8s.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>Dynamic UDN Node Allocation - OVN-Kubernetes</title>
+        <title>Gateway Accelerated Interface Configuration - OVN-Kubernetes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,15 +44,15 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -85,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dynamic-udn-node-allocation" class="md-skip">
+        <a href="#gateway-accelerated-interface-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -105,9 +101,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="OVN-Kubernetes" class="md-header__button md-logo" aria-label="OVN-Kubernetes" data-md-component="logo">
+    <a href="../.." title="OVN-Kubernetes" class="md-header__button md-logo" aria-label="OVN-Kubernetes" data-md-component="logo">
       
-  <img src="../../../images/ovn-inside-k8s.png" alt="logo">
+  <img src="../../images/ovn-inside-k8s.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -124,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dynamic UDN Node Allocation
+              Gateway Accelerated Interface Configuration
             
           </span>
         </div>
@@ -231,7 +227,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
   
@@ -253,7 +249,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../installation/launching-ovn-kubernetes-on-kind/" class="md-tabs__link">
+        <a href="../../installation/launching-ovn-kubernetes-on-kind/" class="md-tabs__link">
           
   
   
@@ -275,7 +271,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../governance/CONTRIBUTING/" class="md-tabs__link">
+        <a href="../../governance/CONTRIBUTING/" class="md-tabs__link">
           
   
   
@@ -297,7 +293,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../api-reference/introduction/" class="md-tabs__link">
+        <a href="../../api-reference/introduction/" class="md-tabs__link">
           
   
   
@@ -315,8 +311,6 @@
   
   
   
-    
-  
   
     
     
@@ -324,13 +318,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../user-defined-networks/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../features/user-defined-networks/user-defined-networks/" class="md-tabs__link">
           
   
   
@@ -355,7 +347,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../troubleshooting/debugging/" class="md-tabs__link">
+        <a href="../../troubleshooting/debugging/" class="md-tabs__link">
           
   
   
@@ -377,7 +369,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../observability/metrics/" class="md-tabs__link">
+        <a href="../../observability/metrics/" class="md-tabs__link">
           
   
   
@@ -399,7 +391,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../okeps/okep-5085-localnet-api/" class="md-tabs__link">
+        <a href="../../okeps/okep-5085-localnet-api/" class="md-tabs__link">
           
   
   
@@ -421,7 +413,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../blog/" class="md-tabs__link">
+        <a href="../../blog/" class="md-tabs__link">
           
   
   
@@ -463,9 +455,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="OVN-Kubernetes" class="md-nav__button md-logo" aria-label="OVN-Kubernetes" data-md-component="logo">
+    <a href="../.." title="OVN-Kubernetes" class="md-nav__button md-logo" aria-label="OVN-Kubernetes" data-md-component="logo">
       
-  <img src="../../../images/ovn-inside-k8s.png" alt="logo">
+  <img src="../../images/ovn-inside-k8s.png" alt="logo">
 
     </a>
     OVN-Kubernetes
@@ -535,7 +527,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   
@@ -579,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/architecture/" class="md-nav__link">
+      <a href="../architecture/" class="md-nav__link">
         
   
   
@@ -607,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/topology/" class="md-nav__link">
+      <a href="../topology/" class="md-nav__link">
         
   
   
@@ -635,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/gateway-modes/" class="md-nav__link">
+      <a href="../gateway-modes/" class="md-nav__link">
         
   
   
@@ -663,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/traffic-flows/" class="md-nav__link">
+      <a href="../traffic-flows/" class="md-nav__link">
         
   
   
@@ -691,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/pod-creation-workflow/" class="md-nav__link">
+      <a href="../pod-creation-workflow/" class="md-nav__link">
         
   
   
@@ -719,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/service-creation-workflow/" class="md-nav__link">
+      <a href="../service-creation-workflow/" class="md-nav__link">
         
   
   
@@ -747,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/service-traffic-policy/" class="md-nav__link">
+      <a href="../service-traffic-policy/" class="md-nav__link">
         
   
   
@@ -775,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/host-to-node-port-hairpin-trafficflow/" class="md-nav__link">
+      <a href="../host-to-node-port-hairpin-trafficflow/" class="md-nav__link">
         
   
   
@@ -803,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/external-ip-and-loadbalancer-ingress/" class="md-nav__link">
+      <a href="../external-ip-and-loadbalancer-ingress/" class="md-nav__link">
         
   
   
@@ -831,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../design/ovn-kubernetes-subnets/" class="md-nav__link">
+      <a href="../ovn-kubernetes-subnets/" class="md-nav__link">
         
   
   
@@ -859,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../live-migration/" class="md-nav__link">
+      <a href="../../features/live-migration/" class="md-nav__link">
         
   
   
@@ -966,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/launching-ovn-kubernetes-on-kind/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-on-kind/" class="md-nav__link">
         
   
   
@@ -994,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/launching-ovn-kubernetes-with-helm/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-helm/" class="md-nav__link">
         
   
   
@@ -1022,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1050,7 +1042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/INSTALL.KUBEADM/" class="md-nav__link">
+      <a href="../../installation/INSTALL.KUBEADM/" class="md-nav__link">
         
   
   
@@ -1078,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/configuration/" class="md-nav__link">
+      <a href="../../getting-started/configuration/" class="md-nav__link">
         
   
   
@@ -1106,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../requirements/" class="md-nav__link">
+      <a href="../../features/requirements.md" class="md-nav__link">
         
   
   
@@ -1134,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/cli-guide/" class="md-nav__link">
+      <a href="../../getting-started/cli-guide/" class="md-nav__link">
         
   
   
@@ -1162,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/example-pod-creation/" class="md-nav__link">
+      <a href="../../getting-started/example-pod-creation/" class="md-nav__link">
         
   
   
@@ -1190,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/example-service-creation/" class="md-nav__link">
+      <a href="../../getting-started/example-service-creation/" class="md-nav__link">
         
   
   
@@ -1218,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/building-ovn-kubernetes/" class="md-nav__link">
+      <a href="../../getting-started/building-ovn-kubernetes/" class="md-nav__link">
         
   
   
@@ -1325,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../governance/CONTRIBUTING/" class="md-nav__link">
+      <a href="../../governance/CONTRIBUTING/" class="md-nav__link">
         
   
   
@@ -1353,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../governance/GOVERNANCE/" class="md-nav__link">
+      <a href="../../governance/GOVERNANCE/" class="md-nav__link">
         
   
   
@@ -1381,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../governance/REVIEWING/" class="md-nav__link">
+      <a href="../../governance/REVIEWING/" class="md-nav__link">
         
   
   
@@ -1409,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../developer-guide/developer/" class="md-nav__link">
+      <a href="../../developer-guide/developer/" class="md-nav__link">
         
   
   
@@ -1437,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../developer-guide/image-build/" class="md-nav__link">
+      <a href="../../developer-guide/image-build/" class="md-nav__link">
         
   
   
@@ -1465,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../developer-guide/documentation/" class="md-nav__link">
+      <a href="../../developer-guide/documentation/" class="md-nav__link">
         
   
   
@@ -1493,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../developer-guide/local_testing_guide/" class="md-nav__link">
+      <a href="../../developer-guide/local_testing_guide/" class="md-nav__link">
         
   
   
@@ -1521,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ci/ci/" class="md-nav__link">
+      <a href="../../ci/ci/" class="md-nav__link">
         
   
   
@@ -1549,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../developer-guide/debugging/" class="md-nav__link">
+      <a href="../../developer-guide/debugging/" class="md-nav__link">
         
   
   
@@ -1577,7 +1569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../developer-guide/release/" class="md-nav__link">
+      <a href="../../developer-guide/release/" class="md-nav__link">
         
   
   
@@ -1684,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/introduction/" class="md-nav__link">
+      <a href="../../api-reference/introduction/" class="md-nav__link">
         
   
   
@@ -1712,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/egress-ip-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/egress-ip-api-spec/" class="md-nav__link">
         
   
   
@@ -1740,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/egress-service-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/egress-service-api-spec/" class="md-nav__link">
         
   
   
@@ -1768,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/egress-qos-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/egress-qos-api-spec/" class="md-nav__link">
         
   
   
@@ -1796,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/egress-firewall-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/egress-firewall-api-spec/" class="md-nav__link">
         
   
   
@@ -1824,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/admin-epbr-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/admin-epbr-api-spec/" class="md-nav__link">
         
   
   
@@ -1852,7 +1844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/userdefinednetwork-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/userdefinednetwork-api-spec/" class="md-nav__link">
         
   
   
@@ -1880,7 +1872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/routeadvertisements-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/routeadvertisements-api-spec/" class="md-nav__link">
         
   
   
@@ -1908,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -1936,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -1968,10 +1960,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -2003,20 +1993,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -2034,7 +2021,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2049,10 +2036,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -2069,11 +2054,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1">
         
           
           <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
@@ -2094,7 +2079,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2112,7 +2097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/user-defined-networks/" class="md-nav__link">
         
   
   
@@ -2140,7 +2125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cluster-network-connect/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2165,37 +2150,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dynamic UDN Node Allocation
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../features/user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -2211,92 +2169,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Introduction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-use-dynamic-udn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why use Dynamic UDN?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enabling-dynamic-udn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enabling Dynamic UDN
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observing-dynamic-udn" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Observing Dynamic UDN
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2375,7 +2247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network-security-controls/admin-network-policy/" class="md-nav__link">
+      <a href="../../features/network-security-controls/admin-network-policy/" class="md-nav__link">
         
   
   
@@ -2403,7 +2275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network-security-controls/network-policy/" class="md-nav__link">
+      <a href="../../features/network-security-controls/network-policy/" class="md-nav__link">
         
   
   
@@ -2431,7 +2303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network-security-controls/egress-firewall/" class="md-nav__link">
+      <a href="../../features/network-security-controls/egress-firewall/" class="md-nav__link">
         
   
   
@@ -2527,7 +2399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cluster-egress-controls/egress-ip/" class="md-nav__link">
+      <a href="../../features/cluster-egress-controls/egress-ip/" class="md-nav__link">
         
   
   
@@ -2555,7 +2427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cluster-egress-controls/egress-service/" class="md-nav__link">
+      <a href="../../features/cluster-egress-controls/egress-service/" class="md-nav__link">
         
   
   
@@ -2583,7 +2455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cluster-egress-controls/egress-qos/" class="md-nav__link">
+      <a href="../../features/cluster-egress-controls/egress-qos/" class="md-nav__link">
         
   
   
@@ -2611,7 +2483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cluster-egress-controls/egress-gateway/" class="md-nav__link">
+      <a href="../../features/cluster-egress-controls/egress-gateway/" class="md-nav__link">
         
   
   
@@ -2701,7 +2573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../infrastructure-security-controls/node-identity/" class="md-nav__link">
+      <a href="../../features/infrastructure-security-controls/node-identity/" class="md-nav__link">
         
   
   
@@ -2795,7 +2667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../multiple-networks/multi-homing/" class="md-nav__link">
+      <a href="../../features/multiple-networks/multi-homing/" class="md-nav__link">
         
   
   
@@ -2823,7 +2695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../multiple-networks/multi-network-policies/" class="md-nav__link">
+      <a href="../../features/multiple-networks/multi-network-policies/" class="md-nav__link">
         
   
   
@@ -2851,7 +2723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../multiple-networks/multi-vtep/" class="md-nav__link">
+      <a href="../../features/multiple-networks/multi-vtep/" class="md-nav__link">
         
   
   
@@ -2887,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../multicast/" class="md-nav__link">
+      <a href="../../features/multicast/" class="md-nav__link">
         
   
   
@@ -2971,7 +2843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network-qos/" class="md-nav__link">
+      <a href="../../features/network-qos/" class="md-nav__link">
         
   
   
@@ -2999,7 +2871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../network-qos-guide/" class="md-nav__link">
+      <a href="../../features/network-qos-guide/" class="md-nav__link">
         
   
   
@@ -3035,7 +2907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../live-migration/" class="md-nav__link">
+      <a href="../../features/live-migration/" class="md-nav__link">
         
   
   
@@ -3063,7 +2935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hybrid-overlay/" class="md-nav__link">
+      <a href="../../features/hybrid-overlay/" class="md-nav__link">
         
   
   
@@ -3091,7 +2963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../features/ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3175,7 +3047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware-offload/ovs-kernel/" class="md-nav__link">
+      <a href="../../features/hardware-offload/ovs-kernel/" class="md-nav__link">
         
   
   
@@ -3203,7 +3075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware-offload/ovs-doca/" class="md-nav__link">
+      <a href="../../features/hardware-offload/ovs-doca/" class="md-nav__link">
         
   
   
@@ -3297,7 +3169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bgp-integration/route-advertisements/" class="md-nav__link">
+      <a href="../../features/bgp-integration/route-advertisements/" class="md-nav__link">
         
   
   
@@ -3325,7 +3197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../features/bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3353,7 +3225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../features/bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -3454,7 +3326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../troubleshooting/debugging/" class="md-nav__link">
+      <a href="../../troubleshooting/debugging/" class="md-nav__link">
         
   
   
@@ -3482,7 +3354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../troubleshooting/ovnkube-trace/" class="md-nav__link">
+      <a href="../../troubleshooting/ovnkube-trace/" class="md-nav__link">
         
   
   
@@ -3510,7 +3382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../troubleshooting/logging/" class="md-nav__link">
+      <a href="../../troubleshooting/logging/" class="md-nav__link">
         
   
   
@@ -3603,7 +3475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../observability/metrics/" class="md-nav__link">
+      <a href="../../observability/metrics/" class="md-nav__link">
         
   
   
@@ -3631,7 +3503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../observability/sdn-dashboard/" class="md-nav__link">
+      <a href="../../observability/sdn-dashboard/" class="md-nav__link">
         
   
   
@@ -3659,7 +3531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../observability/ovn-observability/" class="md-nav__link">
+      <a href="../../observability/ovn-observability/" class="md-nav__link">
         
   
   
@@ -3772,7 +3644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5085-localnet-api/" class="md-nav__link">
+      <a href="../../okeps/okep-5085-localnet-api/" class="md-nav__link">
         
   
   
@@ -3800,7 +3672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-4380-network-qos/" class="md-nav__link">
+      <a href="../../okeps/okep-4380-network-qos/" class="md-nav__link">
         
   
   
@@ -3828,7 +3700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5193-user-defined-networks/" class="md-nav__link">
+      <a href="../../okeps/okep-5193-user-defined-networks/" class="md-nav__link">
         
   
   
@@ -3856,7 +3728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5233-preconfigured-udn-addresses/" class="md-nav__link">
+      <a href="../../okeps/okep-5233-preconfigured-udn-addresses/" class="md-nav__link">
         
   
   
@@ -3884,7 +3756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5296-bgp/" class="md-nav__link">
+      <a href="../../okeps/okep-5296-bgp/" class="md-nav__link">
         
   
   
@@ -3912,7 +3784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
+      <a href="../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
         
   
   
@@ -3940,7 +3812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
+      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
         
   
   
@@ -3968,7 +3840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
+      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
         
   
   
@@ -3996,7 +3868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
+      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
         
   
   
@@ -4024,7 +3896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5259-no-overlay/" class="md-nav__link">
+      <a href="../../okeps/okep-5259-no-overlay/" class="md-nav__link">
         
   
   
@@ -4052,7 +3924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5088-evpn/" class="md-nav__link">
+      <a href="../../okeps/okep-5088-evpn/" class="md-nav__link">
         
   
   
@@ -4080,7 +3952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
+      <a href="../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
         
   
   
@@ -4108,7 +3980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4166,7 +4038,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../blog/" class="md-nav__link ">
+            <a href="../../blog/" class="md-nav__link ">
               
   
   
@@ -4210,7 +4082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -4265,10 +4137,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Introduction
+        Description
       
     </span>
   </a>
@@ -4276,10 +4148,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-use-dynamic-udn" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why use Dynamic UDN?
+        How it works?
       
     </span>
   </a>
@@ -4287,10 +4159,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enabling-dynamic-udn" class="md-nav__link">
+  <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enabling Dynamic UDN
+        How to use?
       
     </span>
   </a>
@@ -4298,32 +4170,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#observing-dynamic-udn" class="md-nav__link">
+  <a href="#verification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Observing Dynamic UDN
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
+        Verification
       
     </span>
   </a>
@@ -4350,101 +4200,66 @@
   
 
 
-<h1 id="dynamic-udn-node-allocation">Dynamic UDN Node Allocation<a class="headerlink" href="#dynamic-udn-node-allocation" title="Permanent link">¶</a></h1>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
-<p>By default, OVN-Kubernetes renders each UDN on every node. Rendering a UDN
-means that ovnkube-controller and ovnkube-node create the per-network OVN and
-host-side state needed for that network on the node.</p>
-<p>Dynamic UDN Node Allocation changes this behavior for UDN and CUDN managed
-networks. When the feature is enabled, OVN-Kubernetes only renders a UDN on
-nodes that are actively using it. A node becomes active for a UDN when one of
-the following is true:</p>
-<ul>
-<li>A scheduled pod on the node attaches to a CUDN or UDN.</li>
-<li>The node is assigned as an EgressIP node for that UDN.</li>
-<li>A UDN is connected via the <a href="../cluster-network-connect/">Cluster Network Connect (CNC)</a>
-  feature to another UDN that meets either of the previously stated criteria.</li>
-</ul>
-<p>When a node is inactive for a UDN, OVN-Kubernetes does not run the per-network
-controllers or create the per-node OVN and host networking state for that UDN
-on that node. Per-node allocations, such as Layer3 host subnets and Layer2
-tunnel IDs, are also delayed until the node becomes active for the network.</p>
-<h2 id="why-use-dynamic-udn">Why use Dynamic UDN?<a class="headerlink" href="#why-use-dynamic-udn" title="Permanent link">¶</a></h2>
-<p>Dynamic UDN is useful for clusters with many UDNs where most nodes only need a
-small subset of those networks. For example, a cluster admin might dedicate
-groups of worker nodes to different tenants and create one CUDN per tenant. In
-that model, each tenant network only needs to exist on the nodes where that
-tenant's workloads can run.</p>
-<p>This can reduce the amount of OVN-Kubernetes work on each node, lower the
-number of unused per-node network objects, and improve scale when a cluster has
-many UDNs. It can also help IP planning for Layer3 UDNs because host subnets are
-allocated only for active nodes instead of every node in the cluster.</p>
-<h2 id="enabling-dynamic-udn">Enabling Dynamic UDN<a class="headerlink" href="#enabling-dynamic-udn" title="Permanent link">¶</a></h2>
-<p>Dynamic UDN is disabled by default. Enable it with the
-<code>--enable-dynamic-udn-allocation</code> feature config option:</p>
-<div class="highlight"><pre><span></span><code>--enable-network-segmentation=true
---enable-multi-network=true
---enable-dynamic-udn-allocation=true
+<h1 id="gateway-accelerated-interface-configuration">Gateway Accelerated Interface Configuration<a class="headerlink" href="#gateway-accelerated-interface-configuration" title="Permanent link">¶</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">¶</a></h2>
+<p>To provide hardware acceleration for traffic, both IN and OUT ports need to be a hardware 
+accelerated netdevice backed by the Network Interface Card hardware itself.
+In case of external traffic, when one such port is the external OVS bridge, which for example has the gateway IP, 
+such traffic (like host networking traffic) would not be accelerated.
+Using Switchdev VirtualFunction (VF) or SubFunction (SF) as a gateway interface allows to accelerate these too.</p>
+<h2 id="how-it-works">How it works?<a class="headerlink" href="#how-it-works" title="Permanent link">¶</a></h2>
+<p>Instead of using the gateway interface as the external bridge itself, use a  switchdev VF or SF instead. 
+This is depicted as following:</p>
+<div class="highlight"><pre><span></span><code>                         +----------+
+                         |  br-ext  |
+                   +--------+       |
+                   | UPLINK |       |
+                   +--------+       |  patch  +----------+
+                         |          x---------x  br-int  |
+    +--------+     +--------+       |  port   +----------+
+    | NETDEV +-----+   REP  |       |
+    +--------+     +--------+       |
+                         +----------+
 </code></pre></div>
-<p>Dynamic UDN requires Network Segmentation. OVN-Kubernetes will reject a
-configuration that enables <code>--enable-dynamic-udn-allocation</code> without also
-enabling <code>--enable-network-segmentation</code>. UDNs also depend on the multi-network
-feature because the UDN controllers create NetworkAttachmentDefinitions
-under the hood.</p>
-<p>When a node becomes inactive for a UDN, OVN-Kubernetes does not remove the
-network from that node immediately. A node is inactive for a UDN when it has no
-primary or secondary pod attachments and no EgressIP assignment for that UDN.
-OVN-Kubernetes waits for <code>--udn-deletion-grace-period</code> before tearing down the
-inactive network state. The default grace period is <code>120s</code> and is applied from
-the moment the node becomes inactive for that UDN. Increasing the value reduces
-churn when workloads move quickly; reducing it cleans up inactive node state
-sooner.</p>
-<h2 id="observing-dynamic-udn">Observing Dynamic UDN<a class="headerlink" href="#observing-dynamic-udn" title="Permanent link">¶</a></h2>
-<p>UDN and CUDN status includes a <code>NodesSelected</code> condition when Dynamic UDN is
-enabled. The condition reports whether any nodes currently render the network
-and includes the current rendered node count:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">status</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">conditions</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodesSelected</span>
-<span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="s">"True"</span>
-<span class="w">    </span><span class="nt">reason</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DynamicAllocation</span>
-<span class="w">    </span><span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="s">"5</span><span class="nv"> </span><span class="s">node(s)</span><span class="nv"> </span><span class="s">rendered</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">network"</span>
+<p>Where <code>UPLINK</code> is a port on an offloading capable network interface hardware, <code>NETDEV</code> is a switchdev function 
+of this port and <code>REP</code> is a representor netdevice of the switchdev function. 
+Node/Host IP assigned to <code>NETDEV</code> which make OVS to chose <code>REP</code> port for external flows instead of the bridge.</p>
+<h2 id="how-to-use">How to use?<a class="headerlink" href="#how-to-use" title="Permanent link">¶</a></h2>
+<p>Gateway accelerated interface can be used in two steps:</p>
+<p>a) Creating and configuring the device. 
+See figure above.
+An <code>UPLINK</code> device is connected to the OVS external bridge. 
+An existing VF or SF <code>NETDEV</code> from the <code>UPLINK</code> is first selected as the the Gateway Interface. Its associated 
+representor <code>REP</code> is plugged into the OVS external bridge (br-ext). The gateway IP is assigned to this interface 
+instead of the OVS external bridge (br-ext). </p>
+<p>b) Specify <code>NETDEV</code> as a gateway interface explicitly via <code>OVN_GATEWAY_OPTS</code> environment variable for
+  ovnkube-node container. Example:</p>
+<div class="highlight"><pre><span></span><code><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OVN_GATEWAY_OPTS</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"--gateway-accelerated-interface=&lt;&lt;NETDEV&gt;&gt;"</span>
 </code></pre></div>
-<p>If no nodes currently render the network, the condition is reported with
-<code>status: "False"</code> and the message <code>no nodes currently rendered with network</code>.</p>
-<p>The cluster manager also exposes the
-<code>ovnkube_clustermanager_udn_nodes_rendered</code> metric with a <code>network_name</code> label.
-This metric tracks the number of nodes where each UDN or CUDN is currently
-rendered.</p>
-<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">¶</a></h2>
-<p>Dynamic UDN is a scale optimization, not a security boundary. It should not be
-used as the only mechanism to prevent a tenant network from appearing on a
-node. Use normal Kubernetes scheduling controls, node isolation, and policy for
-that purpose.</p>
-<p>The first pod for a UDN on an inactive node can take longer to start because
-OVN-Kubernetes must render the UDN and allocate any required per-node network
-state before the pod can be wired.</p>
-<p>The feature applies globally to UDN and CUDN managed networks. It is not
-currently configured on a per-UDN basis. Only NetworkAttachmentDefinitions
-owned by a UDN or CUDN are activity-gated; standalone NetworkAttachmentDefinitions
-are treated as present on all nodes.</p>
-<p>Externally exposed UDN services with <code>externalTrafficPolicy: Cluster</code> can fail
-when external traffic is sent to a node where the UDN is inactive. Prefer
-<code>externalTrafficPolicy: Local</code> for externally exposed UDN services when
-possible. For LoadBalancer services, Kubernetes health checks only pass on nodes
-with local ready endpoints; those local endpoint pods make the UDN active on
-the node, so load balancers that honor the health check will target nodes where
-Dynamic UDN has rendered the network.</p>
-<p>For NodePort, ExternalIP, or LoadBalancer providers that do not use those health
-checks, make sure external traffic lands on nodes where the UDN is rendered. If
-a provider such as MetalLB advertises service IPs for UDN workloads, configure
-it so the advertisement happens from nodes where the UDN is rendered. One way
-to do that is to schedule the speaker on the designated UDN nodes.</p>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
-<ul>
-<li>User Defined Networks <a href="../user-defined-networks/">feature page</a></li>
-<li>Dynamic UDN Node Allocation <a href="https://ovn-kubernetes.io/okeps/okep-5552-dynamic-udn-node-allocation/">enhancement</a></li>
-</ul>
+<p>Note that this is mutually exclusive to the <code>--gateway-interface</code> flag for GATEWAY_OPTIONS.</p>
+<p>c) Set the external-id on the bridge to detect the uplink device correctly. This is useful for instances where,
+the name of the bridge (eg: br-ext) does not use the uplink device (eg: p0) in its name. The uplink can also 
+be a bond device. 
+</p><div class="highlight"><pre><span></span><code>ovs-vsctl<span class="w"> </span>br-set-external-id<span class="w"> </span>br-ext<span class="w"> </span>bridge-uplink<span class="w"> </span>p0
+</code></pre></div>
+This gives more flexibility in detecting the uplink device in cases where the auto detection fails (like in case of 
+bonded uplinks etc.)<p></p>
+<h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">¶</a></h2>
+<p>Openflow rules added to the external bridge will use this port as the IN/OUT port instead.</p>
+<p>Example flows when pf0vf1 is the netdev and pf0vf1_r is the representor
+</p><div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">500</span>,ip,in_port<span class="o">=</span><span class="s2">"pf0vf1_r"</span>,nw_dst<span class="o">=</span><span class="m">169</span>.254.0.1<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>ct<span class="o">(</span><span class="nv">table</span><span class="o">=</span><span class="m">5</span>,zone<span class="o">=</span><span class="m">64002</span>,nat<span class="o">)</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">655</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">129843</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">500</span>,ip,in_port<span class="o">=</span><span class="s2">"pf0vf1_r"</span>,nw_dst<span class="o">=</span><span class="m">10</span>.96.0.0/16<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>ct<span class="o">(</span>commit,table<span class="o">=</span><span class="m">2</span>,zone<span class="o">=</span><span class="m">64001</span>,nat<span class="o">(</span><span class="nv">src</span><span class="o">=</span><span class="m">169</span>.254.0.2<span class="o">))</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">359877855</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">531033264511</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">205</span>,udp,in_port<span class="o">=</span>p0,dl_dst<span class="o">=</span><span class="m">42</span>:0b:9a:f1:83:b2,tp_dst<span class="o">=</span><span class="m">6081</span><span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">6252796</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">775727815</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">200</span>,udp,in_port<span class="o">=</span><span class="s2">"pf0vf1_r"</span>,tp_dst<span class="o">=</span><span class="m">6081</span><span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:p0
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">1867752</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">294547557</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">100</span>,ip,in_port<span class="o">=</span><span class="s2">"pf0vf1_r"</span><span class="w"> </span><span class="nv">actions</span><span class="o">=</span>ct<span class="o">(</span>commit,zone<span class="o">=</span><span class="m">64000</span>,exec<span class="o">(</span>load:0x2-&gt;NXM_NX_CT_MARK<span class="o">[]))</span>,output:p0
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">22</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">1320</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">10</span>,in_port<span class="o">=</span>p0,dl_dst<span class="o">=</span><span class="m">42</span>:0b:9a:f1:83:b2<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"patch-brp0_c-23"</span>,output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">1</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">1313364</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">669490616</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">100</span>,ct_state<span class="o">=</span>+est+trk,ct_mark<span class="o">=</span>0x2,ip<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">1</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">100</span>,ct_state<span class="o">=</span>+rel+trk,ct_mark<span class="o">=</span>0x2,ip<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">1</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">13</span>,udp,in_port<span class="o">=</span>p0,tp_dst<span class="o">=</span><span class="m">3784</span><span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"patch-brp0_c-23"</span>,output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">1</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">493602</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">48384748</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">10</span>,dl_dst<span class="o">=</span><span class="m">42</span>:0b:9a:f1:83:b2<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">3</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">694</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">276779</span>,<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>move:NXM_OF_ETH_DST<span class="o">[]</span>-&gt;NXM_OF_ETH_SRC<span class="o">[]</span>,mod_dl_dst:42:0b:9a:f1:83:b2,output:<span class="s2">"pf0vf1_r"</span>
+</code></pre></div><p></p>
 
 
 
@@ -4498,10 +4313,10 @@ to do that is to schedule the speaker on the designated UDN nodes.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   

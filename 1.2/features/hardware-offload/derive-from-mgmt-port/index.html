@@ -1014,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1098,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../requirements/" class="md-nav__link">
+      <a href="../../requirements.md" class="md-nav__link">
         
   
   
@@ -1900,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -1928,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2125,7 +2125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../../user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2153,7 +2153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../../user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -2963,7 +2963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3197,7 +3197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3225,7 +3225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -3980,7 +3980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4491,7 +4491,6 @@
 <li><strong>Extensible Design</strong>: Foundation for future enhancements</li>
 </ul>
 <h2 id="technical-implementation">Technical Implementation<a class="headerlink" href="#technical-implementation" title="Permanent link">¶</a></h2>
-<p>Always check the dependencies on the <a href="../../requirements/">Requirements page</a></p>
 <h3 id="code-changes">Code Changes<a class="headerlink" href="#code-changes" title="Permanent link">¶</a></h3>
 <ol>
 <li><strong>New Constant</strong>: Added <code>DeriveFromMgmtPort = "derive-from-mgmt-port"</code> constant in <code>go-controller/pkg/types/const.go</code></li>
@@ -4514,36 +4513,10 @@
 <h2 id="configuration-examples">Configuration Examples<a class="headerlink" href="#configuration-examples" title="Permanent link">¶</a></h2>
 <h3 id="basic-configuration">Basic Configuration<a class="headerlink" href="#basic-configuration" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>--ovnkube-node-mode<span class="o">=</span>dpu-host
---ovnkube-node-mgmt-port-dp-resource-name<span class="o">=</span>example.com/sriov_pool
---gateway-interface<span class="o">=</span>derive-from-mgmt-port
-</code></pre></div>
-<p>Alternatively, the management port VF can be specified directly by netdev name
-using <code>--ovnkube-node-mgmt-port-netdev</code>. Note that this approach does <strong>not</strong>
-support network segmentation (UDN); use <code>--ovnkube-node-mgmt-port-dp-resource-name</code>
-instead when network segmentation is enabled.</p>
-<div class="highlight"><pre><span></span><code>--ovnkube-node-mode<span class="o">=</span>dpu-host
 --ovnkube-node-mgmt-port-netdev<span class="o">=</span>pf0vf0
 --gateway-interface<span class="o">=</span>derive-from-mgmt-port
 </code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> When both <code>--ovnkube-node-mgmt-port-dp-resource-name</code> and
-<code>--ovnkube-node-mgmt-port-netdev</code> are specified,
-<code>--ovnkube-node-mgmt-port-dp-resource-name</code> takes priority and the netdev
-provided by <code>--ovnkube-node-mgmt-port-netdev</code> will be overridden by the
-device chosen from the SR-IOV resource pool. Additionally, when network
-segmentation (UDN) is enabled in DPU-host mode,
-<code>--ovnkube-node-mgmt-port-dp-resource-name</code> is <strong>mandatory</strong> and
-<code>--ovnkube-node-mgmt-port-netdev</code> is not supported.</p>
-</blockquote>
 <h3 id="helm-configuration">Helm Configuration<a class="headerlink" href="#helm-configuration" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">ovnkube-node</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dpu-host</span>
-<span class="w">  </span><span class="nt">mgmtPortVFResourceName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com/sriov_pool</span>
-
-<span class="nt">gateway</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">derive-from-mgmt-port</span>
-</code></pre></div>
-<p>Or using the netdev name directly (not supported with network segmentation / UDN):</p>
 <div class="highlight"><pre><span></span><code><span class="nt">ovnkube-node</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dpu-host</span>
 <span class="w">  </span><span class="nt">mgmtPortNetdev</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pf0vf0</span>
@@ -4552,14 +4525,6 @@ segmentation (UDN) is enabled in DPU-host mode,
 <span class="w">  </span><span class="nt">interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">derive-from-mgmt-port</span>
 </code></pre></div>
 <h3 id="configuration-file">Configuration File<a class="headerlink" href="#configuration-file" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">[OvnKubeNode]</span>
-<span class="na">mode</span><span class="o">=</span><span class="s">dpu-host</span>
-<span class="na">mgmt-port-dp-resource-name</span><span class="o">=</span><span class="s">example.com/sriov_pool</span>
-
-<span class="k">[Gateway]</span>
-<span class="na">interface</span><span class="o">=</span><span class="s">derive-from-mgmt-port</span>
-</code></pre></div>
-<p>Or using the netdev name directly (not supported with network segmentation / UDN):</p>
 <div class="highlight"><pre><span></span><code><span class="k">[OvnKubeNode]</span>
 <span class="na">mode</span><span class="o">=</span><span class="s">dpu-host</span>
 <span class="na">mgmt-port-netdev</span><span class="o">=</span><span class="s">pf0vf0</span>
@@ -4606,7 +4571,7 @@ segmentation (UDN) is enabled in DPU-host mode,
 <ul>
 <li><a href="../dpu-gateway-interface/">DPU Gateway Interface Configuration</a></li>
 <li><a href="../dpu-support/">DPU Support</a></li>
-<li><a href="../../../design/gateway-accelerated-interface-configuration/">Gateway Accelerated Interface Configuration</a></li>
+<li><a href="../design/gateway-accelerated-interface-configuration.md">Gateway Accelerated Interface Configuration</a></li>
 <li><a href="../../../getting-started/configuration/">Configuration Guide</a></li>
 </ul>
 <h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">¶</a></h2>

@@ -5,31 +5,27 @@
       
       
       
-        <link rel="canonical" href="https://www.ovn.org/ovn-kubernetes/1.2/installation/launching-ovn-kubernetes-with-dpu/">
+        <link rel="canonical" href="https://www.ovn.org/ovn-kubernetes/1.2/features/hardware-offload/dpu-acceleration/">
       
       
-        <link rel="prev" href="../launching-ovn-kubernetes-with-helm/">
-      
-      
-        <link rel="next" href="../INSTALL.KUBEADM/">
       
       
         
       
       
-      <link rel="icon" href="../../images/ovn-inside-k8s.png">
+      <link rel="icon" href="../../../images/ovn-inside-k8s.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>Launching OVN-Kubernetes with DPU Acceleration - OVN-Kubernetes</title>
+        <title>Dpu acceleration - OVN-Kubernetes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,15 +44,15 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -84,11 +80,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#launching-ovn-kubernetes-in-dpu-accelerated-environment-in-interconnect-mode" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -105,9 +96,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="OVN-Kubernetes" class="md-header__button md-logo" aria-label="OVN-Kubernetes" data-md-component="logo">
+    <a href="../../.." title="OVN-Kubernetes" class="md-header__button md-logo" aria-label="OVN-Kubernetes" data-md-component="logo">
       
-  <img src="../../images/ovn-inside-k8s.png" alt="logo">
+  <img src="../../../images/ovn-inside-k8s.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -124,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Launching OVN-Kubernetes with DPU Acceleration
+              Dpu acceleration
             
           </span>
         </div>
@@ -231,7 +222,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -249,13 +240,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../launching-ovn-kubernetes-on-kind/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../installation/launching-ovn-kubernetes-on-kind/" class="md-tabs__link">
           
   
   
@@ -277,7 +266,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../governance/CONTRIBUTING/" class="md-tabs__link">
+        <a href="../../../governance/CONTRIBUTING/" class="md-tabs__link">
           
   
   
@@ -299,7 +288,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../api-reference/introduction/" class="md-tabs__link">
+        <a href="../../../api-reference/introduction/" class="md-tabs__link">
           
   
   
@@ -328,7 +317,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../features/user-defined-networks/user-defined-networks/" class="md-tabs__link">
+        <a href="../../user-defined-networks/user-defined-networks/" class="md-tabs__link">
           
   
   
@@ -353,7 +342,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../troubleshooting/debugging/" class="md-tabs__link">
+        <a href="../../../troubleshooting/debugging/" class="md-tabs__link">
           
   
   
@@ -375,7 +364,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../observability/metrics/" class="md-tabs__link">
+        <a href="../../../observability/metrics/" class="md-tabs__link">
           
   
   
@@ -397,7 +386,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../okeps/okep-5085-localnet-api/" class="md-tabs__link">
+        <a href="../../../okeps/okep-5085-localnet-api/" class="md-tabs__link">
           
   
   
@@ -419,7 +408,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../blog/" class="md-tabs__link">
+        <a href="../../../blog/" class="md-tabs__link">
           
   
   
@@ -461,9 +450,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="OVN-Kubernetes" class="md-nav__button md-logo" aria-label="OVN-Kubernetes" data-md-component="logo">
+    <a href="../../.." title="OVN-Kubernetes" class="md-nav__button md-logo" aria-label="OVN-Kubernetes" data-md-component="logo">
       
-  <img src="../../images/ovn-inside-k8s.png" alt="logo">
+  <img src="../../../images/ovn-inside-k8s.png" alt="logo">
 
     </a>
     OVN-Kubernetes
@@ -533,7 +522,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   
@@ -577,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/architecture/" class="md-nav__link">
+      <a href="../../../design/architecture/" class="md-nav__link">
         
   
   
@@ -605,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/topology/" class="md-nav__link">
+      <a href="../../../design/topology/" class="md-nav__link">
         
   
   
@@ -633,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/gateway-modes/" class="md-nav__link">
+      <a href="../../../design/gateway-modes/" class="md-nav__link">
         
   
   
@@ -661,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/traffic-flows/" class="md-nav__link">
+      <a href="../../../design/traffic-flows/" class="md-nav__link">
         
   
   
@@ -689,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/pod-creation-workflow/" class="md-nav__link">
+      <a href="../../../design/pod-creation-workflow/" class="md-nav__link">
         
   
   
@@ -717,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/service-creation-workflow/" class="md-nav__link">
+      <a href="../../../design/service-creation-workflow/" class="md-nav__link">
         
   
   
@@ -745,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/service-traffic-policy/" class="md-nav__link">
+      <a href="../../../design/service-traffic-policy/" class="md-nav__link">
         
   
   
@@ -773,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/host-to-node-port-hairpin-trafficflow/" class="md-nav__link">
+      <a href="../../../design/host-to-node-port-hairpin-trafficflow/" class="md-nav__link">
         
   
   
@@ -801,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/external-ip-and-loadbalancer-ingress/" class="md-nav__link">
+      <a href="../../../design/external-ip-and-loadbalancer-ingress/" class="md-nav__link">
         
   
   
@@ -829,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/ovn-kubernetes-subnets/" class="md-nav__link">
+      <a href="../../../design/ovn-kubernetes-subnets/" class="md-nav__link">
         
   
   
@@ -857,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/live-migration/" class="md-nav__link">
+      <a href="../../live-migration/" class="md-nav__link">
         
   
   
@@ -889,10 +878,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -920,20 +907,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -951,7 +935,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -969,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../launching-ovn-kubernetes-on-kind/" class="md-nav__link">
+      <a href="../../../installation/launching-ovn-kubernetes-on-kind/" class="md-nav__link">
         
   
   
@@ -997,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../launching-ovn-kubernetes-with-helm/" class="md-nav__link">
+      <a href="../../../installation/launching-ovn-kubernetes-with-helm/" class="md-nav__link">
         
   
   
@@ -1022,37 +1006,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Launching OVN-Kubernetes with DPU Acceleration
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1068,114 +1025,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#ovn-k8s-cluster-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OVN K8s cluster setup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sr-iov-settings-on-dpu-host" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SR-IOV settings on DPU Host
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k8s-settings-on-dpu-host" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        K8s Settings on DPU Host
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#launching-ovn-k8s-dpu-host-cluster-using-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Launching OVN K8s DPU Host cluster using helm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-credentials-for-accessing-this-cluster-from-dpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generating credentials for accessing this cluster from DPU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k8s-settings-on-dpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        K8s Settings on DPU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ovs-settings-on-dpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OVS settings on DPU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#launching-ovn-k8s-dpu-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Launching OVN K8s DPU cluster
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1188,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../INSTALL.KUBEADM/" class="md-nav__link">
+      <a href="../../../installation/INSTALL.KUBEADM/" class="md-nav__link">
         
   
   
@@ -1216,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/configuration/" class="md-nav__link">
+      <a href="../../../getting-started/configuration/" class="md-nav__link">
         
   
   
@@ -1244,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/requirements/" class="md-nav__link">
+      <a href="../../requirements.md" class="md-nav__link">
         
   
   
@@ -1272,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/cli-guide/" class="md-nav__link">
+      <a href="../../../getting-started/cli-guide/" class="md-nav__link">
         
   
   
@@ -1300,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/example-pod-creation/" class="md-nav__link">
+      <a href="../../../getting-started/example-pod-creation/" class="md-nav__link">
         
   
   
@@ -1328,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/example-service-creation/" class="md-nav__link">
+      <a href="../../../getting-started/example-service-creation/" class="md-nav__link">
         
   
   
@@ -1356,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/building-ovn-kubernetes/" class="md-nav__link">
+      <a href="../../../getting-started/building-ovn-kubernetes/" class="md-nav__link">
         
   
   
@@ -1463,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/CONTRIBUTING/" class="md-nav__link">
+      <a href="../../../governance/CONTRIBUTING/" class="md-nav__link">
         
   
   
@@ -1491,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/GOVERNANCE/" class="md-nav__link">
+      <a href="../../../governance/GOVERNANCE/" class="md-nav__link">
         
   
   
@@ -1519,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/REVIEWING/" class="md-nav__link">
+      <a href="../../../governance/REVIEWING/" class="md-nav__link">
         
   
   
@@ -1547,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guide/developer/" class="md-nav__link">
+      <a href="../../../developer-guide/developer/" class="md-nav__link">
         
   
   
@@ -1575,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guide/image-build/" class="md-nav__link">
+      <a href="../../../developer-guide/image-build/" class="md-nav__link">
         
   
   
@@ -1603,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guide/documentation/" class="md-nav__link">
+      <a href="../../../developer-guide/documentation/" class="md-nav__link">
         
   
   
@@ -1631,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guide/local_testing_guide/" class="md-nav__link">
+      <a href="../../../developer-guide/local_testing_guide/" class="md-nav__link">
         
   
   
@@ -1659,7 +1508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ci/ci/" class="md-nav__link">
+      <a href="../../../ci/ci/" class="md-nav__link">
         
   
   
@@ -1687,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guide/debugging/" class="md-nav__link">
+      <a href="../../../developer-guide/debugging/" class="md-nav__link">
         
   
   
@@ -1715,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guide/release/" class="md-nav__link">
+      <a href="../../../developer-guide/release/" class="md-nav__link">
         
   
   
@@ -1822,7 +1671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/introduction/" class="md-nav__link">
+      <a href="../../../api-reference/introduction/" class="md-nav__link">
         
   
   
@@ -1850,7 +1699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/egress-ip-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/egress-ip-api-spec/" class="md-nav__link">
         
   
   
@@ -1878,7 +1727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/egress-service-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/egress-service-api-spec/" class="md-nav__link">
         
   
   
@@ -1906,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/egress-qos-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/egress-qos-api-spec/" class="md-nav__link">
         
   
   
@@ -1934,7 +1783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/egress-firewall-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/egress-firewall-api-spec/" class="md-nav__link">
         
   
   
@@ -1962,7 +1811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/admin-epbr-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/admin-epbr-api-spec/" class="md-nav__link">
         
   
   
@@ -1990,7 +1839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/userdefinednetwork-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/userdefinednetwork-api-spec/" class="md-nav__link">
         
   
   
@@ -2018,7 +1867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/routeadvertisements-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/routeadvertisements-api-spec/" class="md-nav__link">
         
   
   
@@ -2046,7 +1895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -2074,7 +1923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2243,7 +2092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/user-defined-networks/" class="md-nav__link">
+      <a href="../../user-defined-networks/user-defined-networks/" class="md-nav__link">
         
   
   
@@ -2271,7 +2120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../../user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2299,7 +2148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../../user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -2393,7 +2242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/network-security-controls/admin-network-policy/" class="md-nav__link">
+      <a href="../../network-security-controls/admin-network-policy/" class="md-nav__link">
         
   
   
@@ -2421,7 +2270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/network-security-controls/network-policy/" class="md-nav__link">
+      <a href="../../network-security-controls/network-policy/" class="md-nav__link">
         
   
   
@@ -2449,7 +2298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/network-security-controls/egress-firewall/" class="md-nav__link">
+      <a href="../../network-security-controls/egress-firewall/" class="md-nav__link">
         
   
   
@@ -2545,7 +2394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/cluster-egress-controls/egress-ip/" class="md-nav__link">
+      <a href="../../cluster-egress-controls/egress-ip/" class="md-nav__link">
         
   
   
@@ -2573,7 +2422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/cluster-egress-controls/egress-service/" class="md-nav__link">
+      <a href="../../cluster-egress-controls/egress-service/" class="md-nav__link">
         
   
   
@@ -2601,7 +2450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/cluster-egress-controls/egress-qos/" class="md-nav__link">
+      <a href="../../cluster-egress-controls/egress-qos/" class="md-nav__link">
         
   
   
@@ -2629,7 +2478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/cluster-egress-controls/egress-gateway/" class="md-nav__link">
+      <a href="../../cluster-egress-controls/egress-gateway/" class="md-nav__link">
         
   
   
@@ -2719,7 +2568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/infrastructure-security-controls/node-identity/" class="md-nav__link">
+      <a href="../../infrastructure-security-controls/node-identity/" class="md-nav__link">
         
   
   
@@ -2813,7 +2662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/multiple-networks/multi-homing/" class="md-nav__link">
+      <a href="../../multiple-networks/multi-homing/" class="md-nav__link">
         
   
   
@@ -2841,7 +2690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/multiple-networks/multi-network-policies/" class="md-nav__link">
+      <a href="../../multiple-networks/multi-network-policies/" class="md-nav__link">
         
   
   
@@ -2869,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/multiple-networks/multi-vtep/" class="md-nav__link">
+      <a href="../../multiple-networks/multi-vtep/" class="md-nav__link">
         
   
   
@@ -2905,7 +2754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/multicast/" class="md-nav__link">
+      <a href="../../multicast/" class="md-nav__link">
         
   
   
@@ -2989,7 +2838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/network-qos/" class="md-nav__link">
+      <a href="../../network-qos/" class="md-nav__link">
         
   
   
@@ -3017,7 +2866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/network-qos-guide/" class="md-nav__link">
+      <a href="../../network-qos-guide/" class="md-nav__link">
         
   
   
@@ -3053,7 +2902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/live-migration/" class="md-nav__link">
+      <a href="../../live-migration/" class="md-nav__link">
         
   
   
@@ -3081,7 +2930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/hybrid-overlay/" class="md-nav__link">
+      <a href="../../hybrid-overlay/" class="md-nav__link">
         
   
   
@@ -3109,7 +2958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3193,7 +3042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/hardware-offload/ovs-kernel/" class="md-nav__link">
+      <a href="../ovs-kernel/" class="md-nav__link">
         
   
   
@@ -3221,7 +3070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/hardware-offload/ovs-doca/" class="md-nav__link">
+      <a href="../ovs-doca/" class="md-nav__link">
         
   
   
@@ -3315,7 +3164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/route-advertisements/" class="md-nav__link">
+      <a href="../../bgp-integration/route-advertisements/" class="md-nav__link">
         
   
   
@@ -3343,7 +3192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3371,7 +3220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -3472,7 +3321,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/debugging/" class="md-nav__link">
+      <a href="../../../troubleshooting/debugging/" class="md-nav__link">
         
   
   
@@ -3500,7 +3349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/ovnkube-trace/" class="md-nav__link">
+      <a href="../../../troubleshooting/ovnkube-trace/" class="md-nav__link">
         
   
   
@@ -3528,7 +3377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/logging/" class="md-nav__link">
+      <a href="../../../troubleshooting/logging/" class="md-nav__link">
         
   
   
@@ -3621,7 +3470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../observability/metrics/" class="md-nav__link">
+      <a href="../../../observability/metrics/" class="md-nav__link">
         
   
   
@@ -3649,7 +3498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../observability/sdn-dashboard/" class="md-nav__link">
+      <a href="../../../observability/sdn-dashboard/" class="md-nav__link">
         
   
   
@@ -3677,7 +3526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../observability/ovn-observability/" class="md-nav__link">
+      <a href="../../../observability/ovn-observability/" class="md-nav__link">
         
   
   
@@ -3790,7 +3639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5085-localnet-api/" class="md-nav__link">
+      <a href="../../../okeps/okep-5085-localnet-api/" class="md-nav__link">
         
   
   
@@ -3818,7 +3667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-4380-network-qos/" class="md-nav__link">
+      <a href="../../../okeps/okep-4380-network-qos/" class="md-nav__link">
         
   
   
@@ -3846,7 +3695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5193-user-defined-networks/" class="md-nav__link">
+      <a href="../../../okeps/okep-5193-user-defined-networks/" class="md-nav__link">
         
   
   
@@ -3874,7 +3723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5233-preconfigured-udn-addresses/" class="md-nav__link">
+      <a href="../../../okeps/okep-5233-preconfigured-udn-addresses/" class="md-nav__link">
         
   
   
@@ -3902,7 +3751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5296-bgp/" class="md-nav__link">
+      <a href="../../../okeps/okep-5296-bgp/" class="md-nav__link">
         
   
   
@@ -3930,7 +3779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
+      <a href="../../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
         
   
   
@@ -3958,7 +3807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
+      <a href="../../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
         
   
   
@@ -3986,7 +3835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
+      <a href="../../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
         
   
   
@@ -4014,7 +3863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
+      <a href="../../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
         
   
   
@@ -4042,7 +3891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5259-no-overlay/" class="md-nav__link">
+      <a href="../../../okeps/okep-5259-no-overlay/" class="md-nav__link">
         
   
   
@@ -4070,7 +3919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5088-evpn/" class="md-nav__link">
+      <a href="../../../okeps/okep-5088-evpn/" class="md-nav__link">
         
   
   
@@ -4098,7 +3947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
+      <a href="../../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
         
   
   
@@ -4126,7 +3975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4184,7 +4033,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../blog/" class="md-nav__link ">
+            <a href="../../../blog/" class="md-nav__link ">
               
   
   
@@ -4228,7 +4077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -4273,104 +4122,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#ovn-k8s-cluster-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OVN K8s cluster setup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sr-iov-settings-on-dpu-host" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SR-IOV settings on DPU Host
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k8s-settings-on-dpu-host" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        K8s Settings on DPU Host
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#launching-ovn-k8s-dpu-host-cluster-using-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Launching OVN K8s DPU Host cluster using helm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-credentials-for-accessing-this-cluster-from-dpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generating credentials for accessing this cluster from DPU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k8s-settings-on-dpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        K8s Settings on DPU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ovs-settings-on-dpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OVS settings on DPU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#launching-ovn-k8s-dpu-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Launching OVN K8s DPU cluster
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -4390,141 +4141,9 @@
   
 
 
-<h1 id="launching-ovn-kubernetes-in-dpu-accelerated-environment-in-interconnect-mode">Launching OVN-Kubernetes in DPU-Accelerated environment in interconnect mode<a class="headerlink" href="#launching-ovn-kubernetes-in-dpu-accelerated-environment-in-interconnect-mode" title="Permanent link">¶</a></h1>
-<h2 id="ovn-k8s-cluster-setup">OVN K8s cluster setup<a class="headerlink" href="#ovn-k8s-cluster-setup" title="Permanent link">¶</a></h2>
-<p>OVN K8s CNI in a DPU-Accelerated environment is deployed using two Kubernetes clusters, one for the hosts and other for the DPUs.</p>
-<p>DPUs in the DPU cluster will watch DPU Host cluster for K8s resources such as Pods, Namespaces, NetworkAttachmentDefinitions, Services, and Endpoints and act on updates to those resources. Hence they require credentials to access DPU host cluster. Each DPU will have a setting denoting the DPU host to which it is associated.</p>
-<p>Refer <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/docs/features/hardware-offload/dpu-support.md">DPU support</a> for more details on the setup.</p>
-<h2 id="sr-iov-settings-on-dpu-host">SR-IOV settings on DPU Host<a class="headerlink" href="#sr-iov-settings-on-dpu-host" title="Permanent link">¶</a></h2>
-<p>Follow <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/docs/features/hardware-offload/ovs-kernel.md">OVS Acceleration with Kernel datapath</a> or <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/docs/features/hardware-offload/ovs-doca.md">OVS Acceleration with DOCA datapath</a> to enable Open vSwitch hardware offloading feature on DPU hosts.</p>
-<p>A single VF net-device or a group of VF net-devices (configured as SR-IOV device plugin resource pool) need to be setup separately to create management port(s).</p>
-<h2 id="k8s-settings-on-dpu-host">K8s Settings on DPU Host<a class="headerlink" href="#k8s-settings-on-dpu-host" title="Permanent link">¶</a></h2>
-<p>The following node labels must be set on the DPU Host prior to installing OVN K8s CNI</p>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">k8s.ovn.org/dpu-host=</span>
-<span class="l l-Scalar l-Scalar-Plain">k8s.ovn.org/zone-name="dpu-host node name"</span>
-</code></pre></div>
-<h2 id="launching-ovn-k8s-dpu-host-cluster-using-helm">Launching OVN K8s DPU Host cluster using helm<a class="headerlink" href="#launching-ovn-k8s-dpu-host-cluster-using-helm" title="Permanent link">¶</a></h2>
-<p>OVN K8s CNI can be deployed using helm charts provided under <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/tree/master/helm/ovn-kubernetes">OVN K8s Helm Charts</a>. Refer <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/docs/installation/launching-ovn-kubernetes-with-helm.md">Launching OVN-Kubernetes using Helm Charts</a> for general instructions on using helm charts and explanation of common values used in various subcharts.</p>
-<p>For DPU Hosts cluster use values-single-node-zone.yaml by setting the following fields as specified. The other fields in the file can be set as needed.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">tags</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">ovnkube-node-dpu-host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">      </span><span class="c1"># Removing this line will also enable applying ovnkube-node-dpu-host subchart</span>
-<span class="w">  </span><span class="nt">ovs-node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">                  </span><span class="c1"># Disable ovs-node subchart, as OVS is already provided by the corresponding DPU</span>
-<span class="nt">global</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">enableOvnKubeIdentity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">     </span><span class="c1"># This feature is not supported currently for clusters with DPU/DPU-Hosts</span>
-</code></pre></div>
-<p>ovn-kubernetes image to be used in the containers should be provided in the image section
-</p><div class="highlight"><pre><span></span><code><span class="nt">global</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">image</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/ovn-kubernetes/ovn-kubernetes/ovn-kube-fedora</span>
-<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
-</code></pre></div><p></p>
-<p>Management port netdevice information should be provided in values.yaml file under helm/ovn-kubernetes/charts/ovnkube-node-dpu-host. For example,
-</p><div class="highlight"><pre><span></span><code><span class="nt">nodeMgmtPortNetdev</span><span class="p">:</span><span class="w"> </span><span class="s">"enp1s0f0v0"</span><span class="w">         </span><span class="c1"># Single VF net-device to be used for management port or</span>
-<span class="nt">mgmtPortVFResourceName</span><span class="p">:</span><span class="w"> </span><span class="s">"mgmtport_vfs"</span><span class="w">   </span><span class="c1"># SR-IOV device plugin resource pool from which VF net-device(s) can be selected.</span>
-<span class="nt">mgmtPortVFsCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w">                      </span><span class="c1"># If using UDNs, the number of VFs required to handle management ports, which depends on the number of primary UDNs needed should be specified.</span>
-</code></pre></div><p></p>
-<p>mgmtPortVFResourceName will be prioritized over nodeMgmtPortNetdev if both are specified.
-If using UDNs, mgmtPortVFResourceName and mgmtPortVFsCount should be specified.</p>
-<p>Launch OVN K8s using
-</p><div class="highlight"><pre><span></span><code>helm install ovn-kubernetes . -f values-single-node-zone.yaml
-</code></pre></div><p></p>
-<h2 id="generating-credentials-for-accessing-this-cluster-from-dpu">Generating credentials for accessing this cluster from DPU<a class="headerlink" href="#generating-credentials-for-accessing-this-cluster-from-dpu" title="Permanent link">¶</a></h2>
-<p>After deploying the CNI, create a secret in this cluster for service account ovnkube-node by applying the following
-</p><div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ovnkube-node-sa-for-dpu</span>
-<span class="w"> </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ovn-kubernetes</span>
-<span class="w"> </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">   </span><span class="nt">kubernetes.io/service-account.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ovnkube-node</span>
-<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.io/service-account-token</span>
-</code></pre></div><p></p>
-<p>Get the value of ca.crt and token, which will be used in the DPU cluster. The token should be base64 decoded, but the encoded ca.crt should be used as is.</p>
-<h2 id="k8s-settings-on-dpu">K8s Settings on DPU<a class="headerlink" href="#k8s-settings-on-dpu" title="Permanent link">¶</a></h2>
-<p>The following node label is required on DPUs prior to installing OVN K8s CNI
-</p><div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">k8s.ovn.org/dpu=</span>
-</code></pre></div><p></p>
-<h2 id="ovs-settings-on-dpu">OVS settings on DPU<a class="headerlink" href="#ovs-settings-on-dpu" title="Permanent link">¶</a></h2>
-<p>Some OVS settings are required on the DPU to enable hardware offloads, connect to the right DPU-host in the DPU-host cluster and correctly steer traffic flows.</p>
-<p>Consider an example with ovs bridge configuration on DPU and network settings on DPU and DPU Host as below.</p>
-<div class="highlight"><pre><span></span><code>ovs-vsctl show
-    Bridge brp0
-        fail_mode: standalone
-        Port pf0hpf
-            tag: 3
-            Interface pf0hpf
-                type: system
-        Port p0
-            Interface p0
-                type: system
-        Port vtep0
-            tag: 2
-            Interface vtep0
-                type: internal
-        Port brp0
-            Interface brp0
-                type: internal
-</code></pre></div>
-<div class="highlight"><pre><span></span><code>$ ip addr show dev brp0
-4: brp0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP group default qlen 1000
-    link/ether 52:54:00:a1:b2:c3 brd ff:ff:ff:ff:ff:ff
-    inet 192.0.2.10/24 brd 192.0.2.255 scope global brp0
-       valid_lft forever preferred_lft forever
+  <h1>Dpu acceleration</h1>
 
-$ ip addr show dev vtep0
-5: vtep0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1450 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/ether 52:54:00:d4:e5:f6 brd ff:ff:ff:ff:ff:ff
-    inet 198.51.100.10/24 brd 198.51.100.255 scope global vtep0
-       valid_lft forever preferred_lft forever
-</code></pre></div>
-<p>On the DPU host with node name dpu-host, the IP address is set as</p>
-<div class="highlight"><pre><span></span><code>$ ip addr show dev enp1s0f0
-2: enp1s0f0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
-    link/ether 52:54:00:12:34:56 brd ff:ff:ff:ff:ff:ff
-    inet 203.0.113.10/24 brd 203.0.113.255 scope global eth0
-       valid_lft forever preferred_lft forever
 
-$ ip route show default
-default via 203.0.113.1 dev enp1s0f0 proto static
-</code></pre></div>
-<p>Router subnet is 203.0.113.0/24</p>
-<p>The required OVS settings are as below. The values provided are taken from the above example.</p>
-<div class="highlight"><pre><span></span><code>other_config:hw-offload=true                        - enable hardware offloading
-external_ids:host-k8s-nodename="dpu-host"           - name of DPU-Host node
-external_ids:hostname="dpu"                         - OVN Chassis hostname of the DPU
-external_ids:ovn-encap-ip="198.51.100.10"           - encapsulation IP of the DPU
-external_ids:ovn-encap-type="geneve"                - supported encapsulation type
-external_ids:ovn-gw-interface="brp0"                - interface on the DPU that serves as gateway interface
-external_ids:ovn-gw-nexthop="203.0.113.1"           - default gateway address for the DPU-Host network
-external_ids:ovn-gw-router-subnet="203.0.113.0/24"  - subnet to be used for the gateway router if DPU is in a different subnet than DPU-Host network
-external_ids:ovn-gw-vlanid="3"                      - optional setting if VLAN id of gateway is not on native VLAN
-</code></pre></div>
-<h2 id="launching-ovn-k8s-dpu-cluster">Launching OVN K8s DPU cluster<a class="headerlink" href="#launching-ovn-k8s-dpu-cluster" title="Permanent link">¶</a></h2>
-<p>Once the DPU-host cluster is deployed, the credentials to access that cluster is needed for DPU cluster deployment. It also requires additional information regarding OVN K8s configuration.</p>
-<p>Use values-single-node-zone-dpu.yaml for deploying the DPU cluster. Only the ovnkube-single-node-zone-dpu chart has to be installed and is enabled by default. The rest of the charts are disabled by setting them to false under the tags section and it should not be changed.</p>
-<p>Set the following field as specified.
-</p><div class="highlight"><pre><span></span><code><span class="nt">global</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">enableOvnKubeIdentity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">    </span><span class="c1"># This feature is not supported currently for clusters with DPU/DPU-Hosts</span>
-</code></pre></div><p></p>
-<p>The following DPU Host cluster related information must be provided.
-</p><div class="highlight"><pre><span></span><code><span class="nt">global</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">dpuHostClusterK8sAPIServer</span><span class="p">:</span><span class="w"> </span><span class="s">"https://172.25.0.2:6443"</span><span class="w">    </span><span class="c1"># Endpoint of DPU Host cluster's K8s API server</span>
-<span class="w">  </span><span class="nt">dpuHostClusterK8sToken</span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w">                               </span><span class="c1"># DPU Host cluster's K8s Access Token base64 decoded</span>
-<span class="w">  </span><span class="nt">dpuHostClusterK8sCACertData</span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w">                          </span><span class="c1"># DPU Host cluster's encoded K8s Access Certs Data</span>
-<span class="w">  </span><span class="nt">dpuHostClusterNetworkCIDR</span><span class="p">:</span><span class="w"> </span><span class="s">"10.244.0.0/16/24"</span><span class="w">            </span><span class="c1"># DPU Host cluster's Network CIDR</span>
-<span class="w">  </span><span class="nt">dpuHostClusterServiceCIDR</span><span class="p">:</span><span class="w"> </span><span class="s">"10.96.0.0/16"</span><span class="w">                </span><span class="c1"># DPU Host cluster's Service CIDR</span>
-<span class="w">  </span><span class="nt">mtu</span><span class="p">:</span><span class="w"> </span><span class="s">"1400"</span><span class="w">                                              </span><span class="c1"># MTU of network interface in K8s pod</span>
-</code></pre></div><p></p>
-<p>ovn-kubernetes image to be used in the containers should be provided in the dpuImage section. It should be built for arm64 architecture.
-</p><div class="highlight"><pre><span></span><code><span class="nt">global</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">dpuImage</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/ovn-kubernetes/ovn-kubernetes/ovn-kube-ubuntu</span>
-<span class="w">    </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span>
-</code></pre></div><p></p>
-<p>The rest of the fields can be set as needed.</p>
-<p>Launch OVN K8s using
-</p><div class="highlight"><pre><span></span><code>helm install ovn-kubernetes . -f values-single-node-zone-dpu.yaml
-</code></pre></div><p></p>
 
 
 
@@ -4578,10 +4197,10 @@ external_ids:ovn-gw-vlanid="3"                      - optional setting if VLAN i
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
