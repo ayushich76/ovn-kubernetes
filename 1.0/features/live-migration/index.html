@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://www.ovn.org/ovn-kubernetes/1.0/features/live-migration/">
       
       
-        <link rel="prev" href="../network-qos-guide/">
+        <link rel="prev" href="../multicast/">
       
       
         <link rel="next" href="../hybrid-overlay/">
@@ -330,7 +330,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../user-defined-networks/user-defined-networks/" class="md-tabs__link">
+        <a href="../user-defined-networks/user-defined-networks.md" class="md-tabs__link">
           
   
   
@@ -399,7 +399,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../okeps/okep-5085-localnet-api/" class="md-tabs__link">
+        <a href="../../okeps/okep-5085-localnet-api.md" class="md-tabs__link">
           
   
   
@@ -930,210 +930,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Motivation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Motivation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-storiesuse-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User-Stories/Use-Cases
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#non-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Non-Goals
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-enable-this-feature-on-an-ovn-kubernetes-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to enable this feature on an OVN-Kubernetes cluster?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#workflow-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workflow Description
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Workflow Description">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
         Requirements
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-live-migrating-a-fedora-guest-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: live migrating a fedora guest image
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring-dns-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuring dns server
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring-dual-stack-guest-images" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuring dual stack guest images
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kubevirt-introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kubevirt Introduction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ovn-kubernetes-implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OVN-Kubernetes Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="OVN-Kubernetes Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipam" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IPAM
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detecting-migratable-vms-and-changing-point-to-point-routes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detecting migratable VMs and changing point to point routes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-items" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Items
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Limitations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
       
     </span>
   </a>
@@ -1291,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1375,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../requirements/" class="md-nav__link">
+      <a href="../requirements.md" class="md-nav__link">
         
   
   
@@ -2121,7 +1921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/userdefinednetwork-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/userdefinednetwork-api-spec.md" class="md-nav__link">
         
   
   
@@ -2149,7 +1949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/routeadvertisements-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/routeadvertisements-api-spec.md" class="md-nav__link">
         
   
   
@@ -2177,7 +1977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -2205,7 +2005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2379,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/user-defined-networks/" class="md-nav__link">
+      <a href="../user-defined-networks/user-defined-networks.md" class="md-nav__link">
         
   
   
@@ -2407,7 +2207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2435,7 +2235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -3125,7 +2925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-qos/" class="md-nav__link">
+      <a href="../network-qos.md" class="md-nav__link">
         
   
   
@@ -3153,7 +2953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-qos-guide/" class="md-nav__link">
+      <a href="../network-qos-guide.md" class="md-nav__link">
         
   
   
@@ -3260,210 +3060,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Motivation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Motivation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-storiesuse-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User-Stories/Use-Cases
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#non-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Non-Goals
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-enable-this-feature-on-an-ovn-kubernetes-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to enable this feature on an OVN-Kubernetes cluster?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#workflow-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workflow Description
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Workflow Description">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
         Requirements
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-live-migrating-a-fedora-guest-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: live migrating a fedora guest image
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring-dns-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuring dns server
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring-dual-stack-guest-images" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuring dual stack guest images
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kubevirt-introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kubevirt Introduction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ovn-kubernetes-implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OVN-Kubernetes Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="OVN-Kubernetes Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipam" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IPAM
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detecting-migratable-vms-and-changing-point-to-point-routes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detecting migratable VMs and changing point to point routes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-items" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Items
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Limitations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
       
     </span>
   </a>
@@ -3514,7 +3114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3598,7 +3198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hardware-offload/ovs-kernel/" class="md-nav__link">
+      <a href="../hardware-offload/ovs-kernel.md" class="md-nav__link">
         
   
   
@@ -3720,7 +3320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/route-advertisements/" class="md-nav__link">
+      <a href="../bgp-integration/route-advertisements.md" class="md-nav__link">
         
   
   
@@ -3748,7 +3348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3776,7 +3376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/evpn/" class="md-nav__link">
+      <a href="../bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -4082,7 +3682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../observability/ovn-observability/" class="md-nav__link">
+      <a href="../../observability/ovn-observability.md" class="md-nav__link">
         
   
   
@@ -4195,7 +3795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5085-localnet-api/" class="md-nav__link">
+      <a href="../../okeps/okep-5085-localnet-api.md" class="md-nav__link">
         
   
   
@@ -4223,7 +3823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-4380-network-qos/" class="md-nav__link">
+      <a href="../../okeps/okep-4380-network-qos.md" class="md-nav__link">
         
   
   
@@ -4251,7 +3851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5193-user-defined-networks/" class="md-nav__link">
+      <a href="../../okeps/okep-5193-user-defined-networks.md" class="md-nav__link">
         
   
   
@@ -4279,7 +3879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5233-preconfigured-udn-addresses/" class="md-nav__link">
+      <a href="../../okeps/okep-5233-preconfigured-udn-addresses.md" class="md-nav__link">
         
   
   
@@ -4307,7 +3907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5296-bgp/" class="md-nav__link">
+      <a href="../../okeps/okep-5296-bgp.md" class="md-nav__link">
         
   
   
@@ -4335,7 +3935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
+      <a href="../../okeps/okep-5094-layer2-transit-router.md" class="md-nav__link">
         
   
   
@@ -4363,7 +3963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
+      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server.md" class="md-nav__link">
         
   
   
@@ -4391,7 +3991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
+      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation.md" class="md-nav__link">
         
   
   
@@ -4419,7 +4019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
+      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns.md" class="md-nav__link">
         
   
   
@@ -4447,7 +4047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5259-no-overlay/" class="md-nav__link">
+      <a href="../../okeps/okep-5259-no-overlay.md" class="md-nav__link">
         
   
   
@@ -4475,7 +4075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5088-evpn/" class="md-nav__link">
+      <a href="../../okeps/okep-5088-evpn.md" class="md-nav__link">
         
   
   
@@ -4503,7 +4103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
+      <a href="../../okeps/okep-5674-dpu-healthcheck.md" class="md-nav__link">
         
   
   
@@ -4531,7 +4131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4699,210 +4299,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Motivation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Motivation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-storiesuse-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User-Stories/Use-Cases
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#non-goals" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Non-Goals
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-enable-this-feature-on-an-ovn-kubernetes-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to enable this feature on an OVN-Kubernetes cluster?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#workflow-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workflow Description
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Workflow Description">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
         Requirements
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-live-migrating-a-fedora-guest-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: live migrating a fedora guest image
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring-dns-server" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuring dns server
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuring-dual-stack-guest-images" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuring dual stack guest images
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#kubevirt-introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Kubevirt Introduction
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ovn-kubernetes-implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OVN-Kubernetes Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="OVN-Kubernetes Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ipam" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IPAM
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#detecting-migratable-vms-and-changing-point-to-point-routes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detecting migratable VMs and changing point to point routes
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-items" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Future Items
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Limitations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
       
     </span>
   </a>
@@ -4935,24 +4335,19 @@
 while keeping the established TCP connections alive, and preserving the VM IP configuration.
 These two requirements provide seamless live-migration of a KubeVirt VM using OVN-Kubernetes
 cluster default network.</p>
-<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">¶</a></h2>
-<p>kubevirt integration requires the ability to have live-migration functionality across the network with OVN-Kubernetes implemented at the pod's default network.</p>
-<h3 id="user-storiesuse-cases">User-Stories/Use-Cases<a class="headerlink" href="#user-storiesuse-cases" title="Permanent link">¶</a></h3>
-<p>I, a kubevirt user, need to migrate one virtual machine with bridge binding without affecting different ones and have minimal
-disruption.</p>
-<h3 id="non-goals">Non-Goals<a class="headerlink" href="#non-goals" title="Permanent link">¶</a></h3>
-<p>This feature is not implemented at secondary networks, only primary networks will be live migratable.</p>
-<h2 id="how-to-enable-this-feature-on-an-ovn-kubernetes-cluster">How to enable this feature on an OVN-Kubernetes cluster?<a class="headerlink" href="#how-to-enable-this-feature-on-an-ovn-kubernetes-cluster" title="Permanent link">¶</a></h2>
-<p>This feature is always enabled, it get triggered when a VM is annotated with 
-<code>kubevirt.io/allow-pod-bridge-network-live-migration: ""</code> and use bridge binding. </p>
-<h2 id="workflow-description">Workflow Description<a class="headerlink" href="#workflow-description" title="Permanent link">¶</a></h2>
-<h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">¶</a></h3>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">¶</a></h2>
 <ul>
 <li>KubeVirt &gt;= v1.0.0</li>
 <li>DHCP aware guest image (fedora family is well tested, https://quay.io/organization/containerdisks)</li>
 </ul>
-<p>Always check the dependencies on the <a href="../requirements/">Requirements page</a></p>
-<h3 id="example-live-migrating-a-fedora-guest-image">Example: live migrating a fedora guest image<a class="headerlink" href="#example-live-migrating-a-fedora-guest-image" title="Permanent link">¶</a></h3>
+<h1 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">¶</a></h1>
+<ul>
+<li>Only KubeVirt VMs with bridge binding pod network are supported</li>
+<li>Single stack IPv6 is not supported</li>
+<li>DualSack does not configure routes for IPv6 over DHCP/autoconf</li>
+<li>SRIOV is not supported</li>
+</ul>
+<h2 id="example-live-migrating-a-fedora-guest-image">Example: live migrating a fedora guest image<a class="headerlink" href="#example-live-migrating-a-fedora-guest-image" title="Permanent link">¶</a></h2>
 <p>Install KubeVirt following the guide <a href="https://kubevirt.io/user-guide/operations/installation/">here</a></p>
 <p>Create a fedora virtual machine with the annotations <code>kubevirt.io/allow-pod-bridge-network-live-migration</code>:
 </p><div class="highlight"><pre><span></span><code>cat<span class="w"> </span><span class="s">&lt;&lt;'EOF' | kubectl create -f -</span>
@@ -5033,13 +4428,16 @@ fedora<span class="w">   </span>9m42s<span class="w">   </span>Running<span clas
 </code></pre></div><p></p>
 <p>Also we can check the neighbours cache to verify it later on
 </p><div class="highlight"><pre><span></span><code><span class="o">[</span>fedora@fedora<span class="w"> </span>~<span class="o">]</span>arp<span class="w"> </span>-a
-_gateway<span class="w"> </span><span class="o">(</span><span class="m">10</span>.244.2.1<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>0a:58:a9:fe:01:01<span class="w"> </span><span class="o">[</span>ether<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>eth0
+_gateway<span class="w"> </span><span class="o">(</span><span class="m">169</span>.254.1.1<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>0a:58:a9:fe:01:01<span class="w"> </span><span class="o">[</span>ether<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>eth0
 </code></pre></div><p></p>
-<p>The default gateway is the pod network subnet gateway IP. The ARP proxy feature
-ensures the gateway MAC address remains consistent across live migrations.</p>
+<p>Keep in mind the default gw is a link local address; that is because 
+the live migration feature is implemented using ARP proxy.</p>
+<p>The last route is needed since the link local address subnet is not bound to any interface, that
+route is automatically created by dhcp client.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>fedora@fedora<span class="w"> </span>~<span class="o">]</span>ip<span class="w"> </span>route
-default<span class="w"> </span>via<span class="w"> </span><span class="m">10</span>.244.2.1<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>dhcp<span class="w"> </span>src<span class="w"> </span><span class="m">10</span>.244.2.26<span class="w"> </span>metric<span class="w"> </span><span class="m">100</span>
+default<span class="w"> </span>via<span class="w"> </span><span class="m">169</span>.254.1.1<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>dhcp<span class="w"> </span>src<span class="w"> </span><span class="m">10</span>.244.2.26<span class="w"> </span>metric<span class="w"> </span><span class="m">100</span>
 <span class="m">10</span>.244.2.0/24<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>kernel<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>src<span class="w"> </span><span class="m">10</span>.244.2.26<span class="w"> </span>metric<span class="w"> </span><span class="m">100</span>
+<span class="m">169</span>.254.1.1<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>dhcp<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>src<span class="w"> </span><span class="m">10</span>.244.2.26<span class="w"> </span>metric<span class="w"> </span><span class="m">100</span>
 </code></pre></div>
 <p>Then a live migration can be initialized with <code>virtctl migrate fedora</code> and wait
 at the vmim resource
@@ -5069,15 +4467,15 @@ default<span class="w">     </span>fedora<span class="w">   </span>16m<span clas
 <span class="w">    </span>inet6<span class="w"> </span>fe80::32d2:10d4:f5ed:3064/64<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>noprefixroute
 <span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
 <span class="o">[</span>fedora@fedora<span class="w"> </span>~<span class="o">]</span>arp<span class="w"> </span>-a
-_gateway<span class="w"> </span><span class="o">(</span><span class="m">10</span>.244.2.1<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>0a:58:a9:fe:01:01<span class="w"> </span><span class="o">[</span>ether<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>eth0
+_gateway<span class="w"> </span><span class="o">(</span><span class="m">169</span>.254.1.1<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>0a:58:a9:fe:01:01<span class="w"> </span><span class="o">[</span>ether<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>eth0
 </code></pre></div><p></p>
-<h3 id="configuring-dns-server">Configuring dns server<a class="headerlink" href="#configuring-dns-server" title="Permanent link">¶</a></h3>
+<h1 id="configuring-dns-server">Configuring dns server<a class="headerlink" href="#configuring-dns-server" title="Permanent link">¶</a></h1>
 <p>By default the DHCP server at ovn-kuberntes will configure the kubernetes
 default dns service <code>kube-system/kube-dns</code> as the name server. This can be
 overriden with the following command line options:
 - dns-service-namespace
 - dns-service-name</p>
-<h3 id="configuring-dual-stack-guest-images">Configuring dual stack guest images<a class="headerlink" href="#configuring-dual-stack-guest-images" title="Permanent link">¶</a></h3>
+<h1 id="configuring-dual-stack-guest-images">Configuring dual stack guest images<a class="headerlink" href="#configuring-dual-stack-guest-images" title="Permanent link">¶</a></h1>
 <p>For dual stack, ovn-kubernetes is configuring the IPv6 address to guest VMs using
 DHCPv6, but the IPv6 default gateway has to be configured manually.
 Since this address is the same - <code>fe80::1</code> - the virtual machine configuration
@@ -5132,163 +4530,6 @@ ignition yaml:</p>
 <span class="w">              </span><span class="no">next-hop-interface: enp1s0</span>
 <span class="w">              </span><span class="no">next-hop-address: fe80::1</span>
 </code></pre></div>
-<h2 id="implementation-details">Implementation Details<a class="headerlink" href="#implementation-details" title="Permanent link">¶</a></h2>
-<h3 id="kubevirt-introduction">Kubevirt Introduction<a class="headerlink" href="#kubevirt-introduction" title="Permanent link">¶</a></h3>
-<p>At kubevirt every VM is executed inside a "virt-launcher" pod; how the "virt-launcher" pod net interface is "bound" to the VM is specified by the network binding at the VM spec, ovn-kubernetes support live migration of the KubeVirt network bridge binding. </p>
-<p>The KubeVirt bridge binding adds  a bridge and a tap device and connects the existing pod interface as a port of the aforementioned bridge. When IPAM is configured on the pod interface, a DHCP server is started to advertise the pod's IP to DHCP aware VMs.</p>
-<p>KubeVirt doesn't replace anything. It adds a bridge and a tap device, and connects the existing pod interface as a port of the aforementioned bridge.</p>
-<p>Benefit of the bridge binding is that is able to expose the pod IP to the VM as expected by most users also pod network bridge binding live migration is implemented by ovn-kubernetes by doing the following:
-- Do IP assignemnt with ovn-k but skip the CNI part that configure it at pod's netns veth.
-- Do not expect the IP to be on the pod netns.
-- Add the ability at ovn-k controllers to migrate pod's IP from node to node.</p>
-<h3 id="ovn-kubernetes-implementation-details">OVN-Kubernetes Implementation Details<a class="headerlink" href="#ovn-kubernetes-implementation-details" title="Permanent link">¶</a></h3>
-<p>To implement live migration ovn-kubernetes do the following:
-- Send DHCP replies advertising the allocated IP address and subnet gateway to the guest VM (via OVN-Kubernetes DHCP options configured for the logical switch ports).
-- A point to point routing is used so one node's subnet IP can be routed from different node
-- The VM's gateway IP (subnet gateway) and MAC are kept consistent across nodes using ARP proxy</p>
-<p><strong>Point to point routing:</strong></p>
-<p>When the VM is running at a node that does not "own" it's IP address - e.g. after a live migration - 
-after a live migration, do point to point routing with a policy for non 
-interconnect and a cluster wide static route for interconnected zones, it will
-route outbound traffic and a static route to route inboud.
-By doing this, the VM can live migrate to different node and keep previous 
-addresses (IP / MAC), thus preserving n/s and e/w communication, and ensuring traffic
-goes over the node where the VM is running. The latter reduces inter node communication.</p>
-<p>If the VM is going back to the node that "owns" the ip, those static routes and 
-policies should be reconciled (deleted).</p>
-<div class="highlight"><pre><span></span><code>       ┌───────────────────────────┐
-       │     ovn_cluster_router    │
-┌───────────────────────────┐   ┌────────────────────────────┐
-│ static route (ingress all)│───│ policy  (egress n/s)       │
-│ prefix: 10.244.0.8        │   │ match: ip4.src==10.244.0.8 │
-│ nexthop: 10.244.0.8       │   │ action: reroute            │
-│ output-port: rtos-node1   │   │ nexthop: 10.64.0.2         │
-│ policy: dst-ip            │   │                            │  
-└───────────────────────────┘   └────────────────────────────┘ 
-- static route: ingress traffic to VM's IP via VM's node port
-- policy: egress n/s traffic from VM's IP via gateway router ip
-</code></pre></div>
-<p>When ovn-kubernetes is deployed with multiple ovn zones interconected 
-an extra static route is added to the local zone (zone where vm is running) to
-route egress n/s traffic to the gw router. Note that for interconnect the
-previous policy is not needed, at remote zones a static route is address to 
-enroute VM egress traffic over the transit switch port address.</p>
-<p>If the transit switch port address is 10.64.0.3 and gw router is 10.64.0.2, 
-those below are the static route added to the topology when running with 
-multiple zones:</p>
-<div class="highlight"><pre><span></span><code>Local zone:
-       ┌───────────────────────────┐
-       │     ovn_cluster_router    │
-┌───────────────────────────┐   ┌───────────────────────────┐
-│ static route (egress n/s) │───│ static route (ingress all)│
-│ prefix: 10.244.0.0/16     │   │ prefix: 10.244.0.8        │
-│ nexthop: 10.64.0.2        │   │ nexthop: 10.244.0.8       │
-│ policy: src-ip            │   │ output-port: rtos-node1   │
-└───────────────────────────┘   │ policy: dst-ip            │
-                                └───────────────────────────┘
-Remote zone:
-       ┌───────────────────────────┐
-       │     ovn_cluster_router    │
-┌───────────────────────────┐      │
-│ static route (ingress all)│──────┘
-│ prefix: 10.244.0.8        │
-│ nexthop: 10.64.0.3        │
-│ policy: dst-ip            │
-└───────────────────────────┘
-</code></pre></div>
-<p><strong>Nodes logical switch ports:</strong></p>
-<p>To have a consistent gateway at VMs (keep ip and mac after live migration)
-the "arp_proxy" feature is used and it need to be activated at
-the logical switch port of type router connects node's logical switch to
-ovn_cluster_router logical router.</p>
-<p>The "arp_proxy" LSP option will include the MAC to answer ARPs with, and the
-link local ipv4 and ipv6 addresses, as well as the cluster wide pod CIDR. This
-allows the proxy to answer ARP requests for the subnet gateway IP when the node
-switch does not have the live migrated IP. The flows from arp_proxy have less
-priority than the ones from the node logical switch so ARP flows are not overriden.</p>
-<div class="highlight"><pre><span></span><code>    ┌────────────────────┐   ┌────────────────────┐
-    │logical switch node1│   │logical switch node2│
-    └────────────────────┘   └────────────────────┘
-┌────────────────────┐  │     │   ┌─────────────────────┐
-│ lsp stor-node1     │──┘     └───│ lsp stor-node2      │
-│ options:           │            │ options:            │
-│  arp_proxy:        │            │   arp_proxy:        │
-│   0a:58:0a:f3:00:00│            │    0a:58:0a:f3:00:00│
-│   169.254.1.1      │            │    169.254.1.1      │
-│   10.244.0.0/16    │            │    10.244.0.0/16    │
-└────────────────────┘            └─────────────────────┘
-</code></pre></div>
-<p><strong>VMs logical switch ports:</strong></p>
-<p>The logical switch port for new VMs will use ovn-k ipam to reserve an IP address,
-and when live-migrating the VM, the LSP address will be re-used.</p>
-<p>CNI must avoid setting the IP address on the migration destination pod, but ovn-k controllers should 
-preserve the IP allocation, that is done when ovn-k detects that the pod is
-live migratable.</p>
-<p>Also the DHCP options will be configured to deliver the address to the VMs</p>
-<div class="highlight"><pre><span></span><code>    ┌──────────────────────┐   ┌────────────────────┐
-    │logical switch node1  │   │logical switch node2│
-    └──────────────────────┘   └────────────────────┘
-┌──────────────────────┐  │     │   ┌──────────────────────┐      
-│ lsp ns-virt-launcher1│──┘     └───│ lsp ns-virt-launcher2│     
-│ dhcpv4_options: 1234 │            │ dhcpv4_options: 1234 │
-│ address:             │            │ address:             │    
-│  0a:58:0a:f4:00:01   │            │  0a:58:0a:f4:00:01   │
-│  10.244.0.8          │            │  10.244.0.8          │
-└──────────────────────┘            └──────────────────────┘
-
-┌─────────────────────────────────┐
-│ dhcp-options 1234               │
-│   lease_time: 3500              │
-│   router: 10.244.0.1            │
-│   dns_server: [kubedns]         │
-│   server_id: 169.254.1.1        │
-│   server_mac: c0:ff:ee:00:00:01 │
-└─────────────────────────────────┘
-</code></pre></div>
-<p><strong>Virt-launcher pod address:</strong>
-The CNI will not set an address at virt-launcher pod netns, that address is
-assigned to the VM with the DHCP options from the LSP, this allows to use 
-kubevirt bridge binding with pod networking and still do live migration.</p>
-<h4 id="ipam">IPAM<a class="headerlink" href="#ipam" title="Permanent link">¶</a></h4>
-<p>The point to point routing feature allows an address to be running at a node different from
-the one "owning" the subnet the address is coming from. This will happen
-after VM live migration.</p>
-<p>One scenario for live migration is to shut down the node the VMs were migrated
-from, this means that the IPAM node subnet should go back to the pool but since
-the migrated VMs contains IPs from it those IPs should reserved in case the 
-subnet is assigned to a new node.</p>
-<p>On that case before assigning the subnet to the node the VMs ips need to be 
-reserved so they don't get assigned to new pods</p>
-<p>Another scenario is ovn-kubernetes pods restarting after live migration, on 
-that case ovnkube-master should discover to what IP pool the VM belongs.</p>
-<h4 id="detecting-migratable-vms-and-changing-point-to-point-routes">Detecting migratable VMs and changing point to point routes<a class="headerlink" href="#detecting-migratable-vms-and-changing-point-to-point-routes" title="Permanent link">¶</a></h4>
-<p>To detect that a pod is migratable KubevirtVm the annotation <code>kubevirt.io/allow-pod-bridge-network-live-migration</code>
-has to be present and also the label <code>vm.kubevirt.io/name=vm1</code>, on that case
-the point to point routes will be created after live migration and also a 
-DHCPOptions will be configured to serve the ip configuration to the VM</p>
-<p>During live migration there are two virt-launcher pods with different names for the same VM (source and target). The ovn-k pod controller uses <code>CreationTimestamp</code> and <code>kubevirt.io/vm=vm1</code>
-to differentiate between them; it then watches the target pod <code>kubevirt.io/nodeName</code> and <code>kubevirt.io/migration-target-start-timestamp</code> annotation and label, with the following intent:
-- The <code>kubevirt.io/nodeName</code> is set after the VM finishes live migrating or when it becomes ready.
-- The <code>kubevirt.io/migration-target-start-timestamp</code> is set when live migration has not finished but migration-target pod is ready to receive traffic (this happens at post-copy live migration, where migration is taking too long).</p>
-<p>The point to point routing cleanup (remove of static routes and policies) will be done at this cases:
-- VM is deleted, all the routing related to the VM is removed at all the ovn zones.
-- VM is live migrated back to the node that owns its IP, all the routing related to the VM is removed at all the ovn zones.
-- ovn-kubernetes controllers are restarted, stale routing is removed.</p>
-<h2 id="future-items">Future Items<a class="headerlink" href="#future-items" title="Permanent link">¶</a></h2>
-<ul>
-<li>Implement single stack IPv6</li>
-</ul>
-<h2 id="known-limitations">Known Limitations<a class="headerlink" href="#known-limitations" title="Permanent link">¶</a></h2>
-<ul>
-<li>Only KubeVirt VMs with bridge binding pod network are supported</li>
-<li>Single stack IPv6 is not supported</li>
-<li>DualSack does not configure routes for IPv6 over DHCP/autoconf</li>
-<li>SRIOV is not supported</li>
-</ul>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="https://github.com/openshift/enhancements/blob/master/enhancements/network/ovn-hypershift-live-migration.md">hypershift kubevirt live migration enhancement</a></li>
-</ul>
 
 
 
