@@ -173,6 +173,10 @@
          <lastmod>2026-05-07</lastmod>
     </url>
     <url>
+         <loc>https://www.ovn.org/ovn-kubernetes/1.1/features/bgp-integration/evpn/</loc>
+         <lastmod>2026-05-07</lastmod>
+    </url>
+    <url>
          <loc>https://www.ovn.org/ovn-kubernetes/1.1/features/bgp-integration/no-overlay/</loc>
          <lastmod>2026-05-07</lastmod>
     </url>
