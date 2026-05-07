@@ -5,13 +5,9 @@
       
       
       
-        <link rel="canonical" href="https://www.ovn.org/ovn-kubernetes/1.1/features/ovs-dynamic-cpu-affinity/">
+        <link rel="canonical" href="https://www.ovn.org/ovn-kubernetes/1.1/design/gatway-accelerated-interface-configuration/">
       
       
-        <link rel="prev" href="../hybrid-overlay/">
-      
-      
-        <link rel="next" href="../hardware-offload/ovs-kernel/">
       
       
         
@@ -22,7 +18,7 @@
     
     
       
-        <title>OVS Dynamic CPU Affinity - OVN-Kubernetes</title>
+        <title>Gateway Accelerated Interface Configuration - OVN-Kubernetes</title>
       
     
     
@@ -85,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ovs-dynamic-cpu-affinity" class="md-skip">
+        <a href="#gateway-accelerated-interface-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OVS Dynamic CPU Affinity
+              Gateway Accelerated Interface Configuration
             
           </span>
         </div>
@@ -315,8 +311,6 @@
   
   
   
-    
-  
   
     
     
@@ -324,13 +318,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../user-defined-networks/user-defined-networks/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../features/user-defined-networks/user-defined-networks/" class="md-tabs__link">
           
   
   
@@ -579,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/architecture/" class="md-nav__link">
+      <a href="../architecture/" class="md-nav__link">
         
   
   
@@ -607,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/topology/" class="md-nav__link">
+      <a href="../topology/" class="md-nav__link">
         
   
   
@@ -635,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/gateway-modes/" class="md-nav__link">
+      <a href="../gateway-modes/" class="md-nav__link">
         
   
   
@@ -663,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/traffic-flows/" class="md-nav__link">
+      <a href="../traffic-flows/" class="md-nav__link">
         
   
   
@@ -691,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/pod-creation-workflow/" class="md-nav__link">
+      <a href="../pod-creation-workflow/" class="md-nav__link">
         
   
   
@@ -719,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/service-creation-workflow/" class="md-nav__link">
+      <a href="../service-creation-workflow/" class="md-nav__link">
         
   
   
@@ -747,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/service-traffic-policy/" class="md-nav__link">
+      <a href="../service-traffic-policy/" class="md-nav__link">
         
   
   
@@ -775,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/host-to-node-port-hairpin-trafficflow/" class="md-nav__link">
+      <a href="../host-to-node-port-hairpin-trafficflow/" class="md-nav__link">
         
   
   
@@ -803,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/external-ip-and-loadbalancer-ingress/" class="md-nav__link">
+      <a href="../external-ip-and-loadbalancer-ingress/" class="md-nav__link">
         
   
   
@@ -831,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/ovn-kubernetes-subnets/" class="md-nav__link">
+      <a href="../ovn-kubernetes-subnets/" class="md-nav__link">
         
   
   
@@ -859,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../live-migration/" class="md-nav__link">
+      <a href="../../features/live-migration/" class="md-nav__link">
         
   
   
@@ -1022,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1106,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../requirements/" class="md-nav__link">
+      <a href="../../features/requirements.md" class="md-nav__link">
         
   
   
@@ -1908,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -1936,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -1968,10 +1960,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -2003,20 +1993,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -2034,7 +2021,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2110,7 +2097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/user-defined-networks/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/user-defined-networks/" class="md-nav__link">
         
   
   
@@ -2138,7 +2125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2166,7 +2153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -2260,7 +2247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-security-controls/admin-network-policy/" class="md-nav__link">
+      <a href="../../features/network-security-controls/admin-network-policy/" class="md-nav__link">
         
   
   
@@ -2288,7 +2275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-security-controls/network-policy/" class="md-nav__link">
+      <a href="../../features/network-security-controls/network-policy/" class="md-nav__link">
         
   
   
@@ -2316,7 +2303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-security-controls/egress-firewall/" class="md-nav__link">
+      <a href="../../features/network-security-controls/egress-firewall/" class="md-nav__link">
         
   
   
@@ -2412,7 +2399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cluster-egress-controls/egress-ip/" class="md-nav__link">
+      <a href="../../features/cluster-egress-controls/egress-ip/" class="md-nav__link">
         
   
   
@@ -2440,7 +2427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cluster-egress-controls/egress-service/" class="md-nav__link">
+      <a href="../../features/cluster-egress-controls/egress-service/" class="md-nav__link">
         
   
   
@@ -2468,7 +2455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cluster-egress-controls/egress-qos/" class="md-nav__link">
+      <a href="../../features/cluster-egress-controls/egress-qos/" class="md-nav__link">
         
   
   
@@ -2496,7 +2483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cluster-egress-controls/egress-gateway/" class="md-nav__link">
+      <a href="../../features/cluster-egress-controls/egress-gateway/" class="md-nav__link">
         
   
   
@@ -2586,7 +2573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure-security-controls/node-identity/" class="md-nav__link">
+      <a href="../../features/infrastructure-security-controls/node-identity/" class="md-nav__link">
         
   
   
@@ -2680,7 +2667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../multiple-networks/multi-homing/" class="md-nav__link">
+      <a href="../../features/multiple-networks/multi-homing/" class="md-nav__link">
         
   
   
@@ -2708,7 +2695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../multiple-networks/multi-network-policies/" class="md-nav__link">
+      <a href="../../features/multiple-networks/multi-network-policies/" class="md-nav__link">
         
   
   
@@ -2736,7 +2723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../multiple-networks/multi-vtep/" class="md-nav__link">
+      <a href="../../features/multiple-networks/multi-vtep/" class="md-nav__link">
         
   
   
@@ -2772,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../multicast/" class="md-nav__link">
+      <a href="../../features/multicast/" class="md-nav__link">
         
   
   
@@ -2856,7 +2843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-qos/" class="md-nav__link">
+      <a href="../../features/network-qos/" class="md-nav__link">
         
   
   
@@ -2884,7 +2871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-qos-guide/" class="md-nav__link">
+      <a href="../../features/network-qos-guide/" class="md-nav__link">
         
   
   
@@ -2920,7 +2907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../live-migration/" class="md-nav__link">
+      <a href="../../features/live-migration/" class="md-nav__link">
         
   
   
@@ -2948,7 +2935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hybrid-overlay/" class="md-nav__link">
+      <a href="../../features/hybrid-overlay/" class="md-nav__link">
         
   
   
@@ -2973,37 +2960,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    OVS Dynamic CPU Affinity
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../features/ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3019,393 +2979,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Introduction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Motivation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Motivation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-storiesuse-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User-Stories/Use-Cases
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User-Stories/Use-Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#story-1-dynamic-cpu-scaling-for-ovs-under-load" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Story 1: Dynamic CPU scaling for OVS under load
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#story-2-per-node-enablement-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Story 2: Per-node enablement control
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#story-3-runtime-feature-toggle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Story 3: Runtime feature toggle
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-enable-this-feature-on-an-ovn-kubernetes-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to enable this feature on an OVN-Kubernetes cluster?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How to enable this feature on an OVN-Kubernetes cluster?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enabling-the-feature" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enabling the feature
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disabling-the-feature" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Disabling the feature
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#workflow-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workflow Description
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Workflow Description">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#workflow-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workflow Steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ovn-kubernetes-implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OVN-Kubernetes Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="OVN-Kubernetes Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Components
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cpu-set-calculation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CPU Set Calculation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#thread-level-affinity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Thread-Level Affinity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Code Flow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#verifying-the-feature-is-enabled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying the feature is enabled
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-current-ovs-cpu-affinity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checking current OVS CPU affinity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common issues
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common issues">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#issue-failed-to-get-reservedsystemcpus-from-kubelet-config-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue: "Failed to get reservedSystemCPUs from kubelet config file"
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#issue-getallocatableresources-failed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue: "GetAllocatableResources failed"
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#issue-cpu-affinity-not-being-updated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue: CPU affinity not being updated
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metrics-and-alerts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Metrics and alerts
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best Practices
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Limitations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3474,7 +3047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hardware-offload/ovs-kernel/" class="md-nav__link">
+      <a href="../../features/hardware-offload/ovs-kernel/" class="md-nav__link">
         
   
   
@@ -3502,7 +3075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hardware-offload/ovs-doca/" class="md-nav__link">
+      <a href="../../features/hardware-offload/ovs-doca/" class="md-nav__link">
         
   
   
@@ -3596,7 +3169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/route-advertisements/" class="md-nav__link">
+      <a href="../../features/bgp-integration/route-advertisements/" class="md-nav__link">
         
   
   
@@ -3624,7 +3197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../features/bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3652,7 +3225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../features/bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -4211,7 +3784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
+      <a href="../../okeps/okep-5094-layer2-transit-router.md" class="md-nav__link">
         
   
   
@@ -4239,7 +3812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
+      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server.md" class="md-nav__link">
         
   
   
@@ -4267,7 +3840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
+      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation.md" class="md-nav__link">
         
   
   
@@ -4295,7 +3868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
+      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns.md" class="md-nav__link">
         
   
   
@@ -4323,7 +3896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5259-no-overlay/" class="md-nav__link">
+      <a href="../../okeps/okep-5259-no-overlay.md" class="md-nav__link">
         
   
   
@@ -4351,7 +3924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5088-evpn/" class="md-nav__link">
+      <a href="../../okeps/okep-5088-evpn.md" class="md-nav__link">
         
   
   
@@ -4379,7 +3952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
+      <a href="../../okeps/okep-5674-dpu-healthcheck.md" class="md-nav__link">
         
   
   
@@ -4407,7 +3980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4564,10 +4137,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Introduction
+        Description
       
     </span>
   </a>
@@ -4575,333 +4148,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Motivation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Motivation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-storiesuse-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        User-Stories/Use-Cases
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User-Stories/Use-Cases">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#story-1-dynamic-cpu-scaling-for-ovs-under-load" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Story 1: Dynamic CPU scaling for OVS under load
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#story-2-per-node-enablement-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Story 2: Per-node enablement control
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#story-3-runtime-feature-toggle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Story 3: Runtime feature toggle
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-enable-this-feature-on-an-ovn-kubernetes-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How to enable this feature on an OVN-Kubernetes cluster?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How to enable this feature on an OVN-Kubernetes cluster?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enabling-the-feature" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enabling the feature
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disabling-the-feature" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Disabling the feature
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#workflow-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workflow Description
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Workflow Description">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#workflow-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workflow Steps
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ovn-kubernetes-implementation-details" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        OVN-Kubernetes Implementation Details
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="OVN-Kubernetes Implementation Details">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-components" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Components
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cpu-set-calculation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CPU Set Calculation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#thread-level-affinity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Thread-Level Affinity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Code Flow
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#verifying-the-feature-is-enabled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying the feature is enabled
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#checking-current-ovs-cpu-affinity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checking current OVS CPU affinity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#common-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common issues
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common issues">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#issue-failed-to-get-reservedsystemcpus-from-kubelet-config-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue: "Failed to get reservedSystemCPUs from kubelet config file"
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#issue-getallocatableresources-failed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue: "GetAllocatableResources failed"
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#issue-cpu-affinity-not-being-updated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Issue: CPU affinity not being updated
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#metrics-and-alerts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Metrics and alerts
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best Practices
+        How it works?
       
     </span>
   </a>
@@ -4909,10 +4159,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#known-limitations" class="md-nav__link">
+  <a href="#how-to-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Known Limitations
+        How to use?
       
     </span>
   </a>
@@ -4920,10 +4170,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#verification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        References
+        Verification
       
     </span>
   </a>
@@ -4950,341 +4200,66 @@
   
 
 
-<h1 id="ovs-dynamic-cpu-affinity">OVS Dynamic CPU Affinity<a class="headerlink" href="#ovs-dynamic-cpu-affinity" title="Permanent link">¶</a></h1>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
-<p>OVS Dynamic CPU Affinity is a feature that enables ovnkube-node pod to manage the CPU
-affinity of <code>ovs-vswitchd</code> and <code>ovsdb-server</code> processes dynamically. When enabled,
-ovnkube-controller container (running in the ovnkube-node pod) continuously monitors the available (non-exclusively-pinned) CPUs on
-the node and aligns the OVS daemon processes to use those CPUs. This allows OVS
-daemons to access more CPU cycles when needed to cope with network load spikes.</p>
-<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">¶</a></h2>
-<p>In Kubernetes clusters with performance-sensitive workloads, the kubelet can be
-configured with the static CPU Manager policy to provide exclusive CPU allocation
-to Guaranteed QoS pods.</p>
-<p>When using static CPU Manager, administrators configure <code>reservedSystemCPUs</code> which
-are dedicated for housekeeping tasks of the system, such as systemd services.
-The <code>ovs-vswitchd</code> and <code>ovsdb-server</code> daemons are such housekeeping processes.
-However, giving them access only to <code>reservedSystemCPUs</code> may not be sufficient
-when network load increases and OVS requires more CPU cycles.</p>
-<p>This feature addresses two complementary needs:</p>
-<ol>
-<li>
-<p><strong>Expanding CPU access for OVS</strong>: When the network load rises, OVS daemons can
-   span across all non-pinned CPUs (not just reserved ones), giving them access to
-   more processing power when needed.</p>
-</li>
-<li>
-<p><strong>Protecting Guaranteed workloads</strong>: When a new Guaranteed QoS pod is admitted
-   and assigned to a specific CPU set, the OVS daemons must be moved off those CPUs
-   to avoid interrupting the guaranteed workload's exclusive CPU access.</p>
-</li>
-</ol>
-<h3 id="user-storiesuse-cases">User-Stories/Use-Cases<a class="headerlink" href="#user-storiesuse-cases" title="Permanent link">¶</a></h3>
-<h4 id="story-1-dynamic-cpu-scaling-for-ovs-under-load">Story 1: Dynamic CPU scaling for OVS under load<a class="headerlink" href="#story-1-dynamic-cpu-scaling-for-ovs-under-load" title="Permanent link">¶</a></h4>
-<p>As a cluster administrator running workloads with static CPU Manager policy,
-I want OVS daemons to automatically have access to all available non-pinned CPUs,
-so that OVS can handle network load spikes without being constrained to a fixed
-CPU set.</p>
-<h4 id="story-2-per-node-enablement-control">Story 2: Per-node enablement control<a class="headerlink" href="#story-2-per-node-enablement-control" title="Permanent link">¶</a></h4>
-<p>As a cluster administrator, I want to enable OVS dynamic CPU affinity on specific
-nodes where I expect high network load, so that I can selectively apply this
-feature where it's most beneficial without affecting the entire cluster.</p>
-<h4 id="story-3-runtime-feature-toggle">Story 3: Runtime feature toggle<a class="headerlink" href="#story-3-runtime-feature-toggle" title="Permanent link">¶</a></h4>
-<p>As a cluster administrator, I want to be able to enable or disable this feature
-at runtime by creating or deleting a file on the node, so that I can quickly
-respond to changing workload requirements without restarting pods.</p>
-<h2 id="how-to-enable-this-feature-on-an-ovn-kubernetes-cluster">How to enable this feature on an OVN-Kubernetes cluster?<a class="headerlink" href="#how-to-enable-this-feature-on-an-ovn-kubernetes-cluster" title="Permanent link">¶</a></h2>
-<p>This feature is enabled on a <strong>per-node basis</strong> by creating a non-empty file at
-the following path on the host filesystem:</p>
-<div class="highlight"><pre><span></span><code>/etc/openvswitch/enable_dynamic_cpu_affinity
+<h1 id="gateway-accelerated-interface-configuration">Gateway Accelerated Interface Configuration<a class="headerlink" href="#gateway-accelerated-interface-configuration" title="Permanent link">¶</a></h1>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">¶</a></h2>
+<p>To provide hardware acceleration for traffic, both IN and OUT ports need to be a hardware 
+accelerated netdevice backed by the Network Interface Card hardware itself.
+In case of external traffic, when one such port is the external OVS bridge, which for example has the gateway IP, 
+such traffic (like host networking traffic) would not be accelerated.
+Using Switchdev VirtualFunction (VF) or SubFunction (SF) as a gateway interface allows to accelerate these too.</p>
+<h2 id="how-it-works">How it works?<a class="headerlink" href="#how-it-works" title="Permanent link">¶</a></h2>
+<p>Instead of using the gateway interface as the external bridge itself, use a  switchdev VF or SF instead. 
+This is depicted as following:</p>
+<div class="highlight"><pre><span></span><code>                         +----------+
+                         |  br-ext  |
+                   +--------+       |
+                   | UPLINK |       |
+                   +--------+       |  patch  +----------+
+                         |          x---------x  br-int  |
+    +--------+     +--------+       |  port   +----------+
+    | NETDEV +-----+   REP  |       |
+    +--------+     +--------+       |
+                         +----------+
 </code></pre></div>
-<p>Always check the dependencies on the <a href="../requirements/">Requirements page</a></p>
-<h3 id="enabling-the-feature">Enabling the feature<a class="headerlink" href="#enabling-the-feature" title="Permanent link">¶</a></h3>
-<p>To enable the feature on a specific node:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># On the node (or via SSH/kubectl debug)</span>
-<span class="c1"># The file must be non-empty to enable the feature</span>
-<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/openvswitch/enable_dynamic_cpu_affinity
+<p>Where <code>UPLINK</code> is a port on an offloading capable network interface hardware, <code>NETDEV</code> is a switchdev function 
+of this port and <code>REP</code> is a representor netdevice of the switchdev function. 
+Node/Host IP assigned to <code>NETDEV</code> which make OVS to chose <code>REP</code> port for external flows instead of the bridge.</p>
+<h2 id="how-to-use">How to use?<a class="headerlink" href="#how-to-use" title="Permanent link">¶</a></h2>
+<p>Gateway accelerated interface can be used in two steps:</p>
+<p>a) Creating and configuring the device. 
+See figure above.
+An <code>UPLINK</code> device is connected to the OVS external bridge. 
+An existing VF or SF <code>NETDEV</code> from the <code>UPLINK</code> is first selected as the the Gateway Interface. Its associated 
+representor <code>REP</code> is plugged into the OVS external bridge (br-ext). The gateway IP is assigned to this interface 
+instead of the OVS external bridge (br-ext). </p>
+<p>b) Specify <code>NETDEV</code> as a gateway interface explicitly via <code>OVN_GATEWAY_OPTS</code> environment variable for
+  ovnkube-node container. Example:</p>
+<div class="highlight"><pre><span></span><code><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OVN_GATEWAY_OPTS</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"--gateway-accelerated-interface=&lt;&lt;NETDEV&gt;&gt;"</span>
 </code></pre></div>
-<p>After creating the file, the ovnkube-node pod watches for this specific file and activates the feature.</p>
-<h3 id="disabling-the-feature">Disabling the feature<a class="headerlink" href="#disabling-the-feature" title="Permanent link">¶</a></h3>
-<p>To disable the feature:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Remove or empty the file</span>
-rm<span class="w"> </span>/etc/openvswitch/enable_dynamic_cpu_affinity
-<span class="c1"># or</span>
-truncate<span class="w"> </span>-s<span class="w"> </span><span class="m">0</span><span class="w"> </span>/etc/openvswitch/enable_dynamic_cpu_affinity
+<p>Note that this is mutually exclusive to the <code>--gateway-interface</code> flag for GATEWAY_OPTIONS.</p>
+<p>c) Set the external-id on the bridge to detect the uplink device correctly. This is useful for instances where,
+the name of the bridge (eg: br-ext) does not use the uplink device (eg: p0) in its name. The uplink can also 
+be a bond device. 
+</p><div class="highlight"><pre><span></span><code>ovs-vsctl<span class="w"> </span>br-set-external-id<span class="w"> </span>br-ext<span class="w"> </span>bridge-uplink<span class="w"> </span>p0
 </code></pre></div>
-<p>The feature uses <code>fsnotify</code> to watch for changes to this file. When the file
-is removed or emptied, the CPU affinity updates will stop (though existing
-affinity settings on OVS processes remain until changed by another mechanism).</p>
-<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h3>
-<ol>
-<li>
-<p><strong>Linux platform</strong>: This feature is only supported on Linux nodes.</p>
-</li>
-<li>
-<p><strong>Kubelet Pod Resources API</strong>: The kubelet must expose the Pod Resources API
-   socket at <code>/var/lib/kubelet/pod-resources/kubelet.sock</code>. This is enabled by
-   default in Kubernetes.</p>
-</li>
-<li>
-<p><strong>Static CPU Manager policy</strong> (recommended): While not strictly required, this
-   feature is most beneficial when the kubelet is configured with the static CPU
-   Manager policy:</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="c1"># In kubelet configuration</span>
-<span class="nt">cpuManagerPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">static</span>
-<span class="nt">reservedSystemCPUs</span><span class="p">:</span><span class="w"> </span><span class="s">"0-1"</span><span class="w">  </span><span class="c1"># Example: reserve CPUs 0 and 1 for system</span>
-</code></pre></div>
-<ol>
-<li><strong>Host filesystem access</strong>: The ovnkube-node pod must have access to:</li>
-<li><code>/etc/openvswitch/</code> (for the enable file)</li>
-<li><code>/var/lib/kubelet/pod-resources/</code> (for the Pod Resources API)</li>
-<li><code>/host/etc/kubernetes/kubelet.conf</code> (for reading kubelet configuration)</li>
-</ol>
-<h2 id="workflow-description">Workflow Description<a class="headerlink" href="#workflow-description" title="Permanent link">¶</a></h2>
-<p>The following diagram illustrates how the OVS Dynamic CPU Affinity feature works:</p>
-<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────────┐
-│                              Kubernetes Node                                 │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  ┌──────────────────────┐     ┌───────────────────────────────────────────┐ │
-│  │    ovnkube-node      │     │              Kubelet                       │ │
-│  │    (ovspinning)      │     │                                           │ │
-│  │                      │     │  ┌─────────────────────────────────────┐  │ │
-│  │  1. Check enabler    │     │  │      Pod Resources API              │  │ │
-│  │     file on startup  │     │  │  /var/lib/kubelet/pod-resources/    │  │ │
-│  │                      │     │  │                                     │  │ │
-│  │  2. Read reserved    │◄────┼──┤  - GetAllocatableResources()        │  │ │
-│  │     CPUs from        │     │  │  - ListPodResources()               │  │ │
-│  │     kubelet.conf     │     │  │                                     │  │ │
-│  │                      │     │  └─────────────────────────────────────┘  │ │
-│  │  3. Every second:    │     │                                           │ │
-│  │     - Get non-pinned │     │  cpuManagerPolicy: static                 │ │
-│  │       CPUs from      │     │  reservedSystemCPUs: "0-1"                │ │
-│  │       PodResources   │     │                                           │ │
-│  │       API            │     └───────────────────────────────────────────┘ │
-│  │     - Add reserved   │                                                   │
-│  │       CPUs           │                                                   │
-│  │     - Set affinity   │                                                   │
-│  │       on OVS procs   │                                                   │
-│  │                      │                                                   │
-│  └──────────┬───────────┘                                                   │
-│             │                                                                │
-│             │  sched_setaffinity()                                          │
-│             ▼                                                                │
-│  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │                         OVS Daemons                                   │   │
-│  │                                                                       │   │
-│  │   ┌─────────────────┐              ┌─────────────────┐               │   │
-│  │   │  ovs-vswitchd   │              │  ovsdb-server   │               │   │
-│  │   │                 │              │                 │               │   │
-│  │   │  CPU Affinity:  │              │  CPU Affinity:  │               │   │
-│  │   │  0-1,4-7        │              │  0-1,4-7        │               │   │
-│  │   │  (non-pinned +  │              │  (non-pinned +  │               │   │
-│  │   │   reserved)     │              │   reserved)     │               │   │
-│  │   └─────────────────┘              └─────────────────┘               │   │
-│  │                                                                       │   │
-│  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
-│  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │                    CPU Allocation Example                             │   │
-│  │                                                                       │   │
-│  │  CPU 0-1: Reserved for system (reservedSystemCPUs)                   │   │
-│  │  CPU 2-3: Exclusively pinned to Guaranteed QoS pod                   │   │
-│  │  CPU 4-7: Available for BestEffort/Burstable pods + OVS              │   │
-│  │                                                                       │   │
-│  │  OVS affinity mask = {0,1,4,5,6,7} = reserved ∪ non-pinned           │   │
-│  │                                                                       │   │
-│  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
-└─────────────────────────────────────────────────────────────────────────────┘
-</code></pre></div>
-<h3 id="workflow-steps">Workflow Steps<a class="headerlink" href="#workflow-steps" title="Permanent link">¶</a></h3>
-<ol>
-<li>
-<p><strong>Feature enablement check</strong>: On startup, ovnkube-node checks if
-   <code>/etc/openvswitch/enable_dynamic_cpu_affinity</code> exists and is non-empty.</p>
-</li>
-<li>
-<p><strong>Reserved CPUs detection</strong>: The feature reads <code>reservedSystemCPUs</code> from
-   the kubelet configuration file (<code>/host/etc/kubernetes/kubelet.conf</code>). If
-   this fails, it falls back to calculating reserved CPUs as the difference
-   between online CPUs and allocatable CPUs from the Pod Resources API.
-   This process is done once at startup. If both methods fail, the feature logs a
-   warning and exits without applying CPU affinity.</p>
-</li>
-<li>
-<p><strong>Continuous monitoring</strong>: A ticker runs every second to:</p>
-</li>
-<li>Query the Pod Resources API for allocatable CPUs and currently pinned CPUs.</li>
-<li>Calculate non-pinned CPUs as: <code>allocatable - used_by_guaranteed_containers</code>.</li>
-<li>Add reserved system CPUs to the set.</li>
-<li>
-<p>Apply this CPU set as the affinity mask for both <code>ovs-vswitchd</code> and
-     <code>ovsdb-server</code> processes (including all their threads).</p>
-</li>
-<li>
-<p><strong>File watcher</strong>: An <code>fsnotify</code> watcher monitors the enabler file for changes.
-   If the file is removed or emptied, affinity updates stop.</p>
-</li>
-</ol>
-<h2 id="implementation-details">Implementation Details<a class="headerlink" href="#implementation-details" title="Permanent link">¶</a></h2>
-<h3 id="ovn-kubernetes-implementation-details">OVN-Kubernetes Implementation Details<a class="headerlink" href="#ovn-kubernetes-implementation-details" title="Permanent link">¶</a></h3>
-<p>The feature is implemented in the <code>ovspinning</code> package under
-<code>go-controller/pkg/node/ovspinning/</code>. It runs as a goroutine started by the
-<code>DefaultNodeNetworkController</code> during node initialization.</p>
-<h4 id="key-components">Key Components<a class="headerlink" href="#key-components" title="Permanent link">¶</a></h4>
-<ul>
-<li><strong>ovspinning_linux.go</strong>: Main implementation for Linux systems</li>
-<li><strong>ovspinning_noop.go</strong>: No-op implementation for non-Linux platforms</li>
-<li><strong>podresourcesapi package</strong>: Client for the Kubelet Pod Resources API</li>
-</ul>
-<h4 id="cpu-set-calculation">CPU Set Calculation<a class="headerlink" href="#cpu-set-calculation" title="Permanent link">¶</a></h4>
-<p>The CPU affinity for OVS daemons is calculated as:</p>
-<div class="highlight"><pre><span></span><code>OVS CPU Affinity = (Allocatable CPUs - Exclusively Pinned CPUs) ∪ Reserved System CPUs
-</code></pre></div>
-<p>Where:</p>
-<ul>
-<li><strong>Allocatable CPUs</strong>: CPUs available for pod scheduling (from Kubelet perspective)</li>
-<li><strong>Exclusively Pinned CPUs</strong>: CPUs assigned to QoS class guaranteed containers with exclusive CPU access.</li>
-<li><strong>Reserved System CPUs</strong>: CPUs reserved for system processes and housekeeping tasks (from kubelet config).</li>
-</ul>
-<h4 id="thread-level-affinity">Thread-Level Affinity<a class="headerlink" href="#thread-level-affinity" title="Permanent link">¶</a></h4>
-<p>The feature sets CPU affinity at the thread level, iterating through all threads
-of each OVS daemon process (<code>/proc/&lt;pid&gt;/task/</code>) to ensure both the main process
-and all spawned threads are properly pinned.</p>
-<h4 id="code-flow">Code Flow<a class="headerlink" href="#code-flow" title="Permanent link">¶</a></h4>
-<div class="highlight"><pre><span></span><code><span class="c1">// Simplified flow from ovspinning_linux.go</span>
-
-<span class="kd">func</span><span class="w"> </span><span class="nx">Run</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">stopCh</span><span class="w"> </span><span class="o">&lt;-</span><span class="kd">chan</span><span class="w"> </span><span class="kd">struct</span><span class="p">{},</span><span class="w"> </span><span class="nx">podResCli</span><span class="w"> </span><span class="nx">podresourcesapi</span><span class="p">.</span><span class="nx">PodResourcesListerClient</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Check if feature is enabled</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">!</span><span class="nx">isFileNotEmpty</span><span class="p">(</span><span class="s">"/etc/openvswitch/enable_dynamic_cpu_affinity"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="c1">// Get reserved CPUs (from kubelet config or fallback)</span>
-<span class="w">    </span><span class="nx">reservedCPUs</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">getReservedCPUs</span><span class="p">(</span><span class="nx">kubeletConfigFilePath</span><span class="p">)</span>
-
-<span class="w">    </span><span class="c1">// Main loop - runs every second</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// Get non-pinned CPUs from Pod Resources API</span>
-<span class="w">        </span><span class="nx">cpus</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">getNonPinnedCPUs</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">podResCli</span><span class="p">)</span>
-
-<span class="w">        </span><span class="c1">// Add reserved CPUs</span>
-<span class="w">        </span><span class="nx">cpus</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nx">cpus</span><span class="p">.</span><span class="nx">Union</span><span class="p">(</span><span class="nx">reservedCPUs</span><span class="p">)</span>
-
-<span class="w">        </span><span class="c1">// Set affinity on OVS processes</span>
-<span class="w">        </span><span class="nx">setOvsVSwitchdCPUAffinity</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">cpus</span><span class="p">)</span>
-<span class="w">        </span><span class="nx">setOvsDBServerCPUAffinity</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">cpus</span><span class="p">)</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h2>
-<h3 id="verifying-the-feature-is-enabled">Verifying the feature is enabled<a class="headerlink" href="#verifying-the-feature-is-enabled" title="Permanent link">¶</a></h3>
-<p>Check the ovnkube-node logs for the following messages:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>ovn-kubernetes<span class="w"> </span>&lt;ovnkube-node-pod&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"ovspinning\|cpu pinning"</span>
-</code></pre></div>
-<p>Feature enabled:</p>
-<div class="highlight"><pre><span></span><code>I0115 10:00:00.000000  Starting OVS daemon CPU pinning
-I0115 10:00:00.000000  OVS CPU dynamic pinning reservedSystemCPUs set: 0-1
-</code></pre></div>
-<p>Feature disabled:</p>
-<div class="highlight"><pre><span></span><code>I0115 10:00:00.000000  OVS CPU affinity pinning disabled
-</code></pre></div>
-<h3 id="checking-current-ovs-cpu-affinity">Checking current OVS CPU affinity<a class="headerlink" href="#checking-current-ovs-cpu-affinity" title="Permanent link">¶</a></h3>
-<p>On the node, check the CPU affinity of OVS processes:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Get ovs-vswitchd PID</span>
-<span class="nv">OVS_PID</span><span class="o">=</span><span class="k">$(</span>pidof<span class="w"> </span>ovs-vswitchd<span class="k">)</span>
-
-<span class="c1"># Check current affinity</span>
-taskset<span class="w"> </span>-cp<span class="w"> </span><span class="nv">$OVS_PID</span>
-
-<span class="c1"># Example output:</span>
-<span class="c1"># pid 1234's current affinity list: 0-1,4-7</span>
-</code></pre></div>
-<h3 id="common-issues">Common issues<a class="headerlink" href="#common-issues" title="Permanent link">¶</a></h3>
-<h4 id="issue-failed-to-get-reservedsystemcpus-from-kubelet-config-file">Issue: "Failed to get reservedSystemCPUs from kubelet config file"<a class="headerlink" href="#issue-failed-to-get-reservedsystemcpus-from-kubelet-config-file" title="Permanent link">¶</a></h4>
-<p>This warning indicates the kubelet configuration file couldn't be read. The
-feature falls back to detecting reserved CPUs from the Pod Resources API.
-Ensure <code>/host/etc/kubernetes/kubelet.conf</code> is accessible from the pod.</p>
-<h4 id="issue-getallocatableresources-failed">Issue: "GetAllocatableResources failed"<a class="headerlink" href="#issue-getallocatableresources-failed" title="Permanent link">¶</a></h4>
-<p>Verify the Pod Resources API is available:</p>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-la<span class="w"> </span>/var/lib/kubelet/pod-resources/kubelet.sock
-</code></pre></div>
-<p>Ensure the ovnkube-node pod has the socket mounted.</p>
-<h4 id="issue-cpu-affinity-not-being-updated">Issue: CPU affinity not being updated<a class="headerlink" href="#issue-cpu-affinity-not-being-updated" title="Permanent link">¶</a></h4>
-<ol>
-<li>Verify the enabler file exists and is non-empty:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-la<span class="w"> </span>/etc/openvswitch/enable_dynamic_cpu_affinity
-cat<span class="w"> </span>/etc/openvswitch/enable_dynamic_cpu_affinity
-</code></pre></div>
-<ol>
-<li>
-<p>Check for errors in the logs related to setting affinity</p>
-</li>
-<li>
-<p>Verify ovs-vswitchd and ovsdb-server are running:</p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code>pidof<span class="w"> </span>ovs-vswitchd<span class="w"> </span>ovsdb-server
-</code></pre></div>
-<h3 id="metrics-and-alerts">Metrics and alerts<a class="headerlink" href="#metrics-and-alerts" title="Permanent link">¶</a></h3>
-<p>Currently, this feature does not expose dedicated Prometheus metrics. The CPU
-affinity changes are logged and can be observed in the ovnkube-node logs.</p>
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">¶</a></h2>
-<ol>
-<li>
-<p><strong>Use with static CPU Manager policy</strong>: This feature is most beneficial when
-   the kubelet is configured with <code>cpuManagerPolicy: static</code> and you have
-   Guaranteed QoS pods with exclusive CPU access.</p>
-</li>
-<li>
-<p><strong>Set appropriate reservedSystemCPUs</strong>: Ensure your kubelet configuration
-   includes <code>reservedSystemCPUs</code> to guarantee OVS always has access to some CPUs.</p>
-</li>
-<li>
-<p><strong>Enable selectively</strong>: Only enable this feature on nodes where you expect
-   high network load or have many pods with exclusive CPU allocation.</p>
-</li>
-<li>
-<p><strong>Monitor OVS performance</strong>: After enabling, monitor OVS packet drops and
-   latency to verify the feature is having the desired effect.</p>
-</li>
-</ol>
-<h2 id="known-limitations">Known Limitations<a class="headerlink" href="#known-limitations" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p><strong>Linux only</strong>: This feature is only supported on Linux nodes. On other
-  platforms, the feature logs a message and exits gracefully.</p>
-</li>
-<li>
-<p><strong>No Windows/macOS support</strong>: Due to the use of Linux-specific syscalls
-  (<code>sched_setaffinity</code>), this feature is not portable to other operating systems.</p>
-</li>
-<li>
-<p><strong>Affinity persists after disabling</strong>: When the feature is disabled (by
-  removing the enabler file), the existing CPU affinity on OVS processes is not
-  reset. The affinity will remain until changed by another mechanism or process
-  restart.</p>
-</li>
-<li>
-<p><strong>Brief interference window</strong>: The affinity is updated every second, plus up to
-  5 seconds for the CPU Manager reconciliation loop to update the exclusive CPUs
-  set. During this window, OVS processes may still run on CPUs that have been
-  assigned to a newly admitted Guaranteed pod, potentially causing brief
-  interruptions to sensitive workloads.</p>
-</li>
-</ul>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/">Kubelet CPU Manager Policy</a></li>
-<li><a href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/#monitoring-device-plugin-resources">Pod Resources API</a></li>
-<li><a href="https://man7.org/linux/man-pages/man2/sched_setaffinity.2.html">Linux sched_setaffinity</a></li>
-<li><a href="https://github.com/ovn-kubernetes/ovn-kubernetes/pull/3542">Original PR #3542: OVS Dynamic CPU Affinity</a></li>
-<li><a href="https://github.com/ovn-kubernetes/ovn-kubernetes/pull/5270">PR #5270: Using PodResourcesAPI to get affinity mask</a></li>
-</ul>
+This gives more flexibility in detecting the uplink device in cases where the auto detection fails (like in case of 
+bonded uplinks etc.)<p></p>
+<h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">¶</a></h2>
+<p>Openflow rules added to the external bridge will use this port as the IN/OUT port instead.</p>
+<p>Example flows when pf0vf1 is the netdev and pf0vf1_r is the representor
+</p><div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">500</span>,ip,in_port<span class="o">=</span><span class="s2">"pf0vf1_r"</span>,nw_dst<span class="o">=</span><span class="m">169</span>.254.0.1<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>ct<span class="o">(</span><span class="nv">table</span><span class="o">=</span><span class="m">5</span>,zone<span class="o">=</span><span class="m">64002</span>,nat<span class="o">)</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">655</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">129843</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">500</span>,ip,in_port<span class="o">=</span><span class="s2">"pf0vf1_r"</span>,nw_dst<span class="o">=</span><span class="m">10</span>.96.0.0/16<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>ct<span class="o">(</span>commit,table<span class="o">=</span><span class="m">2</span>,zone<span class="o">=</span><span class="m">64001</span>,nat<span class="o">(</span><span class="nv">src</span><span class="o">=</span><span class="m">169</span>.254.0.2<span class="o">))</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">359877855</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">531033264511</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">205</span>,udp,in_port<span class="o">=</span>p0,dl_dst<span class="o">=</span><span class="m">42</span>:0b:9a:f1:83:b2,tp_dst<span class="o">=</span><span class="m">6081</span><span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">6252796</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">775727815</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">200</span>,udp,in_port<span class="o">=</span><span class="s2">"pf0vf1_r"</span>,tp_dst<span class="o">=</span><span class="m">6081</span><span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:p0
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">1867752</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">294547557</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">100</span>,ip,in_port<span class="o">=</span><span class="s2">"pf0vf1_r"</span><span class="w"> </span><span class="nv">actions</span><span class="o">=</span>ct<span class="o">(</span>commit,zone<span class="o">=</span><span class="m">64000</span>,exec<span class="o">(</span>load:0x2-&gt;NXM_NX_CT_MARK<span class="o">[]))</span>,output:p0
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">22</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">1320</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">10</span>,in_port<span class="o">=</span>p0,dl_dst<span class="o">=</span><span class="m">42</span>:0b:9a:f1:83:b2<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"patch-brp0_c-23"</span>,output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">1</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">1313364</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">669490616</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">100</span>,ct_state<span class="o">=</span>+est+trk,ct_mark<span class="o">=</span>0x2,ip<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">1</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">100</span>,ct_state<span class="o">=</span>+rel+trk,ct_mark<span class="o">=</span>0x2,ip<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">1</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">0</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">13</span>,udp,in_port<span class="o">=</span>p0,tp_dst<span class="o">=</span><span class="m">3784</span><span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"patch-brp0_c-23"</span>,output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">1</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">493602</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">48384748</span>,<span class="w"> </span><span class="nv">priority</span><span class="o">=</span><span class="m">10</span>,dl_dst<span class="o">=</span><span class="m">42</span>:0b:9a:f1:83:b2<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>output:<span class="s2">"pf0vf1_r"</span>
+<span class="w"> </span><span class="nv">cookie</span><span class="o">=</span>0xdeff105,<span class="w"> </span><span class="nv">duration</span><span class="o">=</span><span class="m">505314</span>.637s,<span class="w"> </span><span class="nv">table</span><span class="o">=</span><span class="m">3</span>,<span class="w"> </span><span class="nv">n_packets</span><span class="o">=</span><span class="m">694</span>,<span class="w"> </span><span class="nv">n_bytes</span><span class="o">=</span><span class="m">276779</span>,<span class="w"> </span><span class="nv">actions</span><span class="o">=</span>move:NXM_OF_ETH_DST<span class="o">[]</span>-&gt;NXM_OF_ETH_SRC<span class="o">[]</span>,mod_dl_dst:42:0b:9a:f1:83:b2,output:<span class="s2">"pf0vf1_r"</span>
+</code></pre></div><p></p>
 
 
 

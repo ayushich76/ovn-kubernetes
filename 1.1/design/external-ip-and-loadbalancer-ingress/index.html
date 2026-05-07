@@ -1118,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1202,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/requirements/" class="md-nav__link">
+      <a href="../../features/requirements.md" class="md-nav__link">
         
   
   
@@ -2004,7 +2004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -2032,7 +2032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2229,7 +2229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2257,7 +2257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -3067,7 +3067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../features/ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3301,7 +3301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../features/bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3329,7 +3329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../features/bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -3888,7 +3888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
+      <a href="../../okeps/okep-5094-layer2-transit-router.md" class="md-nav__link">
         
   
   
@@ -3916,7 +3916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
+      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server.md" class="md-nav__link">
         
   
   
@@ -3944,7 +3944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
+      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation.md" class="md-nav__link">
         
   
   
@@ -3972,7 +3972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
+      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns.md" class="md-nav__link">
         
   
   
@@ -4000,7 +4000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5259-no-overlay/" class="md-nav__link">
+      <a href="../../okeps/okep-5259-no-overlay.md" class="md-nav__link">
         
   
   
@@ -4028,7 +4028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5088-evpn/" class="md-nav__link">
+      <a href="../../okeps/okep-5088-evpn.md" class="md-nav__link">
         
   
   
@@ -4056,7 +4056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
+      <a href="../../okeps/okep-5674-dpu-healthcheck.md" class="md-nav__link">
         
   
   
@@ -4084,7 +4084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4319,13 +4319,13 @@ If there are external IPs that route to one or more cluster nodes, Kubernetes Se
 <h4 id="loadbalancer-ingress-servicestatusloadbalanceringress">LoadBalancer Ingress (service.Status.LoadBalancer.Ingress)<a class="headerlink" href="#loadbalancer-ingress-servicestatusloadbalanceringress" title="Permanent link">¶</a></h4>
 <p>For a service's Status LoadBalancer Ingress field <code>service.Status.LoadBalancer.Ingress</code>, the aforementioned statement applies in exactly the same manner. Both External IP and <code>service.Status.LoadBalancer.Ingress</code> should behave the same from the network plugin's behavior, and it is the administrator's responsibility to get traffic for the VIPs into the cluster. </p>
 <h4 id="implementation-details">Implementation details<a class="headerlink" href="#implementation-details" title="Permanent link">¶</a></h4>
-<p>OVN-Kubernetes exposes External IPs and <code>service.Status.LoadBalancer.Ingress</code> VIPs as OVN load balancers on every node in the cluster. However, OVN-Kubernetes will not answer to ARP requests to these VIP types, even if they reside on a node local subnet. This is because otherwise, every node in the cluster would answer with its own ARP reply to the same ARP request, leading to potential issues with stateful network flows that are tracked by conntrack. See the discussion in <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/issues/2407">https://github.com/ovn-kubernetes/ovn-kubernetes/issues/2407</a> for further details.</p>
+<p>OVN-Kubernetes exposes External IPs and <code>service.Status.LoadBalancer.Ingress</code> VIPs as OVN load balancers on every node in the cluster. However, OVN-Kubernetes will not answer to ARP requests to these VIP types, even if they reside on a node local subnet. This is because otherwise, every node in the cluster would answer with its own ARP reply to the same ARP request, leading to potential issues with stateful network flows that are tracked by conntrack. See the discussion in <a href="https://github.com/ovn-org/ovn-kubernetes/issues/2407">https://github.com/ovn-org/ovn-kubernetes/issues/2407</a> for further details.</p>
 <p>In fact, OVN-Kubernetes implements explicit bypass rules for ARP requests to these VIP types on the external bridge (<code>br-ex</code> or <code>breth0</code> in most deployments). Any ARP request to such an IP that comes in from the physical port will bypass the OVN dataplane and it will be sent to host's networking stack on purpose. If an ARP reponse to a VIP is expeced, make sure the VIP is added to the host's networking stack.</p>
 <p>For implementation details, see: 
-* <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/00925a6c64f57f03b2918eb48ff589c3417ddaa9/go-controller/pkg/node/gateway_shared_intf.go#L336">https://github.com/ovn-kubernetes/ovn-kubernetes/blob/00925a6c64f57f03b2918eb48ff589c3417ddaa9/go-controller/pkg/node/gateway_shared_intf.go#L336</a>
-* <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/00925a6c64f57f03b2918eb48ff589c3417ddaa9/go-controller/pkg/node/gateway_shared_intf.go#L344">https://github.com/ovn-kubernetes/ovn-kubernetes/blob/00925a6c64f57f03b2918eb48ff589c3417ddaa9/go-controller/pkg/node/gateway_shared_intf.go#L344</a>
-* <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/pull/2540">https://github.com/ovn-kubernetes/ovn-kubernetes/pull/2540</a>
-* <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/pull/2394">https://github.com/ovn-kubernetes/ovn-kubernetes/pull/2394</a></p>
+* <a href="https://github.com/ovn-org/ovn-kubernetes/blob/00925a6c64f57f03b2918eb48ff589c3417ddaa9/go-controller/pkg/node/gateway_shared_intf.go#L336">https://github.com/ovn-org/ovn-kubernetes/blob/00925a6c64f57f03b2918eb48ff589c3417ddaa9/go-controller/pkg/node/gateway_shared_intf.go#L336</a>
+* <a href="https://github.com/ovn-org/ovn-kubernetes/blob/00925a6c64f57f03b2918eb48ff589c3417ddaa9/go-controller/pkg/node/gateway_shared_intf.go#L344">https://github.com/ovn-org/ovn-kubernetes/blob/00925a6c64f57f03b2918eb48ff589c3417ddaa9/go-controller/pkg/node/gateway_shared_intf.go#L344</a>
+* <a href="https://github.com/ovn-org/ovn-kubernetes/pull/2540">https://github.com/ovn-org/ovn-kubernetes/pull/2540</a>
+* <a href="https://github.com/ovn-org/ovn-kubernetes/pull/2394">https://github.com/ovn-org/ovn-kubernetes/pull/2394</a></p>
 <h4 id="guidance-for-administrators">Guidance for administrators<a class="headerlink" href="#guidance-for-administrators" title="Permanent link">¶</a></h4>
 <p>This absence of ARP replies from OVN-Kubernetes means that administrators must take extra actions to make External IPs and LoadBalancer Ingress VIPs work, even when these VIPs reside on one of the node local subnets.</p>
 <p>For External IPs, administrators can either assign the External IP to one of the nodes' Linux networking stacks if the External IP falls into one of the node's subnets. In this case, ARP requests to the External IP will be answered with ARP replies by the node that was assigned the External IP. For example, an admin could run <code>ip address add &lt;externalIP&gt;/32 dev lo</code> to make this work, assuming that <code>arp_ignore</code> is at its default setting of <code>0</code> and thus the Linux networking stack uses the default <a href="https://en.wikipedia.org/wiki/Host_model">weak host model</a> for ARP replies. An alternative could be to point one or multiple static routes for the External IP to one or several of the Kubernetes nodes. </p>

@@ -1291,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1375,7 +1375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../requirements/" class="md-nav__link">
+      <a href="../requirements.md" class="md-nav__link">
         
   
   
@@ -2177,7 +2177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -2205,7 +2205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2407,7 +2407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2435,7 +2435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -3514,7 +3514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3748,7 +3748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3776,7 +3776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/evpn/" class="md-nav__link">
+      <a href="../bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -4335,7 +4335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
+      <a href="../../okeps/okep-5094-layer2-transit-router.md" class="md-nav__link">
         
   
   
@@ -4363,7 +4363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
+      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server.md" class="md-nav__link">
         
   
   
@@ -4391,7 +4391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
+      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation.md" class="md-nav__link">
         
   
   
@@ -4419,7 +4419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
+      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns.md" class="md-nav__link">
         
   
   
@@ -4447,7 +4447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5259-no-overlay/" class="md-nav__link">
+      <a href="../../okeps/okep-5259-no-overlay.md" class="md-nav__link">
         
   
   
@@ -4475,7 +4475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5088-evpn/" class="md-nav__link">
+      <a href="../../okeps/okep-5088-evpn.md" class="md-nav__link">
         
   
   
@@ -4503,7 +4503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
+      <a href="../../okeps/okep-5674-dpu-healthcheck.md" class="md-nav__link">
         
   
   
@@ -4531,7 +4531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4951,7 +4951,6 @@ disruption.</p>
 <li>KubeVirt &gt;= v1.0.0</li>
 <li>DHCP aware guest image (fedora family is well tested, https://quay.io/organization/containerdisks)</li>
 </ul>
-<p>Always check the dependencies on the <a href="../requirements/">Requirements page</a></p>
 <h3 id="example-live-migrating-a-fedora-guest-image">Example: live migrating a fedora guest image<a class="headerlink" href="#example-live-migrating-a-fedora-guest-image" title="Permanent link">¶</a></h3>
 <p>Install KubeVirt following the guide <a href="https://kubevirt.io/user-guide/operations/installation/">here</a></p>
 <p>Create a fedora virtual machine with the annotations <code>kubevirt.io/allow-pod-bridge-network-live-migration</code>:
@@ -5033,13 +5032,16 @@ fedora<span class="w">   </span>9m42s<span class="w">   </span>Running<span clas
 </code></pre></div><p></p>
 <p>Also we can check the neighbours cache to verify it later on
 </p><div class="highlight"><pre><span></span><code><span class="o">[</span>fedora@fedora<span class="w"> </span>~<span class="o">]</span>arp<span class="w"> </span>-a
-_gateway<span class="w"> </span><span class="o">(</span><span class="m">10</span>.244.2.1<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>0a:58:a9:fe:01:01<span class="w"> </span><span class="o">[</span>ether<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>eth0
+_gateway<span class="w"> </span><span class="o">(</span><span class="m">169</span>.254.1.1<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>0a:58:a9:fe:01:01<span class="w"> </span><span class="o">[</span>ether<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>eth0
 </code></pre></div><p></p>
-<p>The default gateway is the pod network subnet gateway IP. The ARP proxy feature
-ensures the gateway MAC address remains consistent across live migrations.</p>
+<p>Keep in mind the default gw is a link local address; that is because 
+the live migration feature is implemented using ARP proxy.</p>
+<p>The last route is needed since the link local address subnet is not bound to any interface, that
+route is automatically created by dhcp client.</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>fedora@fedora<span class="w"> </span>~<span class="o">]</span>ip<span class="w"> </span>route
-default<span class="w"> </span>via<span class="w"> </span><span class="m">10</span>.244.2.1<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>dhcp<span class="w"> </span>src<span class="w"> </span><span class="m">10</span>.244.2.26<span class="w"> </span>metric<span class="w"> </span><span class="m">100</span>
+default<span class="w"> </span>via<span class="w"> </span><span class="m">169</span>.254.1.1<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>dhcp<span class="w"> </span>src<span class="w"> </span><span class="m">10</span>.244.2.26<span class="w"> </span>metric<span class="w"> </span><span class="m">100</span>
 <span class="m">10</span>.244.2.0/24<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>kernel<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>src<span class="w"> </span><span class="m">10</span>.244.2.26<span class="w"> </span>metric<span class="w"> </span><span class="m">100</span>
+<span class="m">169</span>.254.1.1<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>proto<span class="w"> </span>dhcp<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>src<span class="w"> </span><span class="m">10</span>.244.2.26<span class="w"> </span>metric<span class="w"> </span><span class="m">100</span>
 </code></pre></div>
 <p>Then a live migration can be initialized with <code>virtctl migrate fedora</code> and wait
 at the vmim resource
@@ -5069,7 +5071,7 @@ default<span class="w">     </span>fedora<span class="w">   </span>16m<span clas
 <span class="w">    </span>inet6<span class="w"> </span>fe80::32d2:10d4:f5ed:3064/64<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>noprefixroute
 <span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
 <span class="o">[</span>fedora@fedora<span class="w"> </span>~<span class="o">]</span>arp<span class="w"> </span>-a
-_gateway<span class="w"> </span><span class="o">(</span><span class="m">10</span>.244.2.1<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>0a:58:a9:fe:01:01<span class="w"> </span><span class="o">[</span>ether<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>eth0
+_gateway<span class="w"> </span><span class="o">(</span><span class="m">169</span>.254.1.1<span class="o">)</span><span class="w"> </span>at<span class="w"> </span>0a:58:a9:fe:01:01<span class="w"> </span><span class="o">[</span>ether<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>eth0
 </code></pre></div><p></p>
 <h3 id="configuring-dns-server">Configuring dns server<a class="headerlink" href="#configuring-dns-server" title="Permanent link">¶</a></h3>
 <p>By default the DHCP server at ovn-kuberntes will configure the kubernetes
@@ -5143,9 +5145,9 @@ ignition yaml:</p>
 - Add the ability at ovn-k controllers to migrate pod's IP from node to node.</p>
 <h3 id="ovn-kubernetes-implementation-details">OVN-Kubernetes Implementation Details<a class="headerlink" href="#ovn-kubernetes-implementation-details" title="Permanent link">¶</a></h3>
 <p>To implement live migration ovn-kubernetes do the following:
-- Send DHCP replies advertising the allocated IP address and subnet gateway to the guest VM (via OVN-Kubernetes DHCP options configured for the logical switch ports).
+- Send DHCP replies advertising the allocated IP address to the guest VM (via OVN-Kubernetes DHCP options configured for the logical switch ports).
 - A point to point routing is used so one node's subnet IP can be routed from different node
-- The VM's gateway IP (subnet gateway) and MAC are kept consistent across nodes using ARP proxy</p>
+- The VM's gateway IP and MAC are independent of the node they are running on using proxy arp</p>
 <p><strong>Point to point routing:</strong></p>
 <p>When the VM is running at a node that does not "own" it's IP address - e.g. after a live migration - 
 after a live migration, do point to point routing with a policy for non 
@@ -5197,15 +5199,15 @@ Remote zone:
 └───────────────────────────┘
 </code></pre></div>
 <p><strong>Nodes logical switch ports:</strong></p>
-<p>To have a consistent gateway at VMs (keep ip and mac after live migration)
-the "arp_proxy" feature is used and it need to be activated at
-the logical switch port of type router connects node's logical switch to
+<p>To have a consistent gateway at VMs (keep ip and mac after live migration) 
+the "arp_proxy" feature is used and it need to be activated at 
+the logical switch port of type router connects node's logical switch to 
 ovn_cluster_router logical router.</p>
 <p>The "arp_proxy" LSP option will include the MAC to answer ARPs with, and the
-link local ipv4 and ipv6 addresses, as well as the cluster wide pod CIDR. This
-allows the proxy to answer ARP requests for the subnet gateway IP when the node
-switch does not have the live migrated IP. The flows from arp_proxy have less
-priority than the ones from the node logical switch so ARP flows are not overriden.</p>
+link local ipv4 and ipv6 to answer for and the cluster wide pod CIDR to answer
+to pod subnets when the node switch do not have the live migrated ip. The
+flows from arp_proxy has less priority than the ones from the node logical 
+switch so ARP flows are not overriden.</p>
 <div class="highlight"><pre><span></span><code>    ┌────────────────────┐   ┌────────────────────┐
     │logical switch node1│   │logical switch node2│
     └────────────────────┘   └────────────────────┘
@@ -5239,7 +5241,7 @@ live migratable.</p>
 ┌─────────────────────────────────┐
 │ dhcp-options 1234               │
 │   lease_time: 3500              │
-│   router: 10.244.0.1            │
+│   router: 169.254.1.1           │
 │   dns_server: [kubedns]         │
 │   server_id: 169.254.1.1        │
 │   server_mac: c0:ff:ee:00:00:01 │

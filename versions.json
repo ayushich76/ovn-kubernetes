@@ -17,15 +17,16 @@
     "version": "1.1",
     "title": "v1.1 (Stable)",
     "aliases": [
-      "v1.1 (Stable)"
+      "v1.1 (Stable)",
+      "v1.1 (Legacy)"
     ]
   },
   {
     "version": "1.0",
     "title": "v1.0 (Legacy)",
     "aliases": [
-      "v1.0 (Old)",
-      "v1.0 (Legacy)"
+      "v1.0 (Legacy)",
+      "v1.0 (Old)"
     ]
   }
 ]

@@ -1022,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1106,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../requirements/" class="md-nav__link">
+      <a href="../requirements.md" class="md-nav__link">
         
   
   
@@ -1908,7 +1908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -1936,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2138,7 +2138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2166,7 +2166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -3169,7 +3169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3403,7 +3403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3431,7 +3431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bgp-integration/evpn/" class="md-nav__link">
+      <a href="../bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -3990,7 +3990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
+      <a href="../../okeps/okep-5094-layer2-transit-router.md" class="md-nav__link">
         
   
   
@@ -4018,7 +4018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
+      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server.md" class="md-nav__link">
         
   
   
@@ -4046,7 +4046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
+      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation.md" class="md-nav__link">
         
   
   
@@ -4074,7 +4074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
+      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns.md" class="md-nav__link">
         
   
   
@@ -4102,7 +4102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5259-no-overlay/" class="md-nav__link">
+      <a href="../../okeps/okep-5259-no-overlay.md" class="md-nav__link">
         
   
   
@@ -4130,7 +4130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5088-evpn/" class="md-nav__link">
+      <a href="../../okeps/okep-5088-evpn.md" class="md-nav__link">
         
   
   
@@ -4158,7 +4158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
+      <a href="../../okeps/okep-5674-dpu-healthcheck.md" class="md-nav__link">
         
   
   
@@ -4186,7 +4186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4516,12 +4516,11 @@
 <li><a href="#5-explain-the-networkqos-object">Explain the NetworkQoS Object</a></li>
 </ol>
 <h2 id="1-overview"><strong>1 Overview</strong><a class="headerlink" href="#1-overview" title="Permanent link">¶</a></h2>
-<p>Differentiated Services Code Point (DSCP) marking and egress bandwidth metering let you prioritize or police specific traffic flows. The new <strong>NetworkQoS</strong> Custom Resource Definition (CRD) in <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/helm/ovn-kubernetes/crds/k8s.ovn.org_networkqoses.yaml">ovn-kubernetes</a> makes both features available to Kubernetes users on <strong>all</strong> pod interfaces—primary or secondary—without touching pod manifests.</p>
+<p>Differentiated Services Code Point (DSCP) marking and egress bandwidth metering let you prioritize or police specific traffic flows. The new <strong>NetworkQoS</strong> Custom Resource Definition (CRD) in <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/dist/templates/k8s.ovn.org_networkqoses.yaml.j2">ovn-kubernetes</a> makes both features available to Kubernetes users on <strong>all</strong> pod interfaces—primary or secondary—without touching pod manifests.</p>
 <p>This guide provides a step-by-step example of how to use this feature. Before you begin, ensure that you have a Kubernetes cluster configured with the ovn-kubernetes CNI. Since the examples use network attachments, you must run the cluster with multiple network support enabled. In a kind cluster, you would use the following flags:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>contrib
 ./kind-helm.sh<span class="w"> </span>-nqe<span class="w"> </span>-mne<span class="w"> </span><span class="p">;</span><span class="w">  </span><span class="c1">#  --enable-network-qos --enable-multi-network</span>
 </code></pre></div>
-<p>Always check the dependencies on the <a href="../requirements/">Requirements page</a></p>
 <h2 id="2-create-a-secondary-network"><strong>2 Create a Secondary Network</strong><a class="headerlink" href="#2-create-a-secondary-network" title="Permanent link">¶</a></h2>
 <p>File: nad.yaml</p>
 <p></p><div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">k8s.cni.cncf.io/v1</span>
@@ -4578,7 +4577,7 @@
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.16.0.0/12</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.0.0/16</span>
 </code></pre></div>
-A full CRD template lives <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/helm/ovn-kubernetes/crds/k8s.ovn.org_networkqoses.yaml">here</a>.<p></p>
+A full CRD template lives <a href="https://github.com/ovn-kubernetes/ovn-kubernetes/blob/master/dist/templates/k8s.ovn.org_networkqoses.yaml.j2">here</a>.<p></p>
 <p>The <code>egress</code> field is a list, allowing you to define multiple markings and bandwidth limits based on different classifiers.</p>
 <p>Note that this configuration will apply to the NAD of pods based on the network selector, and only on pods that have the label <code>nqos-app: bw-limited</code>.</p>
 <p></p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>nad.yaml<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>

@@ -3,8 +3,6 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="This document covers debugging techniques for ovn-kubernetes.">
-      
       
       
         <link rel="canonical" href="https://www.ovn.org/ovn-kubernetes/1.1/developer-guide/debugging/">
@@ -85,11 +83,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#debugging" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -1022,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1106,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/requirements/" class="md-nav__link">
+      <a href="../../features/requirements.md" class="md-nav__link">
         
   
   
@@ -1560,26 +1553,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Debugging
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1597,136 +1570,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#coredump-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coredump Analysis
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Coredump Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#downloading-artifacts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Downloading Artifacts
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-with-delve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debugging with Delve
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-c-binaries-with-gdb-alpine-based-eg-frr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debugging C Binaries with GDB (Alpine-based, e.g. FRR)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-ovn-services-with-gdb" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debugging OVN Services with GDB
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Debugging OVN Services with GDB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-procedure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debugging Procedure
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local Development
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2071,7 +1914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -2099,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2296,7 +2139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2324,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -3134,7 +2977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../features/ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3368,7 +3211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../features/bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3396,7 +3239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../features/bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -3955,7 +3798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
+      <a href="../../okeps/okep-5094-layer2-transit-router.md" class="md-nav__link">
         
   
   
@@ -3983,7 +3826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
+      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server.md" class="md-nav__link">
         
   
   
@@ -4011,7 +3854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
+      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation.md" class="md-nav__link">
         
   
   
@@ -4039,7 +3882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
+      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns.md" class="md-nav__link">
         
   
   
@@ -4067,7 +3910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5259-no-overlay/" class="md-nav__link">
+      <a href="../../okeps/okep-5259-no-overlay.md" class="md-nav__link">
         
   
   
@@ -4095,7 +3938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5088-evpn/" class="md-nav__link">
+      <a href="../../okeps/okep-5088-evpn.md" class="md-nav__link">
         
   
   
@@ -4123,7 +3966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
+      <a href="../../okeps/okep-5674-dpu-healthcheck.md" class="md-nav__link">
         
   
   
@@ -4151,7 +3994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4298,127 +4141,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#coredump-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Coredump Analysis
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Coredump Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#downloading-artifacts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Downloading Artifacts
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-with-delve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debugging with Delve
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-c-binaries-with-gdb-alpine-based-eg-frr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debugging C Binaries with GDB (Alpine-based, e.g. FRR)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-ovn-services-with-gdb" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debugging OVN Services with GDB
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Debugging OVN Services with GDB">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-procedure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debugging Procedure
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local Development
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -4438,243 +4160,7 @@
   
 
 
-<h1 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">¶</a></h1>
-<p>This document covers debugging techniques for ovn-kubernetes.</p>
-<h2 id="coredump-analysis">Coredump Analysis<a class="headerlink" href="#coredump-analysis" title="Permanent link">¶</a></h2>
-<p>When ovn-kubernetes processes crash, coredumps and their corresponding binaries are
-automatically collected in CI. This allows post-mortem debugging to investigate
-what went wrong.</p>
-<h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">¶</a></h3>
-<ol>
-<li><strong>Coredump collection is enabled</strong> via <code>ENABLE_COREDUMPS=true</code> in KIND clusters.
-   This sets up:</li>
-<li><code>kernel.core_pattern</code> to pipe coredumps to <code>/tmp/kind/logs/coredumps/</code></li>
-<li>
-<p><code>GOTRACEBACK=crash</code> environment variable for Go binaries (required for Go to
-     generate coredumps on crashes)</p>
-</li>
-<li>
-<p><strong>When a process crashes</strong>, the kernel writes a coredump file with the pattern:
-   </p><div class="highlight"><pre><span></span><code>core.&lt;PID&gt;.&lt;executable&gt;.&lt;hostname&gt;.&lt;signal&gt;
-</code></pre></div><p></p>
-</li>
-<li>
-<p><strong>Binary collection</strong> happens during log export. The <code>export-kind-logs.sh</code> script
-   searches all containers for the crashed binary and copies it alongside the coredump.</p>
-</li>
-<li>
-<p><strong>Artifacts are uploaded</strong> to GitHub Actions and can be downloaded from the job's
-   artifacts section.</p>
-</li>
-</ol>
-<h3 id="downloading-artifacts">Downloading Artifacts<a class="headerlink" href="#downloading-artifacts" title="Permanent link">¶</a></h3>
-<p>After a CI job completes, download the <code>kind-logs-*</code> artifact from the GitHub Actions
-job page. Extract it to find:</p>
-<div class="highlight"><pre><span></span><code>/tmp/kind/logs/coredumps/
-├── core.29132.ovnkube.ovn-worker.6    # Coredump file
-└── binaries/
-    └── ovnkube                         # Matching binary
-</code></pre></div>
-<h3 id="debugging-with-delve">Debugging with Delve<a class="headerlink" href="#debugging-with-delve" title="Permanent link">¶</a></h3>
-<p>Use the <a href="https://github.com/go-delve/delve">Delve</a> debugger for post-mortem analysis.</p>
-<ol>
-<li><strong>Create a path substitution file</strong> (<code>dlv.init</code>) to map build paths to your local
-   source checkout:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>config substitute-path /workspace/ovn-kubernetes/go-controller /path/to/your/ovn-kubernetes/go-controller
-config substitute-path /usr/local/go /path/to/your/go/installation
-</code></pre></div>
-<p>The build paths can be found by running <code>dlv core</code> without the init file and
-   using the <code>list</code> command - it will show the paths it's looking for.</p>
-<ol>
-<li><strong>Start the debugger</strong>:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>dlv<span class="w"> </span>core<span class="w"> </span>./binaries/ovnkube<span class="w"> </span>./core.29132.ovnkube.ovn-worker.6<span class="w"> </span>--init<span class="w"> </span>dlv.init
-</code></pre></div>
-<ol>
-<li><strong>Explore the crash</strong>:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>(dlv) goroutines           # List all goroutines
-(dlv) goroutine &lt;id&gt;       # Switch to a specific goroutine
-(dlv) bt                   # Show backtrace
-(dlv) frame &lt;n&gt;            # Select stack frame
-(dlv) list                 # Show source code at current location
-(dlv) locals               # Show local variables
-(dlv) print &lt;var&gt;          # Print variable value
-</code></pre></div>
-<h3 id="debugging-c-binaries-with-gdb-alpine-based-eg-frr">Debugging C Binaries with GDB (Alpine-based, e.g. FRR)<a class="headerlink" href="#debugging-c-binaries-with-gdb-alpine-based-eg-frr" title="Permanent link">¶</a></h3>
-<p>Some coredumps come from C binaries such as FRR's <code>bgpd</code> or <code>zebra</code>, not from Go
-binaries. These require GDB instead of Delve.</p>
-<p><strong>This procedure is for Alpine-based containers</strong> (like FRR). For OVN/OVS components
-running in Fedora containers, see the next section.</p>
-<p>The key challenge is matching the exact container image that produced the coredump,
-since GDB needs the same binary and shared libraries to resolve symbols.</p>
-<ol>
-<li>
-<p><strong>Identify the image that produced the coredump.</strong> Check the CI job logs for the
-   <code>docker run</code> command that started the crashed process. For example, the external
-   FRR container may use <code>quay.io/frrouting/frr:9.1.0</code> (deployed via
-   <code>contrib/kind-common.sh</code>).</p>
-</li>
-<li>
-<p><strong>Run the same image with the coredumps mounted:</strong></p>
-</li>
-</ol>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--platform<span class="w"> </span>linux/amd64<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span>/path/to/coredumps:/coredumps<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>quay.io/frrouting/frr:9.1.0<span class="w"> </span>sh
-</code></pre></div>
-<p>Using <code>--platform linux/amd64</code> is important if the coredump was generated on
-   x86_64 and you are on a different architecture (e.g. Apple Silicon).</p>
-<ol>
-<li><strong>Install GDB and debug symbols inside the container:</strong></li>
-</ol>
-<div class="highlight"><pre><span></span><code>apk<span class="w"> </span>add<span class="w"> </span>gdb<span class="w"> </span>frr-dbg<span class="w"> </span>musl-dbg
-</code></pre></div>
-<p>The exact package names depend on the base distro. Alpine uses <code>-dbg</code> suffix.</p>
-<ol>
-<li><strong>Run GDB:</strong></li>
-</ol>
-<div class="highlight"><pre><span></span><code>gdb<span class="w"> </span>/usr/lib/frr/bgpd<span class="w"> </span>/coredumps/core.38907.bgpd.ovn-control-plane.11
-</code></pre></div>
-<ol>
-<li><strong>Explore the crash:</strong></li>
-</ol>
-<div class="highlight"><pre><span></span><code>(gdb) bt                        # Show backtrace
-(gdb) thread apply all bt       # Backtraces for all threads
-(gdb) frame &lt;n&gt;                 # Select stack frame
-(gdb) info locals               # Show local variables
-(gdb) info args                 # Show function arguments
-(gdb) print *some_ptr           # Dereference and print a pointer
-(gdb) info sharedlibrary        # Check if all shared libraries are resolved
-</code></pre></div>
-<ol>
-<li><strong>Troubleshooting missing symbols.</strong> If the backtrace shows <code>??</code> for most frames:</li>
-<li>Run <code>info sharedlibrary</code> in GDB. Lines marked <code>(*)</code> are missing debug info.</li>
-<li>Verify you are using the exact same image tag that produced the coredump.
-     Floating tags (like <code>latest</code> or even <code>9.1.0</code>) may have been rebuilt with updated
-     packages. If the shared library versions don't match (GDB will print warnings
-     about missing <code>.so</code> files), you need the exact image digest from CI.</li>
-<li>Install additional <code>-dbg</code> packages for libraries that appear in the backtrace.</li>
-</ol>
-<h3 id="debugging-ovn-services-with-gdb">Debugging OVN Services with GDB<a class="headerlink" href="#debugging-ovn-services-with-gdb" title="Permanent link">¶</a></h3>
-<p>OVN services (ovn-northd, ovn-controller) and OVS components are C binaries that run
-in Fedora-based containers. The CI builds strip debug symbols to reduce image size,
-so debugging coredumps requires installing matching debuginfo packages.</p>
-<p><strong>This procedure is specific to OVN/OVS components running in Fedora containers.</strong> It
-differs from the Alpine/FRR approach above because:
-- OVN runs in Fedora (uses RPM packages), not Alpine (apk packages)
-- Debuginfo must be downloaded from koji and installed separately
-- The CI image doesn't contain debuginfo packages (they're stripped during build)</p>
-<p>This procedure works for any OVN/OVS binary crash: northd, controller, or other components.</p>
-<h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h4>
-<p>You need:
-- A coredump from CI (e.g., <code>core.24481.ovn-northd.ovn-control-plane.11</code>)
-- The matching binary from <code>coredumps/binaries/</code> (e.g., <code>ovn-northd</code>, <code>ovn-controller</code>)
-- Docker to run a Fedora container</p>
-<h4 id="debugging-procedure">Debugging Procedure<a class="headerlink" href="#debugging-procedure" title="Permanent link">¶</a></h4>
-<ol>
-<li><strong>Start a Fedora container</strong> (matching the build environment):</li>
-</ol>
-<p>CI records the exact Fedora base image digest used to build the OVN image in
-   <code>coredumps/binaries/fedora-base-image.txt</code>. Use this digest to ensure your
-   debugging container matches the CI environment:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/kind-logs-*/coredumps
-cat<span class="w"> </span>binaries/fedora-base-image.txt
-<span class="c1"># Example output:</span>
-<span class="c1"># quay.io/fedora/fedora@sha256:b489f8cafcb6e79d...</span>
-
-docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--platform<span class="w"> </span>linux/amd64<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">:/coredumps:ro"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>ovn-debug<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>binaries/fedora-base-image.txt<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>bash
-</code></pre></div>
-<p>If <code>fedora-base-image.txt</code> is not available, fall back to the floating tag:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--platform<span class="w"> </span>linux/amd64<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">:/coredumps:ro"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>ovn-debug<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>quay.io/fedora/fedora:43<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>bash
-</code></pre></div>
-<ol>
-<li><strong>Inside the container, install debugging tools</strong>:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>gdb<span class="w"> </span>dnf-utils<span class="w"> </span>dnf5-plugins<span class="w"> </span>koji<span class="w"> </span>file
-</code></pre></div>
-<ol>
-<li><strong>Determine the OVN version</strong> from the binary:</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="c1"># Replace ovn-northd with your binary name (ovn-controller, etc.)</span>
-strings<span class="w"> </span>/coredumps/binaries/ovn-northd<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'{"type":"rpm".*ovn'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
-</code></pre></div>
-<p>Example output: <code>{"type":"rpm","name":"ovn","version":"25.09.2-2.fc43"...}</code></p>
-<ol>
-<li><strong>Download and install OVN packages from koji</strong>:</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="c1"># Download the exact build (replace version as needed)</span>
-koji<span class="w"> </span>download-build<span class="w"> </span>ovn-25.09.2-2.fc43<span class="w"> </span>--arch<span class="o">=</span>x86_64
-
-<span class="c1"># Install with dependency resolution</span>
-dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>./ovn-*.rpm
-</code></pre></div>
-<ol>
-<li><strong>Download and install debuginfo packages</strong>:</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="c1"># Download all debuginfo packages for this OVN build</span>
-koji<span class="w"> </span>download-build<span class="w"> </span>ovn-25.09.2-2.fc43<span class="w"> </span>--debuginfo<span class="w"> </span>--arch<span class="o">=</span>x86_64
-
-<span class="c1"># Install all debuginfo packages (important: install ALL of them)</span>
-dnf<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>./ovn-debuginfo-*.rpm<span class="w"> </span><span class="se">\</span>
-<span class="w">               </span>./ovn-debugsource-*.rpm<span class="w"> </span><span class="se">\</span>
-<span class="w">               </span>./ovn-central-debuginfo-*.rpm<span class="w"> </span><span class="se">\</span>
-<span class="w">               </span>./ovn-host-debuginfo-*.rpm<span class="w"> </span><span class="se">\</span>
-<span class="w">               </span>./ovn-vtep-debuginfo-*.rpm
-</code></pre></div>
-<p><strong>Note</strong>: OVN debuginfo is split into separate packages by component:
-   - <code>ovn-central-debuginfo</code> - contains ovn-northd and related binaries
-   - <code>ovn-host-debuginfo</code> - contains ovn-controller and related binaries
-   - <code>ovn-debuginfo</code> - base package with common utilities
-   - <code>ovn-debugsource</code> - source code mappings</p>
-<p>Install all of them to ensure complete symbols for any OVN component.</p>
-<ol>
-<li><strong>Enable debuginfo repositories</strong> (for system libraries if needed):</li>
-</ol>
-<div class="highlight"><pre><span></span><code>dnf<span class="w"> </span>config-manager<span class="w"> </span>setopt<span class="w"> </span>fedora-debuginfo.enabled<span class="o">=</span><span class="m">1</span>
-dnf<span class="w"> </span>config-manager<span class="w"> </span>setopt<span class="w"> </span>updates-debuginfo.enabled<span class="o">=</span><span class="m">1</span>
-</code></pre></div>
-<p><strong>Note</strong>: On first run, GDB may suggest additional debuginfo packages for system
-   libraries (glibc, openssl, systemd, python, etc.). Install them using the command
-   GDB provides, or use <code>debuginfo-install &lt;package-name&gt;</code> to let dnf resolve the
-   correct debuginfo package names.</p>
-<ol>
-<li><strong>Load the coredump in GDB</strong>:</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="c1"># Replace the binary and core file names with the exact files from your CI artifacts</span>
-gdb<span class="w"> </span>/coredumps/binaries/ovn-northd<span class="w"> </span>/coredumps/core.24481.ovn-northd.ovn-control-plane.11
-</code></pre></div>
-<ol>
-<li><strong>Examine the crash</strong>:</li>
-</ol>
-<div class="highlight"><pre><span></span><code>(gdb) bt              # Show backtrace with file:line numbers
-(gdb) bt full         # Show backtrace with local variables
-(gdb) frame 0         # Select crash frame
-(gdb) list            # Show source code at crash location
-(gdb) info locals     # Show local variables
-(gdb) info args       # Show function arguments
-(gdb) print &lt;var&gt;     # Print specific variable
-(gdb) info threads    # List all threads
-(gdb) thread &lt;n&gt;      # Switch to thread
-</code></pre></div>
-<h3 id="local-development">Local Development<a class="headerlink" href="#local-development" title="Permanent link">¶</a></h3>
-<p>To enable coredump collection in a local KIND cluster:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">ENABLE_COREDUMPS</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span>./contrib/kind.sh
-</code></pre></div>
-<p>To manually export logs with coredump binaries:</p>
-<div class="highlight"><pre><span></span><code>./contrib/export-kind-logs.sh<span class="w"> </span>/path/to/output
-</code></pre></div>
+  <h1>Debugging</h1>
 
 
 
@@ -4682,8 +4168,7 @@ gdb<span class="w"> </span>/coredumps/binaries/ovn-northd<span class="w"> </span
 
 
 
-  
-  
+
 
 
 

@@ -1020,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/launching-ovn-kubernetes-with-dpu/" class="md-nav__link">
+      <a href="../../installation/launching-ovn-kubernetes-with-dpu.md" class="md-nav__link">
         
   
   
@@ -1104,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/requirements/" class="md-nav__link">
+      <a href="../../features/requirements.md" class="md-nav__link">
         
   
   
@@ -1906,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/clusternetworkconnect-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/clusternetworkconnect-api-spec.md" class="md-nav__link">
         
   
   
@@ -1934,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api-reference/vtep-api-spec/" class="md-nav__link">
+      <a href="../../api-reference/vtep-api-spec.md" class="md-nav__link">
         
   
   
@@ -2131,7 +2131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/cluster-network-connect/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/cluster-network-connect.md" class="md-nav__link">
         
   
   
@@ -2159,7 +2159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/user-defined-networks/dynamic-udn/" class="md-nav__link">
+      <a href="../../features/user-defined-networks/dynamic-udn.md" class="md-nav__link">
         
   
   
@@ -2969,7 +2969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/ovs-dynamic-cpu-affinity/" class="md-nav__link">
+      <a href="../../features/ovs-dynamic-cpu-affinity.md" class="md-nav__link">
         
   
   
@@ -3203,7 +3203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/no-overlay/" class="md-nav__link">
+      <a href="../../features/bgp-integration/no-overlay.md" class="md-nav__link">
         
   
   
@@ -3231,7 +3231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/bgp-integration/evpn/" class="md-nav__link">
+      <a href="../../features/bgp-integration/evpn.md" class="md-nav__link">
         
   
   
@@ -3920,7 +3920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5094-layer2-transit-router/" class="md-nav__link">
+      <a href="../../okeps/okep-5094-layer2-transit-router.md" class="md-nav__link">
         
   
   
@@ -3948,7 +3948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server/" class="md-nav__link">
+      <a href="../../okeps/okep-5494-ovn-kubernetes-mcp-server.md" class="md-nav__link">
         
   
   
@@ -3976,7 +3976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation/" class="md-nav__link">
+      <a href="../../okeps/okep-5552-dynamic-udn-node-allocation.md" class="md-nav__link">
         
   
   
@@ -4004,7 +4004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns/" class="md-nav__link">
+      <a href="../../okeps/okep-5224-connecting-udns/okep-5224-connecting-udns.md" class="md-nav__link">
         
   
   
@@ -4032,7 +4032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5259-no-overlay/" class="md-nav__link">
+      <a href="../../okeps/okep-5259-no-overlay.md" class="md-nav__link">
         
   
   
@@ -4060,7 +4060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5088-evpn/" class="md-nav__link">
+      <a href="../../okeps/okep-5088-evpn.md" class="md-nav__link">
         
   
   
@@ -4088,7 +4088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5674-dpu-healthcheck/" class="md-nav__link">
+      <a href="../../okeps/okep-5674-dpu-healthcheck.md" class="md-nav__link">
         
   
   
@@ -4116,7 +4116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology/" class="md-nav__link">
+      <a href="../../okeps/okep-5377-extend-udn-to-support-multiple-cluster-subnets-in-layer3-topology.md" class="md-nav__link">
         
   
   
@@ -4408,7 +4408,7 @@ Measurement accuracy can be impacted by other parallel processing that might be 
 <li>Add metrics to track logfile size for ovnkube processes - ovnkube_node_logfile_size_bytes and ovnkube_controller_logfile_size_bytes</li>
 <li>Remove ovnkube_controller_ovn_cli_latency_seconds metrics since we have moved most of the OVN DB operations to libovsdb.</li>
 <li>Effect of OVN IC architecture:</li>
-<li>Move all the metrics from subsystem "ovnkube-master" to subsystem "ovnkube-controller". The non-IC and IC deployments will each continue to have their ovnkube-master and ovnkube-controller containers running inside the ovnkube-master and ovnkube-controller pods. The metrics scraping should work seemlessly. See https://github.com/ovn-kubernetes/ovn-kubernetes/pull/3723 for details</li>
+<li>Move all the metrics from subsystem "ovnkube-master" to subsystem "ovnkube-controller". The non-IC and IC deployments will each continue to have their ovnkube-master and ovnkube-controller containers running inside the ovnkube-master and ovnkube-controller pods. The metrics scraping should work seemlessly. See https://github.com/ovn-org/ovn-kubernetes/pull/3723 for details</li>
 <li>Move the following metrics from subsystem "master" to subsystem "clustermanager". Therefore, the follow metrics are renamed.<ul>
 <li><code>ovnkube_master_num_v4_host_subnets</code> -&gt; <code>ovnkube_clustermanager_num_v4_host_subnets</code></li>
 <li><code>ovnkube_master_num_v6_host_subnets</code> -&gt; <code>ovnkube_clustermanager_num_v6_host_subnets</code></li>
@@ -4421,16 +4421,16 @@ Measurement accuracy can be impacted by other parallel processing that might be 
 </li>
 <li>Update description of ovnkube_master_pod_creation_latency_seconds</li>
 <li>Add libovsdb metrics - ovnkube_master_libovsdb_disconnects_total and ovnkube_master_libovsdb_monitors.</li>
-<li>Add ovn_controller_southbound_database_connected metric (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/3117).</li>
+<li>Add ovn_controller_southbound_database_connected metric (https://github.com/ovn-org/ovn-kubernetes/pull/3117).</li>
 <li>Stopwatch metrics now report in seconds instead of milliseconds.</li>
-<li>Rename (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/3022):</li>
+<li>Rename (https://github.com/ovn-org/ovn-kubernetes/pull/3022):</li>
 <li><code>ovs_vswitchd_interface_link_resets</code> -&gt; <code>ovs_vswitchd_interface_resets_total</code></li>
 <li><code>ovs_vswitchd_interface_rx_dropped</code> -&gt; <code>ovs_vswitchd_interface_rx_dropped_total</code></li>
 <li><code>ovs_vswitchd_interface_tx_dropped</code> -&gt; <code>ovs_vswitchd_interface_tx_dropped_total</code></li>
 <li><code>ovs_vswitchd_interface_rx_errors</code> -&gt; <code>ovs_vswitchd_interface_rx_errors_total</code></li>
 <li><code>ovs_vswitchd_interface_tx_errors</code> -&gt; <code>ovs_vswitchd_interface_tx_errors_total</code></li>
 <li><code>ovs_vswitchd_interface_collisions</code> -&gt; <code>ovs_vswitchd_interface_collisions_total</code></li>
-<li>Remove (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/3022):</li>
+<li>Remove (https://github.com/ovn-org/ovn-kubernetes/pull/3022):</li>
 <li><code>ovs_vswitchd_dp_if</code></li>
 <li><code>ovs_vswitchd_interface_driver_name</code></li>
 <li><code>ovs_vswitchd_interface_driver_version</code></li>
@@ -4453,13 +4453,13 @@ Measurement accuracy can be impacted by other parallel processing that might be 
 <li><code>ovs_vswitchd_interface_ofport</code></li>
 <li><code>ovs_vswitchd_interface_ingress_policing_burst</code></li>
 <li><code>ovs_vswitchd_interface_ingress_policing_rate</code></li>
-<li>Add <code>ovnkube_master_network_programming_duration_seconds</code> and <code>ovnkube_master_network_programming_ovn_duration_seconds</code> (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/2878)</li>
-<li>Remove <code>ovnkube_master_skipped_nbctl_daemon_total</code> (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/2707)</li>
-<li>Add <code>ovnkube_master_egress_routing_via_host</code> (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/2833)</li>
-<li>Add <code>ovnkube_resource_retry_failures_total</code> (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/3314)</li>
-<li>Add <code>ovs_vswitchd_interfaces_total</code> and <code>ovs_vswitchd_interface_up_wait_seconds_total</code> (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/3391)</li>
-<li>Add <code>ovnkube_controller_admin_network_policies</code> and <code>ovnkube_controller_baseline_admin_network_policies</code> (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/4239)</li>
-<li>Add <code>ovnkube_controller_admin_network_policies_db_objects</code> and <code>ovnkube_controller_baseline_admin_network_policies_db_objects</code> (https://github.com/ovn-kubernetes/ovn-kubernetes/pull/4254)</li>
+<li>Add <code>ovnkube_master_network_programming_duration_seconds</code> and <code>ovnkube_master_network_programming_ovn_duration_seconds</code> (https://github.com/ovn-org/ovn-kubernetes/pull/2878)</li>
+<li>Remove <code>ovnkube_master_skipped_nbctl_daemon_total</code> (https://github.com/ovn-org/ovn-kubernetes/pull/2707)</li>
+<li>Add <code>ovnkube_master_egress_routing_via_host</code> (https://github.com/ovn-org/ovn-kubernetes/pull/2833)</li>
+<li>Add <code>ovnkube_resource_retry_failures_total</code> (https://github.com/ovn-org/ovn-kubernetes/pull/3314)</li>
+<li>Add <code>ovs_vswitchd_interfaces_total</code> and <code>ovs_vswitchd_interface_up_wait_seconds_total</code> (https://github.com/ovn-org/ovn-kubernetes/pull/3391)</li>
+<li>Add <code>ovnkube_controller_admin_network_policies</code> and <code>ovnkube_controller_baseline_admin_network_policies</code> (https://github.com/ovn-org/ovn-kubernetes/pull/4239)</li>
+<li>Add <code>ovnkube_controller_admin_network_policies_db_objects</code> and <code>ovnkube_controller_baseline_admin_network_policies_db_objects</code> (https://github.com/ovn-org/ovn-kubernetes/pull/4254)</li>
 </ul>
 
 
